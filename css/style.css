@@ -1,0 +1,20 @@
+:root {
+  --dresseco-teal-500: #20c997;
+  --dresseco-teal-200: #a6e9d5;
+}
+
+::selection {
+  color: #343a40;
+  background: var(--dresseco-teal-200);
+}
+
+::-moz-selection {
+  color: #343a40;
+  background: var(--dresseco-teal-200);
+}
+
+:focus {
+  border-radius: var(--bs-border-radius);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
