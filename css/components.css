@@ -1,3 +1,34 @@
+/*Header*/
+
 header {
   box-shadow: 0 1px 6px 6px #00000030;
+}
+
+@media only screen and (max-width: 768px) {
+  #dresseco-navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  #dresseco-action-buttons button,
+  .dresseco-button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+  }
+
+  #dresseco-navbar-pages {
+    font-size: 1.1rem;
+  }
+}
+
+#dresseco-action-buttons button,
+#dresseco-navbar-pages,
+.dresseco-button {
+  font-size: 1.1rem;
+}
+
+#dresseco-navbar-page-home:hover,
+#dresseco-navbar-page-catalogue:hover {
+  color: var(--dresseco-teal-500);
+  text-decoration: underline;
 }
