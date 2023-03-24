@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="ca">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="author" content="Dresseco, S.L." />
-    <meta name="description" content="Website header. Reusable component." />
-    <script src="/js/libraries.js"></script>
-    <link href="/css/style.css" rel="stylesheet" />
-    <link href="/css/components.css" rel="stylesheet" />
-  </head>
+class Header extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-  <header>
+  connectedCallback() {
+    this.innerHTML = `
+    <header>
     <nav class="navbar navbar-expand-lg sticky-top bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="https://dresseco.github.io">
@@ -96,4 +90,8 @@
       </div>
     </nav>
   </header>
-</html>
+      `;
+  }
+}
+
+customElements.define("dresseco-header", Header);
