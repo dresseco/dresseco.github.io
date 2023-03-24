@@ -13,7 +13,7 @@ class Header extends HTMLElement {
       <div class="container-fluid">
         <a class="navbar-brand" href="https://dresseco.github.io">
           <img
-            src="assets/images/dresseco-logo.png"
+            src="/assets/images/dresseco-logo.jpg"
             alt="Dresseco, S.L."
             width="160"
             height="64"
