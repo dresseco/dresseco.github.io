@@ -5,24 +5,24 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-    <header>
     <nav
-      id="dresseco-navbar"
+      id="dresseco-header-navbar"
       class="navbar navbar-expand-lg sticky-top bg-light"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="https://dresseco.github.io">
+      <div id="dresseco-header-navbar-brand">
+        <a "class="navbar-brand" href="https://dresseco.github.io/">
           <img
-            src="/assets/images/dresseco-logo.jpg"
+            src="/assets/images/dresseco-logo.png"
             alt="Dresseco, S.L."
-            width="160"
-            height="64"
+            class="img-fluid"
           />
         </a>
-        <div class="order-lg-1">
-          <div id="dresseco-action-buttons">
+        </div>
+        <div id="dresseco-header-navbar-action-buttons-main" class="order-lg-1">
+          <div id="dresseco-header-navbar-action-buttons">
             <button
-              class="btn btn-outline-primary ms-1 dropdown"
+              class="btn btn-outline-primary ms-1 dropdown dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -33,22 +33,22 @@ class Header extends HTMLElement {
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><i class="pe-2">🇦🇩</i>Català</a
+                    ><span class="pe-2">🇦🇩</span>Català</a
                   >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><i class="pe-2">🇪🇸</i>Español</a
+                    ><span class="pe-2">🇪🇸</span>Español</a
                   >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><i class="pe-2">🇬🇧</i>English</a
+                    ><span class="pe-2">🇬🇧</span>English</a
                   >
                 </li>
                 <li>
                   <a class="dropdown-item" href="#"
-                    ><i class="pe-2">🇫🇷</i>Français</a
+                    ><span class="pe-2">🇫🇷</span>Français</a
                   >
                 </li>
               </ul>
@@ -58,7 +58,8 @@ class Header extends HTMLElement {
               <i class="bi bi-cart-fill pe-2"></i><span>0 productes</span>
             </button>
             <button
-              class="btn btn-outline-primary d-md-none ms-1"
+              id="dresseco-header-navbar-action-buttons-collapse"
+              class="btn btn-outline-primary ms-1"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -73,46 +74,48 @@ class Header extends HTMLElement {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <hr />
           <ul
-            id="dresseco-navbar-pages"
+            id="dresseco-header-navbar-pages"
             class="navbar-nav me-auto mb-2 mb-lg-0"
           >
             <li class="nav-item">
               <a
-                id="dresseco-navbar-page-home"
+                id="dresseco-header-navbar-pages-home"
                 class="nav-link mx-3"
-                href="https://dresseco.github.io"
-                ><i class="bi bi-house-fill pe-2"></i><span>Inici</span></a
+                href="https://dresseco.github.io/"
+                ><i class="bi bi-house-fill pe-2"></i><span class="fw-bold">Inici</span></a
               >
             </li>
             <li class="nav-item">
               <a
-                id="dresseco-navbar-page-catalogue"
+                id="dresseco-header-navbar-pages-catalogue"
                 class="nav-link mx-3"
-                href="https://dresseco.github.io/catalogue"
-                ><i class="bi bi-collection-fill pe-2"></i><span>Catàleg</span>
+                href="https://dresseco.github.io/catalogue/"
+                ><i class="bi bi-bag-fill pe-2"></i><span class="fw-bold">Catàleg</span>
               </a>
             </li>
           </ul>
           <div class="me-1">
-            <form class="d-flex" role="search">
+          <form class="d-flex" role="search">
+          <div class="input-group">
+            <div class="form-floating">
               <input
-                class="form-control me-2"
                 type="search"
+                class="form-control me-2"
+                id="floatingInput"
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button
-                class="btn btn-outline-success dresseco-button"
-                type="submit"
-              >
-                <i class="bi bi-search"></i>
-              </button>
-            </form>
+              <label for="floatingInput">Cerca</label>
+            </div>
+            <button class="btn btn-outline-primary dresseco-button" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form>
           </div>
         </div>
       </div>
     </nav>
-  </header>
       `;
   }
 }
