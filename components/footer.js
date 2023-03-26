@@ -6,7 +6,7 @@ class Footer extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
     <footer class="bg-light">
-    <div id="dresseco-footer-container" class="container py-4">
+    <div id="dresseco-footer-container" class="container py-5">
       <div id="dresseco-footer-metadata" class="row">
         <div id="dresseco-footer-metadata-about-us" class="col-md-3">
           <img
