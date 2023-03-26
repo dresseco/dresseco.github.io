@@ -1,7 +1,12 @@
-/*Header*/
+/*Main HTML tag*/
+html {
+  overflow: hidden;
+}
 
+/*Header*/
 #dresseco-header-navbar {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1;
 }
 
 @media only screen and (max-width: 991.98px) {
@@ -24,10 +29,6 @@
     max-height: 75px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  #dresseco-header-navbar-pages {
-    font-size: 1.1rem;
   }
 
   #dresseco-header-navbar-action-buttons-main {
@@ -111,6 +112,7 @@ footer {
   border-top: 1.5px solid rgb(194, 194, 194);
   border-bottom: 1.5px solid rgb(194, 194, 194);
   position: relative;
+  z-index: 0;
 }
 
 @media only screen and (max-width: 767.98px) {
@@ -218,4 +220,51 @@ footer {
 .dresseco-link-muted a:hover {
   color: var(--dresseco-teal-500);
   text-decoration: underline;
+}
+
+/*Loading screen*/
+#dresseco-loading-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#dresseco-loading-screen-spinner {
+  width: 75px;
+  height: 75px;
+}
+
+#dresseco-loading-screen-spinner:after {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 7px solid #ffffff;
+  border-color: #ffffff transparent #ffffff transparent;
+  animation-name: dresseco-loading-screen-spinner;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dresseco-loading-screen-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
