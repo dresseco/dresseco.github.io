@@ -1,36 +1,109 @@
 /*Header*/
 
-header {
-  box-shadow: 0 1px 6px 6px #00000030;
+#dresseco-header-navbar {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-@media only screen and (max-width: 768px) {
-  #dresseco-navbar {
+@media only screen and (max-width: 991.98px) {
+  #dresseco-header-navbar {
     padding-top: 15px;
     padding-bottom: 15px;
   }
 
-  #dresseco-action-buttons button,
+  .navbar-collapse {
+    order: 3;
+  }
+
+  #dresseco-header-navbar-brand {
+    order: 1;
+    flex-basis: 100%;
+  }
+
+  #dresseco-header-navbar-brand img {
+    display: block;
+    max-height: 75px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #dresseco-header-navbar-pages {
+    font-size: 1.1rem;
+  }
+
+  #dresseco-header-navbar-action-buttons-main {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    order: 2;
+  }
+
+  #dresseco-header-navbar-action-buttons button,
   .dresseco-button {
     font-size: 1.25rem;
     padding: 0.5rem 1rem;
   }
 
-  #dresseco-navbar-pages {
-    font-size: 1.1rem;
+  .form-floating > .form-control,
+  .form-floating > .form-control-plaintext {
+    padding: 0rem 0.75rem;
+  }
+
+  .form-floating > .form-control,
+  .form-floating > .form-control-plaintext,
+  .form-floating > .form-select {
+    height: calc(2.84rem + 3px) !important;
+    line-height: 1;
+  }
+
+  .form-floating > label {
+    padding: 0.65rem 0.75rem !important;
   }
 }
 
-#dresseco-action-buttons button,
-#dresseco-navbar-pages,
-.dresseco-button {
+@media only screen and (min-width: 992px) {
+  #dresseco-header-navbar-brand img {
+    max-height: 64px;
+  }
+
+  #dresseco-header-navbar-pages-home {
+    margin-left: 2rem !important;
+  }
+
+  #dresseco-header-navbar-action-buttons-collapse {
+    display: none;
+  }
+}
+
+#dresseco-header-navbar-pages {
   font-size: 1.1rem;
 }
 
-#dresseco-navbar-page-home:hover,
-#dresseco-navbar-page-catalogue:hover {
+#dresseco-header-navbar-pages-home:hover,
+#dresseco-header-navbar-pages-catalogue:hover {
   color: var(--dresseco-teal-500);
   text-decoration: underline;
+}
+
+#dresseco-header-navbar-action-buttons button,
+.dresseco-button {
+  font-size: 1.2rem;
+}
+
+/*Decrease size of form/input when there's a floating label*/
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext {
+  padding: 0rem 0.75rem;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext,
+.form-floating > .form-select {
+  height: calc(2.5rem + 2px);
+  line-height: 1;
+}
+
+.form-floating > label {
+  padding: 0.5rem 0.75rem;
 }
 
 /*Footer*/
@@ -40,29 +113,7 @@ footer {
   position: relative;
 }
 
-@media only screen and (min-width: 768px) {
-  #dresseco-footer-metadata-about-us img {
-    max-height: 50px;
-  }
-
-  #dresseco-footer-metadata-about-us p {
-    text-align: justify;
-    width: 75%;
-  }
-
-  #dresseco-footer-metadata-newsletter {
-    display: flex;
-    justify-content: end;
-  }
-
-  #dresseco-footer-social-media {
-    position: absolute;
-    top: 1rem;
-    right: 0;
-  }
-}
-
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767.98px) {
   #dresseco-footer-container {
     padding-left: 25px;
     padding-right: 25px;
@@ -104,14 +155,44 @@ footer {
     order: 3;
   }
 
-  #dresseco-footer-social-media {
+  #dresseco-footer-bottom {
+    padding-bottom: 5rem;
+  }
+
+  #dresseco-footer-bottom-social-media {
     display: flex;
     justify-content: center;
     font-size: 1.4rem;
   }
 
-  #dresseco-footer-disclaimer {
+  #dresseco-footer-bottom-disclaimer {
     margin-top: 25px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #dresseco-footer-metadata-about-us img {
+    max-height: 50px;
+  }
+
+  #dresseco-footer-metadata-about-us p {
+    text-align: justify;
+    width: 75%;
+  }
+
+  #dresseco-footer-metadata-newsletter {
+    display: flex;
+    justify-content: end;
+  }
+
+  #dresseco-footer-bottom {
+    padding-bottom: 3rem;
+  }
+
+  #dresseco-footer-bottom-social-media {
+    position: absolute;
+    top: 1rem;
+    right: 0;
   }
 }
 
@@ -119,7 +200,7 @@ footer {
   color: black;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .dresseco-link a:hover {
@@ -131,7 +212,7 @@ footer {
   color: rgba(33, 37, 41, 0.75);
   text-decoration: underline;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out;
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .dresseco-link-muted a:hover {
