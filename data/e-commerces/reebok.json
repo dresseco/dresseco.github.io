@@ -1,0 +1,90 @@
+{
+  "shop-name": "reebok",
+  "url": "https://www.reebok.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Reebok_red_logo.svg/300px-Reebok_red_logo.svg.png",
+  "products": [
+    {
+      "reebok-1": [
+        {
+          "product-metadata": [
+            {
+              "shop": "Reebok",
+              "product-id": "reebok-1",
+              "product-url": "https://www.reebok.com/chandal-workout-ready/H46636.html/",
+              "dresseco-url": "/catalogue/reebok/product-reebok-1.html",
+              "images-urls": [
+                {
+                  "model": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed3cbe30740a4eb48b6eadd300a51101_9366/Chandal_Workout_Ready_Negro_H46636_01_standard.jpg",
+                  "item": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c6ebb0f793e416e885bad9d00aace91_9366/Chandal_Workout_Ready_Negro_H46636_13_standard.jpg"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Xandall Workout Ready",
+              "price": "59,50 €",
+              "description": "Llueix el teu millor look mentre et prepares per a qualsevol repte. Aquest xandall per a home Reebok està dissenyat per infondre un estil atlètic al teu dia a dia. Està confeccionat en un teixit de niló resistent al desgast amb un acabat que repel·leix la pluja suau i s'asseca ràpid. El tall folgat et permet moure't amb llibertat i estar sempre llest per a l'acció.",
+              "made-in": "la Xina",
+              "sizes": [
+                {
+                  "all": ["XS", "S", "M", "L", "XL"],
+                  "available": [],
+                  "unavailable": ["XS", "S", "M", "L", "XL"]
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "cotton": "42 %",
+              "polyester": "58 %",
+              "fabrication-used-water": "2.800 L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "reebok-2": [
+        {
+          "product-metadata": [
+            {
+              "shop": "Reebok",
+              "product-id": "reebok-2",
+              "product-url": "https://www.reebok.es/club-c-85/AR0455.html/",
+              "dresseco-url": "/catalogue/reebok/product-reebok-2.html",
+              "images-urls": [
+                {
+                  "model": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0a38c50f84a0436a8b94aa940119ae96_9366/Club_C_85_Blanco_AR0455_06_standard_hover.jpg",
+                  "item": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7b69fecaec0e42ac9665aa940119519b_9366/Club_C_85_Blanco_AR0455_01_standard.jpg"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Club C 85",
+              "price": "80 €",
+              "description": "Flueix a cada pas. Aquesta sabatilla ho fa amb tu. Calça't aquesta Club C 85 i marca tendència. L'estil senzill d'aquesta sabatilla de pell suau combina a la perfecció amb tot el teu armari. Perquè de vegades no cal dir res per llençar un missatge clar.",
+              "made-in": "la Xina",
+              "sizes": [
+                {
+                  "all": ["36", "38", "40", "42", "44"],
+                  "available": ["36", "38", "40", "42", "44"],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "polyester": "100 %",
+              "fabrication-used-water": "4.400 L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

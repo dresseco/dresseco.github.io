@@ -1,0 +1,15 @@
+.dresseco-catalogue-page-container-items-row {
+  display: flex;
+  justify-content: space-between;
+}
+#sis {
+  margin-top: 50px;
+}
+body {
+  background: linear-gradient(to bottom, #effded 50%, #779974);
+  height: 1900px;
+}
+.btn-primary {
+  background-color: #4caf50;
+  border-color: #4caf50;
+}

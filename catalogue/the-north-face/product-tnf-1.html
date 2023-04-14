@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Dresseco, S.L." />
+    <meta name="description" content="Example product page." />
+    <title></title>
+    <link href="/assets/images/favicon.png" rel="icon" />
+    <script src="/js/libraries.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/handlebars-loader.js"></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/components.css" rel="stylesheet" />
+    <link href="/css/pages/product.css" rel="stylesheet" />
+    <script src="/components/header.js"></script>
+    <script src="/components/footer.js"></script>
+    <script src="/components/loading-screen.js"></script>
+  </head>
+
+  <dresseco-loading-screen></dresseco-loading-screen>
+  <dresseco-header></dresseco-header>
+  <body>
+    <div id="dresseco-product-id" data-product-id="tnf-1"></div>
+    <div
+      id="dresseco-product-data-path"
+      data-origin-json="/data/e-commerces/tnf.json"
+    ></div>
+    <div id="dresseco-product-page">
+      <script id="handlebars-template" type="text/x-handlebars-template">
+        <div id="dresseco-product-page-container" class="container py-5">
+          <div id="dresseco-product-page-container-product-img" class="carousel slide">
+            <div
+              id="dresseco-product-page-container-product-img-carousel-product-images"
+              class="carousel-inner"
+            >
+              <div class="carousel-item active">
+                <img
+                  src="{{#each products}}{{#each tnf-1}}{{#each product-metadata}}{{#each images-urls}}{{model}}{{/each}}{{/each}}{{/each}}{{/each}}"
+                  alt="Model image" title="Model image"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="{{#each products}}{{#each tnf-1}}{{#each product-metadata}}{{#each images-urls}}{{item}}{{/each}}{{/each}}{{/each}}{{/each}}"
+                  alt="Item image" title="Item image"
+                />
+              </div>
+            </div>
+            <div
+              id="dresseco-product-page-container-product-img-carousel-control-buttons"
+            >
+              <button
+                class="carousel-control carousel-control-prev"
+                type="button"
+                data-bs-target="#dresseco-product-page-container-product-img"
+                data-bs-slide="prev"
+              >
+                <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control carousel-control-next"
+                type="button"
+                data-bs-target="#dresseco-product-page-container-product-img"
+                data-bs-slide="next"
+              >
+                <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <div
+              id="dresseco-product-page-container-product-img-carousel-product-thumbnails"
+              class="carousel-indicators"
+            >
+              <button
+                type="button"
+                data-bs-target="#dresseco-product-page-container-product-img"
+                data-bs-slide-to="0"
+                class="active"
+                aria-current="true"
+                aria-label="Image 1"
+              >
+                <img
+                  src="{{#each products}}{{#each tnf-1}}{{#each product-metadata}}{{#each images-urls}}{{model}}{{/each}}{{/each}}{{/each}}{{/each}}"
+                  alt="Model image preview"
+                />
+              </button>
+              <button
+                type="button"
+                data-bs-target="#dresseco-product-page-container-product-img"
+                data-bs-slide-to="1"
+                aria-label="Image 2"
+              >
+                <img
+                  src="{{#each products}}{{#each tnf-1}}{{#each product-metadata}}{{#each images-urls}}{{item}}{{/each}}{{/each}}{{/each}}{{/each}}"
+                  alt="Item image preview"
+                />
+              </button>
+            </div>
+          </div>
+          <div id="dresseco-product-page-container-product-info">
+            <div
+              id="dresseco-product-page-container-product-info-title"
+              class="dresseco-link-title"
+            >
+              <a
+                href="{{#each products}}{{#each tnf-1}}{{#each product-metadata}}{{product-url}}{{/each}}{{/each}}{{/each}}"
+                target="_blank"
+              >
+                <span class="fs-1 fw-bold pe-2 text-decoration-underline"
+                  >{{#each products}}{{#each tnf-1}}{{#each
+                  main-information}}{{name}}{{/each}}{{/each}}{{/each}}</span
+                ><i class="bi bi-box-arrow-up-right fs-6"></i>
+              </a>
+            </div>
+            <div id="dresseco-product-page-container-product-info-origin-shop-img">
+              <img src="{{display-image}}" alt="Origin shop image" class="img-fluid" />
+            </div>
+            <div id="dresseco-product-page-container-product-info-price">
+              <span class="fs-2"
+                >{{#each products}}{{#each tnf-1}}{{#each
+                main-information}}{{price}}{{/each}}{{/each}}{{/each}}</span
+              >
+              <span
+                id="dresseco-product-page-container-product-info-price-additional"
+                class="text-muted"
+                >incl. 21 % de IVA. Veure
+                <span class="dresseco-link-muted"
+                  ><a href="/about.html">despeses d'enviament</a></span
+                ></span
+              >
+            </div>
+            <div id="dresseco-product-page-container-product-info-action-buttons">
+              <form name="product-user-data" method="POST" data-netlify="true"
+                onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
+              >
+                <div
+                  id="dresseco-product-page-container-product-info-action-buttons-input"
+                >
+                  <div
+                    id="dresseco-product-page-container-product-info-action-buttons-input-size"
+                  >
+                    <span
+                      id="dresseco-product-page-container-product-info-action-buttons-input-size-label"
+                      ><i class="bi bi-rulers"></i
+                      ><span class="ps-2 pe-3">Mida</span></span
+                    >
+                    <select
+                      id="dresseco-product-page-container-product-info-action-buttons-input-size-selector"
+                      class="form-select"
+                      aria-label="Product size selector"
+                      name="product-user-data-size"
+                      required
+                    >
+                      <option selected disabled value="">. . .</option>
+                      {{#each products}} {{#each tnf-1.[0].main-information.[0].sizes}}
+                      {{#inArray all.[0] unavailable}}
+                      <option value="all.[0]" disabled>{{{json all.[0]}}}</option>
+                      {{else}}
+                      <option value="all.[0]">{{{json all.[0]}}}</option>
+                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
+                      tnf-1.[0].main-information.[0].sizes}} {{#inArray all.[1]
+                      unavailable}}
+                      <option value="all.[1]" disabled>{{{json all.[1]}}}</option>
+                      {{else}}
+                      <option value="all.[1]">{{{json all.[1]}}}</option>
+                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
+                      tnf-1.[0].main-information.[0].sizes}} {{#inArray all.[2]
+                      unavailable}}
+                      <option value="all.[2]" disabled>{{{json all.[2]}}}</option>
+                      {{else}}
+                      <option value="all.[2]">{{{json all.[2]}}}</option>
+                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
+                      tnf-1.[0].main-information.[0].sizes}} {{#inArray all.[3]
+                      unavailable}}
+                      <option value="all.[3]" disabled>{{{json all.[3]}}}</option>
+                      {{else}}
+                      <option value="all.[3]">{{{json all.[3]}}}</option>
+                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
+                      tnf-1.[0].main-information.[0].sizes}} {{#inArray all.[4]
+                      unavailable}}
+                      <option value="all.[4]" disabled>{{{json all.[4]}}}</option>
+                      {{else}}
+                      <option value="all.[4]">{{{json all.[4]}}}</option>
+                      {{/inArray}} {{/each}} {{/each}}
+                    </select>
+                  </div>
+                  <div
+                    id="dresseco-product-page-container-product-info-action-buttons-input-quantity"
+                  >
+                    <span
+                      id="dresseco-product-page-container-product-info-action-buttons-input-quantity-label"
+                      ><i class="bi bi-box"></i
+                      ><span class="ps-2 pe-3">Quantitat</span></span
+                    >
+                    <input
+                      id="dresseco-product-page-container-product-info-action-buttons-input-quantity-input"
+                      type="number"
+                      class="form-control"
+                      placeholder="#"
+                      min="0"
+                      max="30"
+                      name="product-user-data-quantity"
+                      required
+                    />
+                  </div>
+                </div>
+                <div
+                  id="dresseco-product-page-container-product-info-action-buttons-add-cart"
+                >
+                  <button
+                    id="dresseco-product-page-container-product-info-action-buttons-add-cart-button"
+                    class="btn btn-primary"
+                    type="submit"
+                  >
+                    <i class="bi bi-cart-plus-fill pe-2"></i>Afegir producte a la cistella
+                  </button>
+                </div>
+              </form>
+            </div>
+            <hr />
+            <div id="dresseco-product-page-container-product-info-data">
+              <div id="dresseco-product-page-container-product-info-data-description">
+                <p>
+                  {{#each products}}{{#each tnf-1}}{{#each
+                  main-information}}{{description}}{{/each}}{{/each}}{{/each}}
+                </p>
+              </div>
+              <div
+                id="dresseco-product-page-container-product-info-data-additional-information"
+              >
+                <span class="fw-bold">Informació sobre el producte</span>
+                <div
+                  id="dresseco-product-page-container-product-info-data-additional-information-accordion"
+                  class="accordion"
+                >
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                        aria-controls="collapseOne"
+                      >
+                        <i class="bi bi-layers pe-2"></i>Composició
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#dresseco-product-page-container-product-info-data-additional-information-accordion"
+                    >
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Polièster: {{#each products}}{{#each
+                            tnf-1}}{{#each
+                            composition}}{{polyester}}{{/each}}{{/each}}{{/each}}
+                          </li>
+                          <li class="list-group-item">
+                            Aigua utilitzada: {{#each products}}{{#each tnf-1}}{{#each
+                            composition}}{{fabrication-used-water}}{{/each}}{{/each}}{{/each}}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="true"
+                        aria-controls="collapseTwo"
+                      >
+                        <i class="bi bi-geo-alt pe-2"></i>Origen
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#dresseco-product-page-container-product-info-data-additional-information-accordion"
+                    >
+                      <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Fabricat {{#each products}}{{#each tnf-1}}{{#each
+                            main-information}}{{made-in}}{{/each}}{{/each}}{{/each}}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="dresseco-product-page-container-product-info-data-id">
+                <span class="text-muted small"
+                  >Referència: {{#each products}}{{#each tnf-1}}{{#each
+                  product-metadata}}{{product-id}}{{/each}}{{/each}}{{/each}}</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </script>
+      <script id="handlebars-loader">
+        loadTemplate("handlebars-template", "dresseco-product-page", tnf);
+      </script>
+    </div>
+  </body>
+  <dresseco-footer></dresseco-footer>
+</html>

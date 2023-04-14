@@ -1,0 +1,90 @@
+{
+  "shop-name": "hm",
+  "url": "https://www.hm.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/709px-H%26M-Logo.svg.png",
+  "products": [
+    {
+      "hm-1": [
+        {
+          "product-metadata": [
+            {
+              "shop": "H&M",
+              "product-id": "hm-1",
+              "product-url": "https://www.hm.com/productpage.1087261003.html",
+              "dresseco-url": "/catalogue/hm/product-hm-1.html",
+              "images-urls": [
+                {
+                  "model": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fae%2Fde%2Faede78889de76e7bf8b9b791771ea5bbadd53ccd.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
+                  "item": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F4f%2F64%2F4f64dc3ee708f498d249a5059845ffd8030f9142.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Dessuadora oversize amb caputxa",
+              "price": "19,99 €",
+              "description": "Dessuadora oversize en barreja de cotó amb caputxa folrada en punt i cordó dʻajust. Model de tall relaxat amb espatlles marcadament caigudes, butxaca cangur i remat de canalé a punys i baix. Interior raspallat suau.",
+              "made-in": "a Bangladesh, Indonèsia i Turquia",
+              "sizes": [
+                {
+                  "all": ["XS", "S", "M", "L", "XL"],
+                  "available": ["XS", "S", "M", "L", "XL"],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "cotton": "62 %",
+              "polyester": "38 %",
+              "fabrication-used-water": "2.200 L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "hm-2": [
+        {
+          "product-metadata": [
+            {
+              "shop": "H&M",
+              "product-id": "hm-2",
+              "product-url": "https://www.hm.com/productpage.0748749018.html",
+              "dresseco-url": "/catalogue/hm/product-hm-2.html",
+              "images-urls": [
+                {
+                  "model": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc8%2F9d%2Fc89de4a68e58aece5d869ee9e322066e11f04e31.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+                  "item": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2F2c%2Fbc%2F2cbc827596471088062284c787aa49b163084113.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVEDETAIL%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Sabatilles de casa amb peluix",
+              "price": "14,99 €",
+              "description": "Sabatilles de casa suaus amb brodats i aplicacions. Model de canya alta amb tanca autoadherent darrere. Folre i plantilles en peluix. Soles toves amb protecció antilliscant.",
+              "made-in": "la Xina",
+              "sizes": [
+                {
+                  "all": ["13", "15", "17", "19", "21"],
+                  "available": ["13", "15", "17", "19", "21"],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "polyester": "100 %",
+              "fabrication-used-water": "4.400 L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

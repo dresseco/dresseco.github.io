@@ -1,0 +1,93 @@
+{
+  "shop-name": "c-and-a",
+  "url": "https://www.c-and-a.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/C%26A_logo.svg/1280px-C%26A_logo.svg.png",
+  "products": [
+    {
+      "canda-1": [
+        {
+          "product-metadata": [
+            {
+              "shop": "C&A",
+              "product-id": "canda-1",
+              "product-url": "https://www.c-and-a.com/es/es/shop/straight-jeans-jog-denim-2188474/1/",
+              "dresseco-url": "/catalogue/c-and-a/product-canda-1.html",
+              "images-urls": [
+                {
+                  "model": "https://www.c-and-a.com/img/product/q_auto:good,b_rgb:E0DEDA,c_scale,w_478/v1676883021/productimages/2188474-1-05.jpg",
+                  "item": "https://www.c-and-a.com/img/product/q_auto:good,b_rgb:E0DEDA,c_scale,w_478/v1676396780/productimages/2188474-1-08.jpg"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Texans rectes - jog denim",
+              "price": "24,99 €",
+              "description": "Straight jeans de jog denim elàstic i suau amb marques de desgast simulades i efecte rentat.",
+              "made-in": "a Turquia",
+              "sizes": [
+                {
+                  "all": ["128", "134", "140", "146", "152"],
+                  "available": ["128", "134", "140", "146", "152"],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "cotton": "86 %",
+              "polyester": "13 %",
+              "elastane": "2 %",
+              "fabrication-used-water": "3.117 L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "canda-2": [
+        {
+          "product-metadata": [
+            {
+              "shop": "C&A",
+              "product-id": "canda-2",
+              "product-url": "https://www.c-and-a.com/es/ca/shop/mono-2193454/3/",
+              "dresseco-url": "/catalogue/c-and-a/product-canda-2.html",
+              "images-urls": [
+                {
+                  "model": "https://www.c-and-a.com/productimages/b_rgb:E0DEDA,c_scale,h_790,q_70,e_sharpen:70/v1679040610/2193454-3-01.jpg",
+                  "item": "https://www.c-and-a.com/productimages/b_rgb:E0DEDA,c_scale,h_790,q_70,e_sharpen:70/v1678291309/2193454-3-08.jpg"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "Granota de lli",
+              "price": "49,99 €",
+              "description": "Granota de lli de teixit lleuger. Cinturó per nuar a la cintura, butxaques al biaix laterals i cremallera oculta a la costura posterior.",
+              "made-in": "a Bangladesh",
+              "sizes": [
+                {
+                  "all": ["38", "40", "42", "44", "46"],
+                  "available": ["44"],
+                  "unavailable": ["38", "40", "42", "46"]
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "linen": "100 %",
+              "polyester": "80 %",
+              "cotton": "20 %",
+              "fabrication-used-water": "2.700 L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

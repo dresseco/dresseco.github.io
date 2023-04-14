@@ -7,12 +7,35 @@ html {
 #dresseco-header-navbar {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   z-index: 1;
+  background-color: rgba(248, 249, 250, 0.8);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.dresseco-header-navbar-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+#dresseco-header-navbar-action-buttons-main-language-dropdown {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+@media only screen and (max-width: 374.98px) {
+  #dresseco-header-navbar-action-buttons-main button,
+  .dresseco-button {
+    font-size: 1rem !important;
+  }
 }
 
 @media only screen and (max-width: 991.98px) {
   #dresseco-header-navbar {
     padding-top: 15px;
     padding-bottom: 15px;
+    padding-left: 13px;
+    padding-right: 13px;
   }
 
   .navbar-collapse {
@@ -31,17 +54,37 @@ html {
     margin-right: auto;
   }
 
-  #dresseco-header-navbar-action-buttons-main {
+  #dresseco-header-navbar-action-buttons {
     display: block;
     margin-left: auto;
     margin-right: auto;
     order: 2;
   }
 
-  #dresseco-header-navbar-action-buttons button,
+  #dresseco-header-navbar-action-buttons-main button,
   .dresseco-button {
-    font-size: 1.25rem;
     padding: 0.5rem 1rem;
+  }
+
+  #dresseco-header-navbar-action-buttons-main-language {
+    margin-left: 0rem;
+  }
+
+  #dresseco-header-navbar-separator {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #dresseco-header-navbar-pages {
+    margin-bottom: 15px;
+  }
+
+  #dresseco-header-navbar-pages-home {
+    padding-top: 0;
+  }
+
+  #dresseco-header-navbar-pages-catalogue {
+    padding-bottom: 0;
   }
 
   .form-floating > .form-control,
@@ -70,7 +113,11 @@ html {
     margin-left: 2rem !important;
   }
 
-  #dresseco-header-navbar-action-buttons-collapse {
+  #dresseco-header-navbar-action-buttons-main-language {
+    margin-left: 0.25rem;
+  }
+
+  #dresseco-header-navbar-action-buttons-main-collapse {
     display: none;
   }
 }
@@ -85,7 +132,7 @@ html {
   text-decoration: underline;
 }
 
-#dresseco-header-navbar-action-buttons button,
+#dresseco-header-navbar-action-buttons-main button,
 .dresseco-button {
   font-size: 1.2rem;
 }
@@ -109,117 +156,100 @@ html {
 
 /*Footer*/
 footer {
-  border-top: 1.5px solid rgb(194, 194, 194);
-  border-bottom: 1.5px solid rgb(194, 194, 194);
+  border-top: 1px solid rgb(0, 0, 0, 0.175);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.175);
   position: relative;
   z-index: 0;
+  padding-bottom: 0.5rem;
 }
 
-@media only screen and (max-width: 767.98px) {
+#dresseco-footer-container-metadata {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 991.98px) {
   #dresseco-footer-container {
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
-  #dresseco-footer-metadata {
+  #dresseco-footer-container-metadata {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
   }
 
-  #dresseco-footer-metadata-about-us {
+  #dresseco-footer-container-metadata-about-us {
     flex-basis: 100%;
     order: 1;
   }
 
-  #dresseco-footer-metadata-about-us img {
+  #dresseco-footer-container-metadata-about-us img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     max-height: 60px;
   }
 
-  #dresseco-footer-metadata-about-us p {
+  #dresseco-footer-container-metadata-about-us p {
     text-align: center;
     width: 100%;
   }
 
-  #dresseco-footer-metadata-links {
+  #dresseco-footer-container-metadata-links {
     padding-top: 10px;
     flex-grow: 1;
     order: 2;
   }
 
-  #dresseco-footer-metadata-newsletter {
+  #dresseco-footer-container-metadata-newsletter {
     padding-top: 10px;
     flex-grow: 1;
     order: 3;
   }
 
-  #dresseco-footer-bottom {
+  #dresseco-footer-container-bottom {
     padding-bottom: 5rem;
   }
 
-  #dresseco-footer-bottom-social-media {
+  #dresseco-footer-container-bottom-social-media {
     display: flex;
     justify-content: center;
     font-size: 1.4rem;
   }
 
-  #dresseco-footer-bottom-disclaimer {
+  #dresseco-footer-container-bottom-disclaimer {
     margin-top: 25px;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  #dresseco-footer-metadata-about-us img {
+@media only screen and (min-width: 992px) {
+  #dresseco-footer-container-metadata-about-us img {
+    margin-bottom: -1.9rem;
     max-height: 50px;
   }
 
-  #dresseco-footer-metadata-about-us p {
+  #dresseco-footer-container-metadata-about-us p {
+    margin-top: 1.36rem;
     text-align: justify;
     width: 75%;
   }
 
-  #dresseco-footer-metadata-newsletter {
+  #dresseco-footer-container-metadata-newsletter {
     display: flex;
     justify-content: end;
   }
 
-  #dresseco-footer-bottom {
+  #dresseco-footer-container-bottom {
     padding-bottom: 3rem;
   }
 
-  #dresseco-footer-bottom-social-media {
+  #dresseco-footer-container-bottom-social-media {
     position: absolute;
     top: 1rem;
     right: 0;
   }
-}
-
-.dresseco-link a {
-  color: black;
-  text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.dresseco-link a:hover {
-  color: var(--dresseco-teal-500);
-  text-decoration: underline;
-}
-
-.dresseco-link-muted a {
-  color: rgba(33, 37, 41, 0.75);
-  text-decoration: underline;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.dresseco-link-muted a:hover {
-  color: var(--dresseco-teal-500);
-  text-decoration: underline;
 }
 
 /*Loading screen*/
@@ -235,9 +265,11 @@ footer {
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: black;
+  background-color: rgba(36, 36, 36, 0.8);
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 #dresseco-loading-screen-spinner {
@@ -254,7 +286,7 @@ footer {
   border: 7px solid #ffffff;
   border-color: #ffffff transparent #ffffff transparent;
   animation-name: dresseco-loading-screen-spinner;
-  animation-duration: 1.2s;
+  animation-duration: 1.3s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }

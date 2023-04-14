@@ -1,0 +1,23 @@
+#dresseco-cart-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#dresseco-cart-page-container-items {
+  margin-top: 30px;
+}
+
+#dresseco-cart-page-container-items-item-name {
+  margin-bottom: 0.1rem;
+}
+
+#dresseco-cart-page-container-items-item-description li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#dresseco-cart-page-container-items-item-remove-btn {
+  padding: 0;
+}
