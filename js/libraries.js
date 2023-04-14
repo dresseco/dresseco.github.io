@@ -1,3 +1,4 @@
+//global - Library loader to avoid adding too many script tags per HTML file/page head
 const libraries = [
   {
     type: "js",
@@ -5,6 +6,28 @@ const libraries = [
     integrity:
       "sha512-Sct/LCTfkoqr7upmX9VZKEzXuRk5YulFoDTunGapYJdlCwA+Rl4RhgcPCLf7awTNLmIVrszTPNUFu4MSesep5Q==",
     crossorigin: "anonymous",
+    defer: true,
+  },
+  {
+    type: "js",
+    url: "https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js",
+    integrity:
+      "sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==",
+    crossorigin: "anonymous",
+    defer: true,
+  },
+  {
+    type: "js",
+    url: "https://cdn.jsdelivr.net/npm/sweetalert2@11",
+    integrity:
+      "sha512-/iBgV43zPirSC0tue+PT/1VHGs7En24twBmT+sVMgn9PTaOpKfbgIyL5YsGKlbAIxcwz9S8W/YEnYjpIYj2Axw==",
+    crossorigin: "anonymous",
+    defer: true,
+  },
+  {
+    type: "js",
+    //url: "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit", DEPRECATED, a lot of delay
+    url: "/js/element.js?cb=googleTranslateElementInit",
   },
   {
     type: "css",
@@ -12,6 +35,7 @@ const libraries = [
     integrity:
       "sha512-72OVeAaPeV8n3BdZj7hOkaPSEk/uwpDkaGyP4W2jSzAC8tfiO4LMEDWoL3uFp5mcZu+8Eehb4GhZWFwvrss69Q==",
     crossorigin: "anonymous",
+    defer: true,
   },
   {
     type: "css",
@@ -19,19 +43,16 @@ const libraries = [
     integrity:
       "sha512-c0+vSv9tnGS4fzwTIBFPcdCZ0QwP+aTePvZeAJkYpbj67KvQ5+VrJjDh3lil48LILJxhICQf66dQ8t/BJyOo/g==",
     crossorigin: "anonymous",
-  },
-  {
-    type: "css",
-    url: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-    integrity:
-      "sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==",
-    crossorigin: "anonymous",
+    defer: true,
   },
 ];
 
-function loadLibraries() {
+//Function to load the libraries const with the metadata that we defined before
+function loadLibraries(callback) {
   const head = document.getElementsByTagName("head")[0];
-  for (let i = 0; i < libraries.length; i++) {
+  let counter = 0;
+  const numLibraries = libraries.length;
+  for (let i = 0; i < numLibraries; i++) {
     const library = libraries[i];
     let element;
     if (library.type === "css") {
@@ -43,15 +64,27 @@ function loadLibraries() {
       element = document.createElement("script");
       element.type = "text/javascript";
       element.src = library.url;
-      element.integrity = library.integrity;
-      element.crossOrigin = library.crossorigin;
-      element.defer = true;
+      if (library.integrity) {
+        element.integrity = library.integrity;
+      }
+      if (library.crossorigin) {
+        element.crossOrigin = library.crossorigin;
+      }
+      if (library.async) {
+        element.async = true;
+      } else if (library.defer) {
+        element.defer = true;
+      }
     } else {
       console.error(`Invalid library: ${library.type}`);
       continue;
     }
     element.onload = function () {
       console.log(`Successfully loaded ${library.url}`);
+      counter++;
+      if (counter === numLibraries) {
+        callback();
+      }
     };
     element.onerror = function () {
       console.error(`Failed to load ${library.url}`);
@@ -60,4 +93,29 @@ function loadLibraries() {
   }
 }
 
-loadLibraries();
+//SweetAlert2 initialization function and custom modals mixin ("template"):
+let dressecoModal;
+
+function swalInit() {
+  console.log("SweetAlert2 initialized");
+  dressecoModal = Swal.mixin({
+    padding: "1rem",
+    color: "#fff",
+    buttonsStyling: false,
+    focusConfirm: false,
+    returnFocus: false,
+    customClass: {
+      container: "dresseco-modal-container",
+      popup: "dresseco-modal-popup",
+      htmlContainer: "dresseco-modal-htmlcontainer",
+      confirmButton: "dresseco-modal-button btn btn-primary",
+      cancelButton: "dresseco-modal-button btn btn-secondary",
+    },
+  });
+}
+
+//Load the libraries and initialize SweetAlert2
+loadLibraries(function () {
+  console.log("All libraries have been loaded");
+  swalInit();
+});

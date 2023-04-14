@@ -1,0 +1,92 @@
+{
+  "shop-name": "zara",
+  "url": "https://www.zara.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/800px-Zara_Logo.svg.png",
+  "products": [
+    {
+      "zara-1": [
+        {
+          "product-metadata": [
+            {
+              "shop": "Zara",
+              "product-id": "zara-1",
+              "product-url": "https://www.zara.com/es/ca/brusa-amb-estampat-floral-p03026176.html",
+              "dresseco-url": "/catalogue/zara/product-zara-1.html",
+              "images-urls": [
+                {
+                  "model": "https://static.zara.net/photos///2023/V/0/1/p/3026/176/330/2/w/563/3026176330_1_1_1.jpg?ts=1678968805274",
+                  "item": "https://static.zara.net/photos///2023/V/0/1/p/3026/176/330/2/w/563/3026176330_6_1_1.jpg?ts=1679041754591"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "BRUSA AMB ESTAMPAT FLORAL",
+              "price": "25,95 €",
+              "description": "Brusa de coll rodó amb escot en punta i màniga llarga. Detall de tavelles al davant i volants. Tancament frontal amb botons folrats al to.",
+              "made-in": "al Marroc",
+              "sizes": [
+                {
+                  "all": ["XS", "S", "M", "L", "XL"],
+                  "available": ["M", "XL"],
+                  "unavailable": ["XS", "S", "L"]
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "polyester": "99 %",
+              "RCS-certified-recycled-polyester": "50 %",
+              "metallised-fibre": "1 %",
+              "fabrication-used-water": "1.000 L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "zara-2": [
+        {
+          "product-metadata": [
+            {
+              "shop": "Zara",
+              "product-id": "zara-2",
+              "product-url": "https://www.zara.com/es/ca/pantalons-de-lli---coto-cinturo-p04451788.html",
+              "dresseco-url": "/catalogue/zara/product-zara-2.html",
+              "images-urls": [
+                {
+                  "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/33/w/563/4451788700_1_1_1.jpg?ts=1679479967507",
+                  "item": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_6_1_1.jpg?ts=1678894560239"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "PANTALONS DE LLI - COTÓ CINTURÓ",
+              "price": "39,95 €",
+              "description": "Pantalons relaxed fit confeccionats amb teixit amb mescla de lli i cotó. Cintura amb plecs frontals i detall de cinturó combinat a contrast. Butxaques al davant i butxaques amb viu al darrere. Tancament frontal amb cremallera i gafet de metall amagat.",
+              "made-in": "al Marroc",
+              "sizes": [
+                {
+                  "all": ["36", "38", "40", "42", "44"],
+                  "available": ["36", "38", "40", "44"],
+                  "unavailable": ["42"]
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "cotton": "55 %",
+              "linen": "45 %",
+              "fabrication-used-water": "3.305 L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -7,61 +7,84 @@ class Footer extends HTMLElement {
     this.innerHTML = `
     <footer class="bg-light">
     <div id="dresseco-footer-container" class="container py-5">
-      <div id="dresseco-footer-metadata" class="row">
-        <div id="dresseco-footer-metadata-about-us" class="col-md-3">
-          <a href="https://dresseco.github.io/" target="_blank"
+      <div id="dresseco-footer-container-metadata" class="row">
+        <div id="dresseco-footer-container-metadata-about-us" class="col-md-3">
+          <a href="/" target="_blank"
             ><img
               src="/assets/images/dresseco-logo.png"
               alt="Dresseco, S.L."
+              title="Dresseco, S.L."
               class="img-fluid"
           /></a>
           <p>
-            Establerts a Barcelona, som una firma de moda sostenible i de
+            Establerts a Barcelona, som una distribuïdora de moda de
             qualitat.
           </p>
         </div>
-        <div id="dresseco-footer-metadata-links" class="col-md-3 dresseco-link">
+        <div
+          id="dresseco-footer-container-metadata-links"
+          class="col-md-3 dresseco-link"
+        >
           <nav>
             <ul class="list-group list-unstyled list-inline mt-3">
               <li class="list-inline-item me-3">
-                <h5>Enllaços</h5>
+                <span class="fs-5 fw-bold">Enllaços</span>
               </li>
               <li class="list-inline-item me-3">
-                <a href="https://dresseco.github.io/">Inici</a>
+                <a href="/index.html">Inici</a>
               </li>
               <li class="list-inline-item me-3">
-                <a href="https://dresseco.github.io/catalogue/">Catàleg</a>
+                <a href="/catalogue.html">Catàleg</a>
               </li>
             </ul>
           </nav>
         </div>
-        <div id="dresseco-footer-metadata-newsletter" class="col-md-6 mt-3">
+        <div
+          id="dresseco-footer-container-metadata-newsletter"
+          class="col-md-6 mt-3"
+        >
           <div>
-            <h5>Subscriu-te al nostre butlletí</h5>
-            <p>No et perdis cap novetat sobre el món de la moda sostenible.</p>
-            <form class="mb-1">
+            <span class="fs-5 fw-bold">Subscriu-te al nostre butlletí</span>
+            <p>No t'oblidis de cap novetat sobre nosaltres i el món de la moda.</p>
+            <form
+              id="dresseco-footer-container-metadata-newsletter-form"
+              name="user-newsletter-input"
+              method="POST"
+              data-netlify="true"
+              class="mb-1"
+              onsubmit="newsletterThanksModal(event); clearFormInput(
+                'dresseco-footer-container-metadata-newsletter-form')"
+            >
               <div class="input-group">
                 <div class="form-floating">
                   <input
+                    name="email"
                     type="email"
                     class="form-control"
                     id="floatingInput"
-                    placeholder="john.doe@email.com"
+                    placeholder="name@domain.com"
+                    required
                   />
                   <label for="floatingInput">E-mail</label>
                 </div>
-                <button type="submit" class="btn btn-primary">
-                  Subscriure-m'hi
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                >
+                <i class="bi bi-envelope-plus-fill pe-2"></i><span>Subscriure-m'hi</span>
                 </button>
               </div>
             </form>
           </div>
         </div>
       </div>
-
-      <div id="dresseco-footer-bottom" class="position-relative">
-        <hr style="border-top: 1px solid black" />
-        <div id="dresseco-footer-bottom-social-media" class="dresseco-link">
+  
+      <div id="dresseco-footer-container-bottom" class="position-relative">
+        <hr />
+        <div
+          id="dresseco-footer-container-bottom-social-media"
+          class="dresseco-link"
+        >
           <ul class="list-unstyled list-inline mb-0">
             <li class="list-inline-item me-3">
               <a href="mailto:fastfashiontrcdmsc@proton.me"
@@ -69,37 +92,38 @@ class Footer extends HTMLElement {
               ></a>
             </li>
             <li class="list-inline-item me-3">
-              <a href="https://www.instagram.com/dressecoo/" target="_blank"
+            <a href="https://www.github.com/dresseco" target="_blank"
+              ><i class="bi bi-github"></i
+            ></a>
+          </li>
+            <li class="list-inline-item me-3">
+              <a href="https://www.instagram.com/dressecoo" target="_blank"
                 ><i class="bi bi-instagram"></i
               ></a>
             </li>
             <li class="list-inline-item me-3">
-              <a href="https://twitter.com/dresseco/" target="_blank"
-                ><i class="bi bi-twitter"></i
-              ></a>
-            </li>
-            <li class="list-inline-item me-3">
-              <a href="https://www.tiktok.com/@dressecoo/" target="_blank"
-                ><i class="bi bi-tiktok"></i
-              ></a>
-            </li>
+            <a href="https://www.tiktok.com/@dressecoo" target="_blank"
+              ><i class="bi bi-tiktok"></i
+            ></a>
+          </li>
             <li class="list-inline-item">
-              <a href="https://github.com/dresseco/" target="_blank"
-                ><i class="bi bi-github"></i
+              <a href="https://www.twitter.com/dresseco" target="_blank"
+                ><i class="bi bi-twitter"></i
               ></a>
             </li>
           </ul>
         </div>
         <div
-          id="dresseco-footer-bottom-disclaimer"
+          id="dresseco-footer-container-bottom-disclaimer"
           class="text-md-start position-absolute top-1 start-0"
         >
-          <p class="mb-1 small text-black">&copy; 2023 Dresseco, S.L.</p>
+          <span class="mb-1 small text-black">&copy; 2023 Dresseco, S.L.</span>
+          <p class="mb-1 small text-black">Tots els logotips i productes són propietat de les seves respectives marques, de les quals Dresseco no n'està associat.</p>
           <p class="mb-1 small text-muted">
             El codi font d'aquest lloc web està disponible a
-            <span class="dresseco-link-muted"
+            <span class="dresseco-link-muted text-style-underline"
               ><a
-                href="https://github.com/dresseco/dresseco.github.io/"
+                href="https://www.github.com/dresseco/dresseco.github.io"
                 target="_blank"
                 >GitHub</a
               ></span
