@@ -1,0 +1,106 @@
+/*Parallax effect on the background*/
+.parallax {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(141, 153, 223, 0.52),
+      rgba(26, 139, 41, 0.73) 100%,
+      rgba(255, 255, 255, 1)
+    ),
+    url("/assets/images/home-background-image.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#dresseco-home-page {
+  position: relative;
+  z-index: 0;
+}
+
+#dresseco-home-page p {
+  margin-bottom: 0;
+}
+
+#dresseco-home-page-presentation {
+  padding-top: 13%;
+  padding-bottom: 13%;
+}
+
+#dresseco-home-page-presentation-discover {
+  margin-top: 2rem;
+}
+
+#dresseco-home-page-presentation-background-image-credit {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 2rem;
+  margin-right: 2rem;
+}
+
+#dresseco-home-page-trending {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+#dresseco-home-page-trending-carousel-images img {
+  height: 350px !important;
+  width: 350px !important;
+}
+
+.carousel-inner {
+  border-radius: 0.375rem;
+  border: 1px solid rgb(0, 0, 0, 0.175);
+  height: 350px !important;
+  width: 350px !important;
+}
+
+#dresseco-home-page-trending-carousel-control-buttons button {
+  height: 350px !important;
+  width: 20%;
+}
+
+#dresseco-home-page-trending-carousel-control-buttons i {
+  font-size: 1.5rem;
+  color: var(--dresseco-teal-500);
+}
+
+#dresseco-home-page-trending-text {
+  margin-top: 2rem;
+}
+
+#dresseco-home-page-about-us {
+  padding-top: 13%;
+  padding-bottom: 13%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dresseco-home-page-about-us-text {
+  margin-top: 2rem;
+  text-align: justify;
+  max-width: 500px;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-home-page-presentation,
+  #dresseco-home-page-about-us {
+    padding-top: 30%;
+    padding-bottom: 30%;
+  }
+
+  #dresseco-home-page-trending {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+
+  #dresseco-home-page-about-us-text {
+    max-width: 350px;
+  }
+}

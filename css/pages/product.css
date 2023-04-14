@@ -1,0 +1,158 @@
+#dresseco-product-page {
+  position: relative;
+  z-index: 0;
+}
+
+#dresseco-product-page-container {
+  display: flex;
+  flex-direction: row;
+  position: inherit;
+}
+
+#dresseco-product-page-container-product-img-carousel-product-images img {
+  height: 400px !important;
+  width: 270px !important;
+}
+
+.carousel-inner {
+  border-radius: 0.375rem;
+  border: 1px solid rgb(0, 0, 0, 0.175);
+  height: 400px !important;
+  width: 270px !important;
+}
+
+#dresseco-product-page-container-product-img-carousel-control-buttons button {
+  height: 400px !important;
+  width: 20%;
+}
+
+#dresseco-product-page-container-product-img-carousel-control-buttons i {
+  font-size: 1.5rem;
+  color: var(--dresseco-teal-500);
+}
+
+#dresseco-product-page-container-product-img-carousel-product-thumbnails {
+  position: static;
+  margin-top: 1rem;
+}
+
+#dresseco-product-page-container-product-img-carousel-product-thumbnails
+  button {
+  width: 60px;
+  height: 80px;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+#dresseco-product-page-container-product-img-carousel-product-thumbnails img {
+  display: block;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(0, 0, 0, 0.175);
+  width: 60px !important;
+  height: 80px !important;
+}
+
+#dresseco-product-page-container-product-info {
+  padding-left: 50px;
+  display: block;
+  position: relative;
+}
+
+#dresseco-product-page-container-product-info-title {
+  display: inline-block;
+}
+
+#dresseco-product-page-container-product-info-title a {
+  display: inherit;
+  height: 100%;
+}
+
+#dresseco-product-page-container-product-info-origin-shop-img img {
+  max-height: 40px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+#dresseco-product-page-container-product-info-price-additional {
+  margin-left: 0.2rem;
+  font-size: 0.9rem;
+}
+
+#dresseco-product-page-container-product-info-action-buttons {
+  margin-top: 0.5rem;
+}
+
+#dresseco-product-page-container-product-info-action-buttons-input {
+  display: flex;
+}
+
+#dresseco-product-page-container-product-info-action-buttons-input-size,
+#dresseco-product-page-container-product-info-action-buttons-input-quantity {
+  display: inherit;
+  flex-grow: 1;
+}
+
+#dresseco-product-page-container-product-info-action-buttons-input-size {
+  margin-right: 3rem;
+}
+
+#dresseco-product-page-container-product-info-action-buttons-input-size-label,
+#dresseco-product-page-container-product-info-action-buttons-input-quantity-label {
+  display: inherit;
+  align-self: center;
+}
+
+#dresseco-product-page-container-product-info-action-buttons-add-cart {
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#dresseco-product-page-container-product-info-data {
+  margin-top: 1.5rem;
+}
+
+#dresseco-product-page-container-product-info-data-additional-information-accordion {
+  margin-top: 0.5rem;
+}
+
+#dresseco-product-page-container-product-info-data-id {
+  margin-top: 0.75rem;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-product-page-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    padding-right: 50px;
+    align-items: center;
+    font-size: 1.05rem;
+  }
+
+  #dresseco-product-page-container-product-img-carousel-product-images {
+    margin-bottom: 1rem;
+  }
+
+  #dresseco-product-page-container-product-img-carousel-product-thumbnails {
+    display: none;
+  }
+
+  #dresseco-product-page-container-product-info {
+    padding-left: 0px !important;
+  }
+
+  #dresseco-product-page-container-product-info-action-buttons-input {
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #dresseco-product-page-container-product-info-action-buttons-input-size {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  #dresseco-product-page-container-product-info-action-buttons-add-cart button {
+    width: 100%;
+  }
+}
