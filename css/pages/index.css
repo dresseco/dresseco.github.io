@@ -16,6 +16,8 @@
 #dresseco-home-page {
   position: relative;
   z-index: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #dresseco-home-page p {
@@ -29,14 +31,6 @@
 
 #dresseco-home-page-presentation-discover {
   margin-top: 2rem;
-}
-
-#dresseco-home-page-presentation-background-image-credit {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 2rem;
-  margin-right: 2rem;
 }
 
 #dresseco-home-page-trending {
@@ -70,16 +64,23 @@
   color: var(--dresseco-teal-500);
 }
 
+#dresseco-home-page-trending-carousel-indicators button {
+  background-color: var(--dresseco-teal-500);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 #dresseco-home-page-trending-text {
   margin-top: 2rem;
 }
 
 #dresseco-home-page-about-us {
-  padding-top: 13%;
-  padding-bottom: 13%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 #dresseco-home-page-about-us-text {
@@ -88,16 +89,25 @@
   max-width: 500px;
 }
 
+#dresseco-home-page-about-us-background-image-credit {
+  position: relative;
+  align-self: flex-end;
+  margin-top: 3rem;
+  margin-right: 2rem;
+}
+
 @media only screen and (max-width: 767.98px) {
-  #dresseco-home-page-presentation,
-  #dresseco-home-page-about-us {
+  #dresseco-home-page-presentation {
     padding-top: 30%;
     padding-bottom: 30%;
   }
 
-  #dresseco-home-page-trending {
+  #dresseco-home-page-trending,
+  #dresseco-home-page-about-us {
     padding-top: 15%;
     padding-bottom: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   #dresseco-home-page-about-us-text {

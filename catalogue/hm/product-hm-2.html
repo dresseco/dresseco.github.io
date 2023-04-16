@@ -31,7 +31,10 @@
     <div id="dresseco-product-page">
       <script id="handlebars-template" type="text/x-handlebars-template">
         <div id="dresseco-product-page-container" class="container py-5">
-          <div id="dresseco-product-page-container-product-img" class="carousel slide">
+          <div
+            id="dresseco-product-page-container-product-img"
+            class="carousel slide"
+          >
             <div
               id="dresseco-product-page-container-product-img-carousel-product-images"
               class="carousel-inner"
@@ -39,14 +42,34 @@
               <div class="carousel-item active">
                 <img
                   src="{{#each products}}{{#each hm-2}}{{#each product-metadata}}{{#each images-urls}}{{model}}{{/each}}{{/each}}{{/each}}{{/each}}"
-                  alt="Model image" title="Model image"
+                  alt="Model image"
+                  title="Model image"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="{{#each products}}{{#each hm-2}}{{#each product-metadata}}{{#each images-urls}}{{item}}{{/each}}{{/each}}{{/each}}{{/each}}"
-                  alt="Item image" title="Item image"
+                  alt="Item image"
+                  title="Item image"
                 />
+              </div>
+              <div
+                id="dresseco-product-page-container-product-img-carousel-indicators"
+              >
+                <button
+                  type="button"
+                  data-bs-target="#dresseco-product-page-container-product-img"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Model image"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#dresseco-product-page-container-product-img"
+                  data-bs-slide-to="1"
+                  aria-label="Item image"
+                ></button>
               </div>
             </div>
             <div
@@ -58,7 +81,9 @@
                 data-bs-target="#dresseco-product-page-container-product-img"
                 data-bs-slide="prev"
               >
-                <span aria-hidden="true"><i class="bi bi-caret-left-fill"></i></span>
+                <span aria-hidden="true"
+                  ><i class="bi bi-caret-left-fill"></i
+                ></span>
                 <span class="visually-hidden">Previous</span>
               </button>
               <button
@@ -67,7 +92,9 @@
                 data-bs-target="#dresseco-product-page-container-product-img"
                 data-bs-slide="next"
               >
-                <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
+                <span aria-hidden="true"
+                  ><i class="bi bi-caret-right-fill"></i
+                ></span>
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
@@ -116,8 +143,14 @@
                 ><i class="bi bi-box-arrow-up-right fs-6"></i>
               </a>
             </div>
-            <div id="dresseco-product-page-container-product-info-origin-shop-img">
-              <img src="{{display-image}}" alt="Origin shop image" class="img-fluid" />
+            <div
+              id="dresseco-product-page-container-product-info-origin-shop-img"
+            >
+              <img
+                src="{{display-image}}"
+                alt="Origin shop image"
+                class="img-fluid"
+              />
             </div>
             <div id="dresseco-product-page-container-product-info-price">
               <span class="fs-2"
@@ -129,13 +162,16 @@
                 class="text-muted"
                 >incl. 21 % de IVA. Veure
                 <span class="dresseco-link-muted"
-                  ><a href="/about.html">despeses d'enviament</a></span
+                  ><a href="/404.html">despeses d'enviament</a></span
                 ></span
               >
             </div>
             <div id="dresseco-product-page-container-product-info-action-buttons">
-              <form name="product-user-data" method="POST" data-netlify="true"
-                onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
+              <form
+                name="product-user-data"
+                method="POST"
+                data-netlify="true"
+                onsubmit="addToCart('dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
               >
                 <div
                   id="dresseco-product-page-container-product-info-action-buttons-input"
@@ -156,8 +192,9 @@
                       required
                     >
                       <option selected disabled value="">. . .</option>
-                      {{#each products}} {{#each hm-2.[0].main-information.[0].sizes}}
-                      {{#inArray all.[0] unavailable}}
+                      {{#each products}} {{#each
+                      hm-2.[0].main-information.[0].sizes}} {{#inArray all.[0]
+                      unavailable}}
                       <option value="all.[0]" disabled>{{{json all.[0]}}}</option>
                       {{else}}
                       <option value="all.[0]">{{{json all.[0]}}}</option>
@@ -201,8 +238,8 @@
                       type="number"
                       class="form-control"
                       placeholder="#"
-                      min="0"
-                      max="30"
+                      min="1"
+                      max="20"
                       name="product-user-data-quantity"
                       required
                     />
@@ -216,14 +253,17 @@
                     class="btn btn-primary"
                     type="submit"
                   >
-                    <i class="bi bi-cart-plus-fill pe-2"></i>Afegir producte a la cistella
+                    <i class="bi bi-cart-plus-fill pe-2"></i>Afegir producte a la
+                    cistella
                   </button>
                 </div>
               </form>
             </div>
             <hr />
             <div id="dresseco-product-page-container-product-info-data">
-              <div id="dresseco-product-page-container-product-info-data-description">
+              <div
+                id="dresseco-product-page-container-product-info-data-description"
+              >
                 <p>
                   {{#each products}}{{#each hm-2}}{{#each
                   main-information}}{{description}}{{/each}}{{/each}}{{/each}}
@@ -258,12 +298,12 @@
                       <div class="accordion-body">
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item">
-                            Polièster: {{#each products}}{{#each
-                            hm-2}}{{#each
+                            Polièster: {{#each products}}{{#each hm-2}}{{#each
                             composition}}{{polyester}}{{/each}}{{/each}}{{/each}}
                           </li>
                           <li class="list-group-item">
-                            Aigua utilitzada: {{#each products}}{{#each hm-2}}{{#each
+                            Aigua utilitzada: {{#each products}}{{#each
+                            hm-2}}{{#each
                             composition}}{{fabrication-used-water}}{{/each}}{{/each}}{{/each}}
                           </li>
                         </ul>

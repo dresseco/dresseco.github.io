@@ -48,6 +48,25 @@
                   alt="Item image" title="Item image"
                 />
               </div>
+              <div
+            id="dresseco-product-page-container-product-img-carousel-indicators"
+            class="carousel-indicators"
+          >
+            <button
+              type="button"
+              data-bs-target="#dresseco-product-page-container-product-img"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Model image"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#dresseco-product-page-container-product-img"
+              data-bs-slide-to="1"
+              aria-label="Item image"
+            ></button>
+          </div>
             </div>
             <div
               id="dresseco-product-page-container-product-img-carousel-control-buttons"
@@ -129,13 +148,13 @@
                 class="text-muted"
                 >incl. 21 % de IVA. Veure
                 <span class="dresseco-link-muted"
-                  ><a href="/about.html">despeses d'enviament</a></span
+                  ><a href="/404.html">despeses d'enviament</a></span
                 ></span
               >
             </div>
             <div id="dresseco-product-page-container-product-info-action-buttons">
               <form name="product-user-data" method="POST" data-netlify="true"
-                onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
+                onsubmit="addToCart('dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
               >
                 <div
                   id="dresseco-product-page-container-product-info-action-buttons-input"
@@ -201,8 +220,8 @@
                       type="number"
                       class="form-control"
                       placeholder="#"
-                      min="0"
-                      max="30"
+                      min="1"
+                      max="20"
                       name="product-user-data-quantity"
                       required
                     />

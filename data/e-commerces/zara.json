@@ -29,8 +29,8 @@
               "sizes": [
                 {
                   "all": ["XS", "S", "M", "L", "XL"],
-                  "available": ["M", "XL"],
-                  "unavailable": ["XS", "S", "L"]
+                  "available": ["XL"],
+                  "unavailable": ["XS", "S", "M", "L"]
                 }
               ]
             }
@@ -57,7 +57,7 @@
               "dresseco-url": "/catalogue/zara/product-zara-2.html",
               "images-urls": [
                 {
-                  "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/33/w/563/4451788700_1_1_1.jpg?ts=1679479967507",
+                  "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_1_1_1.jpg?ts=1679476582452",
                   "item": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_6_1_1.jpg?ts=1678894560239"
                 }
               ]

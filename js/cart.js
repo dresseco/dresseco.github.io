@@ -46,9 +46,8 @@ async function addToCart(
   sizeSelectorId,
   quantityInputId
 ) {
-  const eventItemAdded = new CustomEvent("cartItemAdded");
   event.preventDefault();
-
+  const eventItemAdded = new CustomEvent("cartItemAdded");
   //Get the product ID from the data-product-id attribute that contains the reference
   let productIdElement = document.getElementById(productIdElementId);
   let productIdValue = productIdElement.dataset.productId;

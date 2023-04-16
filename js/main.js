@@ -20,8 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //product.html - code to show a thanks modal when clicking the subscribe button in the newsletter section on the footer
-function newsletterThanksModal(event) {
-  event.preventDefault();
+function newsletterThanksModal() {
   dressecoModal.fire({
     title:
       "<p class='text-center fs-3 fw-bold text-dark'>Gràcies per subscriure't!</p>",
@@ -38,3 +37,16 @@ function clearFormInput(targetId) {
   var form = document.getElementById(targetId);
   form.reset();
 }
+
+//Add the "carousel-indicators" class to the carousel indicators if the screen is mobile-sized
+var breakpoint = window.matchMedia("(max-width: 767.98px)");
+breakpoint.addEventListener("change", function (e) {
+  const element = document.getElementById(
+    "dresseco-product-page-container-product-img-carousel-indicators"
+  );
+  if (e.matches) {
+    element.className = "carousel-indicators";
+  } else {
+    element.className = "";
+  }
+});

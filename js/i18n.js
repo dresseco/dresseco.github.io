@@ -14,10 +14,3 @@ window.onload = function () {
   let selectElement = translateElement.querySelector("select");
   selectElement.classList.add("form-select");
 };
-
-let dropdownMenu = document.querySelectorAll(".dropdown-menu");
-dropdownMenu.forEach(function (menu) {
-  menu.addEventListener("click", function (e) {
-    e.stopPropagation();
-  });
-});

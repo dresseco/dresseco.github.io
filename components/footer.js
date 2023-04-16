@@ -52,7 +52,7 @@ class Footer extends HTMLElement {
               method="POST"
               data-netlify="true"
               class="mb-1"
-              onsubmit="newsletterThanksModal(event); clearFormInput(
+              onsubmit="newsletterThanksModal(); clearFormInput(
                 'dresseco-footer-container-metadata-newsletter-form')"
             >
               <div class="input-group">
@@ -62,7 +62,7 @@ class Footer extends HTMLElement {
                     type="email"
                     class="form-control"
                     id="floatingInput"
-                    placeholder="name@domain.com"
+                    placeholder="E-mail"
                     required
                   />
                   <label for="floatingInput">E-mail</label>
@@ -118,7 +118,7 @@ class Footer extends HTMLElement {
           class="text-md-start position-absolute top-1 start-0"
         >
           <span class="mb-1 small text-black">&copy; 2023 Dresseco, S.L.</span>
-          <p class="mb-1 small text-black">Tots els logotips i productes són propietat de les seves respectives marques, de les quals Dresseco no n'està associat.</p>
+          <p class="mb-1 small text-black">Totes les marques i productes són propietat de les seves respectives marques, de les quals<span translate="no"> Dresseco </span>no n'està associat.</p>
           <p class="mb-1 small text-muted">
             El codi font d'aquest lloc web està disponible a
             <span class="dresseco-link-muted text-style-underline"
