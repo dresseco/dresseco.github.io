@@ -58,7 +58,7 @@ async function addToCart(
   event.preventDefault();
 
   const myForm = event.target;
-  const formData = newFormData(myForm);
+  const formData = new FormData(myForm);
 
   fetch("/", {
     method: "POST",
