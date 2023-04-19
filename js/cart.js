@@ -1,5 +1,3 @@
-//hook to print as html the additem metadata (got) in cart.html (function?)
-
 //OK modal that shows up when a product has been added to the cart
 function addCartModal() {
   dressecoModal
@@ -35,6 +33,16 @@ function maxQuantityModal() {
   });
 }
 
+//SweetAlert2 toast that shows up when a product has been removed from the cart
+function productFromCartRemoved() {
+  dressecoToast.fire({
+    title: "Producte eliminat",
+    icon: "info",
+    iconColor: "#0dcaf0",
+    width: "fit-content",
+  });
+}
+
 //Get the cart JSON data from local storage. If there is no data, initialize the cart as an empty array instead
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -46,7 +54,20 @@ async function addToCart(
   sizeSelectorId,
   quantityInputId
 ) {
+  //Send form submission to Netlify
   event.preventDefault();
+
+  const myForm = event.target;
+  const formData = newFormData(myForm);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("form submitted"))
+    .catch((error) => alert(error));
+
   const eventItemAdded = new CustomEvent("cartItemAdded");
   //Get the product ID from the data-product-id attribute that contains the reference
   let productIdElement = document.getElementById(productIdElementId);
@@ -116,7 +137,7 @@ async function addToCart(
     //Create an object for the product
     let product = {
       shop: productMetadata.shop,
-      //id: productMetadata["product-id"],
+      id: productMetadata["product-id"],
       dresseco_url: productMetadata["dresseco-url"],
       image_url: productMetadata["images-urls"][0].item,
       name: mainInformation.name,
@@ -141,10 +162,18 @@ async function addToCart(
 }
 
 //Function to remove an item from the cart
-function removeFromCart(index) {
+function removeFromCart(index, productIdToRemove) {
   const eventItemRemoved = new CustomEvent("cartItemRemoved");
   cart.splice(index, 1);
   localStorage.setItem("cart", JSON.stringify(cart));
+
+  //Remove the product card from the cart page
+  const productCard = document.getElementById(productIdToRemove);
+  if (productCard) {
+    productCard.remove();
+  }
+  productFromCartRemoved();
+  cartElementsShow();
 
   //Trigger the removed item event
   document.dispatchEvent(eventItemRemoved);
@@ -164,7 +193,7 @@ function displayCartCLI() {
 
   //Check if the cart is empty
   if (!cart || cart.length === 0) {
-    console.log("Your cart is empty.");
+    console.log("Your cart is empty");
     return;
   }
 
@@ -174,172 +203,204 @@ function displayCartCLI() {
   }
 }
 
+//Generate unique per product ID for the cart page to avoid problems when deleting products
+function generateProductId(product) {
+  const { id, size, quantity } = product;
+  const generatedId = `${id}-${size}${quantity}` + formattedDate;
+  return generatedId;
+}
+
 //Function that prints the items in the cart on the cart.html page
 function printCartUI() {
-  cart.forEach((product) => {
-    /*Main*/
-    const productsContainer = document.getElementById(
-      "dresseco-cart-page-container-items"
-    );
+  window.onload = function () {
+    cartElementsShow();
+    cart.forEach((product) => {
+      /*Main*/
+      const productsContainer = document.getElementById(
+        "dresseco-cart-page-container-items"
+      );
 
-    const productContainer = document.createElement("div");
-    productContainer.className = "card mb-3";
-    productsContainer.appendChild(productContainer);
+      const productContainer = document.createElement("div");
+      productContainer.className = "card mb-3";
+      productContainer.id = "product-" + generateProductId(product) + "-card";
+      productsContainer.appendChild(productContainer);
 
-    const productContainer2 = document.createElement("div");
-    productContainer2.className = "row g-0";
-    productContainer.appendChild(productContainer2);
+      const productContainer2 = document.createElement("div");
+      productContainer2.className = "row g-0";
+      productContainer.appendChild(productContainer2);
 
-    const productImgContainer = document.createElement("div");
-    productImgContainer.className = "col-md-4";
-    productContainer2.appendChild(productImgContainer);
+      const productImgContainer = document.createElement("div");
+      productImgContainer.id = "dresseco-cart-page-container-items-card-image";
+      productImgContainer.className = "col-md-4";
+      productContainer2.appendChild(productImgContainer);
 
-    const productImg = document.createElement("img");
-    productImg.src = product.image_url;
-    productImg.alt = "Product image";
-    productImg.className = "rounded-start img-fluid";
-    productImgContainer.appendChild(productImg);
+      const productImg = document.createElement("img");
+      productImg.src = product.image_url;
+      productImg.alt = "Product image";
+      productImg.className = "rounded-start img-fluid";
+      productImgContainer.appendChild(productImg);
 
-    const productInfoContainer = document.createElement("div");
-    productInfoContainer.className = "col-md-8";
-    productContainer2.appendChild(productInfoContainer);
+      const productInfoContainer = document.createElement("div");
+      productInfoContainer.className = "col-md-8";
+      productContainer2.appendChild(productInfoContainer);
 
-    const productInfoContainerBody = document.createElement("div");
-    productInfoContainerBody.className = "card-body";
-    productInfoContainer.appendChild(productInfoContainerBody);
+      const productInfoContainerBody = document.createElement("div");
+      productInfoContainerBody.id =
+        "dresseco-cart-page-container-items-card-info";
+      productInfoContainerBody.className = "card-body";
+      productInfoContainer.appendChild(productInfoContainerBody);
 
-    const productInfoNameContainer = document.createElement("div");
-    productInfoNameContainer.id =
-      "dresseco-cart-page-container-items-item-name";
-    productInfoNameContainer.className = "dresseco-link-title";
-    productInfoContainerBody.appendChild(productInfoNameContainer);
+      const productInfoNameContainer = document.createElement("div");
+      productInfoNameContainer.id =
+        "dresseco-cart-page-container-items-card-info-name";
+      productInfoNameContainer.className = "dresseco-link-title";
+      productInfoContainerBody.appendChild(productInfoNameContainer);
 
-    const productInfoNameLink = document.createElement("a");
-    productInfoNameLink.href = product.dresseco_url;
-    productInfoNameContainer.appendChild(productInfoNameLink);
+      const productInfoNameLink = document.createElement("a");
+      productInfoNameLink.href = product.dresseco_url;
+      productInfoNameContainer.appendChild(productInfoNameLink);
 
-    const productInfoName = document.createElement("span");
-    productInfoName.className =
-      "fs-4 fw-bold pe-2 text-decoration-underline card-title";
-    productInfoName.textContent = product.name;
-    productInfoNameLink.appendChild(productInfoName);
+      const productInfoName = document.createElement("span");
+      productInfoName.className =
+        "fs-4 fw-bold pe-2 text-decoration-underline card-title";
+      productInfoName.textContent = product.name;
+      productInfoNameLink.appendChild(productInfoName);
 
-    const productInfoPrice = document.createElement("p");
-    productInfoPrice.className = "fs-4 fw-bold";
-    productInfoPrice.textContent = product.price;
-    productInfoContainerBody.appendChild(productInfoPrice);
+      const productInfoPrice = document.createElement("p");
+      productInfoPrice.className = "fs-4";
+      productInfoPrice.textContent = product.price;
+      productInfoContainerBody.appendChild(productInfoPrice);
 
-    /*Description*/
-    const productInfoDescriptionContainer = document.createElement("div");
-    productInfoDescriptionContainer.id =
-      "dresseco-cart-page-container-items-item-description";
-    productInfoContainerBody.appendChild(productInfoDescriptionContainer);
+      /*Description*/
+      const productInfoDescriptionContainer = document.createElement("div");
+      productInfoDescriptionContainer.id =
+        "dresseco-cart-page-container-items-card-info-description";
+      productInfoContainerBody.appendChild(productInfoDescriptionContainer);
 
-    const productInfoDescription = document.createElement("ul");
-    productInfoDescription.className = "list-unstyled";
-    productInfoDescriptionContainer.appendChild(productInfoDescription);
+      const productInfoDescription = document.createElement("ul");
+      productInfoDescription.className = "list-unstyled";
+      productInfoDescriptionContainer.appendChild(productInfoDescription);
 
-    /*Shop*/
-    const productInfoDescriptionShopContainer = document.createElement("li");
-    productInfoDescription.appendChild(productInfoDescriptionShopContainer);
+      /*Shop*/
+      const productInfoDescriptionShopContainer = document.createElement("li");
+      productInfoDescription.appendChild(productInfoDescriptionShopContainer);
 
-    const productInfoDescriptionShop = document.createElement("span");
-    productInfoDescriptionShopContainer.appendChild(productInfoDescriptionShop);
+      const productInfoDescriptionShop = document.createElement("span");
+      productInfoDescriptionShopContainer.appendChild(
+        productInfoDescriptionShop
+      );
 
-    const productInfoDescriptionShopIcon = document.createElement("i");
-    productInfoDescriptionShopIcon.className = "bi bi-shop pe-2";
-    productInfoDescriptionShop.appendChild(productInfoDescriptionShopIcon);
+      const productInfoDescriptionShopIcon = document.createElement("i");
+      productInfoDescriptionShopIcon.className = "bi bi-shop pe-2";
+      productInfoDescriptionShop.appendChild(productInfoDescriptionShopIcon);
 
-    const productInfoDescriptionShopLabel = document.createElement("span");
-    productInfoDescriptionShopLabel.textContent = `Botiga: ${product.shop}`;
-    productInfoDescriptionShop.appendChild(productInfoDescriptionShopLabel);
+      const productInfoDescriptionShopLabel = document.createElement("span");
+      productInfoDescriptionShopLabel.textContent = `Botiga: ${product.shop}`;
+      productInfoDescriptionShop.appendChild(productInfoDescriptionShopLabel);
 
-    /*Size*/
-    const productInfoDescriptionSizeContainer = document.createElement("li");
-    productInfoDescription.appendChild(productInfoDescriptionSizeContainer);
+      /*Size*/
+      const productInfoDescriptionSizeContainer = document.createElement("li");
+      productInfoDescription.appendChild(productInfoDescriptionSizeContainer);
 
-    const productInfoDescriptionSize = document.createElement("span");
-    productInfoDescriptionSizeContainer.appendChild(productInfoDescriptionSize);
+      const productInfoDescriptionSize = document.createElement("span");
+      productInfoDescriptionSizeContainer.appendChild(
+        productInfoDescriptionSize
+      );
 
-    const productInfoDescriptionSizeIcon = document.createElement("i");
-    productInfoDescriptionSizeIcon.className = "bi bi-rulers pe-2";
-    productInfoDescriptionSize.appendChild(productInfoDescriptionSizeIcon);
+      const productInfoDescriptionSizeIcon = document.createElement("i");
+      productInfoDescriptionSizeIcon.className = "bi bi-rulers pe-2";
+      productInfoDescriptionSize.appendChild(productInfoDescriptionSizeIcon);
 
-    const productInfoDescriptionSizeLabel = document.createElement("span");
-    productInfoDescriptionSizeLabel.textContent = `Mida: ${product.size}`;
-    productInfoDescriptionSize.appendChild(productInfoDescriptionSizeLabel);
+      const productInfoDescriptionSizeLabel = document.createElement("span");
+      productInfoDescriptionSizeLabel.textContent = `Mida: ${product.size}`;
+      productInfoDescriptionSize.appendChild(productInfoDescriptionSizeLabel);
 
-    /*Quantity*/
-    const productInfoDescriptionQuantityContainer =
-      document.createElement("li");
-    productInfoDescription.appendChild(productInfoDescriptionQuantityContainer);
+      /*Quantity*/
+      const productInfoDescriptionQuantityContainer =
+        document.createElement("li");
+      productInfoDescription.appendChild(
+        productInfoDescriptionQuantityContainer
+      );
 
-    const productInfoDescriptionQuantity = document.createElement("span");
-    productInfoDescriptionQuantityContainer.appendChild(
-      productInfoDescriptionQuantity
-    );
+      const productInfoDescriptionQuantity = document.createElement("span");
+      productInfoDescriptionQuantityContainer.appendChild(
+        productInfoDescriptionQuantity
+      );
 
-    const productInfoDescriptionQuantityIcon = document.createElement("i");
-    productInfoDescriptionQuantityIcon.className = "bi bi-box pe-2";
-    productInfoDescriptionQuantity.appendChild(
-      productInfoDescriptionQuantityIcon
-    );
+      const productInfoDescriptionQuantityIcon = document.createElement("i");
+      productInfoDescriptionQuantityIcon.className = "bi bi-box pe-2";
+      productInfoDescriptionQuantity.appendChild(
+        productInfoDescriptionQuantityIcon
+      );
 
-    const productInfoDescriptionQuantityLabel = document.createElement("span");
-    productInfoDescriptionQuantityLabel.textContent = `Quantitat: ${product.quantity}`;
-    productInfoDescriptionQuantity.appendChild(
-      productInfoDescriptionQuantityLabel
-    );
+      const productInfoDescriptionQuantityLabel =
+        document.createElement("span");
+      productInfoDescriptionQuantityLabel.textContent = `Quantitat: ${product.quantity}`;
+      productInfoDescriptionQuantity.appendChild(
+        productInfoDescriptionQuantityLabel
+      );
 
-    /*Composition*/
-    const productInfoDescriptionCompositionContainer =
-      document.createElement("li");
-    productInfoDescriptionCompositionContainer.className = "dresseco-link";
-    productInfoDescription.appendChild(
-      productInfoDescriptionCompositionContainer
-    );
+      /*Composition*/
+      const productInfoDescriptionCompositionContainer =
+        document.createElement("li");
+      productInfoDescriptionCompositionContainer.className = "dresseco-link";
+      productInfoDescription.appendChild(
+        productInfoDescriptionCompositionContainer
+      );
 
-    const productInfoDescriptionComposition = document.createElement("a");
-    productInfoDescriptionComposition.href = `${product.dresseco_url}#dresseco-product-page-container-product-info-data-additional-information`;
-    productInfoDescriptionCompositionContainer.appendChild(
-      productInfoDescriptionComposition
-    );
+      const productInfoDescriptionComposition = document.createElement("a");
+      productInfoDescriptionComposition.href = `${product.dresseco_url}#dresseco-product-page-container-product-info-data-additional-information`;
+      productInfoDescriptionCompositionContainer.appendChild(
+        productInfoDescriptionComposition
+      );
 
-    const productInfoDescriptionCompositionIcon = document.createElement("i");
-    productInfoDescriptionCompositionIcon.className = "bi bi-layers pe-2";
-    productInfoDescriptionComposition.appendChild(
-      productInfoDescriptionCompositionIcon
-    );
+      const productInfoDescriptionCompositionIcon = document.createElement("i");
+      productInfoDescriptionCompositionIcon.className = "bi bi-layers pe-2";
+      productInfoDescriptionComposition.appendChild(
+        productInfoDescriptionCompositionIcon
+      );
 
-    const productInfoDescriptionCompositionLabel =
-      document.createElement("span");
-    productInfoDescriptionCompositionLabel.className =
-      "text-decoration-underline";
-    productInfoDescriptionCompositionLabel.textContent = "Composició";
-    productInfoDescriptionComposition.appendChild(
-      productInfoDescriptionCompositionLabel
-    );
+      const productInfoDescriptionCompositionLabel =
+        document.createElement("span");
+      productInfoDescriptionCompositionLabel.className =
+        "text-decoration-underline";
+      productInfoDescriptionCompositionLabel.textContent = "Composició";
+      productInfoDescriptionComposition.appendChild(
+        productInfoDescriptionCompositionLabel
+      );
 
-    /*Remove product button*/
-    const productRemoveButton = document.createElement("button");
-    productRemoveButton.id =
-      "dresseco-cart-page-container-items-item-remove-btn";
-    productRemoveButton.className = "btn btn-link link-danger";
-    productRemoveButton.type = "button";
-    productRemoveButton.onclick = "removeFromCart(cart.indexOf(product))";
-    productInfoContainerBody.appendChild(productRemoveButton);
+      /*Separator*/
+      const productInfoSeparator = document.createElement("hr");
+      productInfoContainerBody.appendChild(productInfoSeparator);
 
-    const productRemoveButtonIcon = document.createElement("i");
-    productRemoveButtonIcon.className = "bi bi-trash3 pe-2 small";
-    productRemoveButton.appendChild(productRemoveButtonIcon);
+      /*Remove product button*/
+      const productRemoveButton = document.createElement("button");
+      productRemoveButton.id =
+        "dresseco-cart-page-container-items-card-info-remove-btn";
+      productRemoveButton.className = "btn btn-link link-danger";
+      productRemoveButton.type = "button";
+      productRemoveButton.onclick = function () {
+        removeFromCart(cart.indexOf(product), productContainer.id);
+      };
+      productInfoContainerBody.appendChild(productRemoveButton);
 
-    const productRemoveButtonLabel = document.createElement("span");
-    productRemoveButtonLabel.className = "small";
-    productRemoveButtonLabel.textContent = "Eliminar";
-    productRemoveButton.appendChild(productRemoveButtonLabel);
+      const productRemoveButtonIcon = document.createElement("i");
+      productRemoveButtonIcon.className = "bi bi-trash3 pe-2 small";
+      productRemoveButton.appendChild(productRemoveButtonIcon);
 
-    productsContainer.innerHTML;
-  });
+      const productRemoveButtonLabel = document.createElement("span");
+      productRemoveButtonLabel.className = "small";
+      productRemoveButtonLabel.textContent = "Eliminar producte";
+      productRemoveButton.appendChild(productRemoveButtonLabel);
+
+      productsContainer.innerHTML;
+
+      /*Subtotal code*/
+      const resumeContainer = document.getElementById(
+        "dresseco-cart-page-container-resume"
+      );
+    });
+  };
 }
 
 //Event that runs when the DOM has finished loading and listens when items have been added or removed to the cart and updates the labels of the cart button
@@ -409,6 +470,33 @@ if (fileName.startsWith("product-")) {
   });
 }
 
+//Code that prints the data of the cart array into the cart page
 if (fileName === "cart.html") {
   printCartUI();
+  window.scrollTo(0, 0);
+
+  //Code to reload the page every time the user leaves and returns, so the cart gets updated on time
+  document.addEventListener("visibilitychange", function () {
+    if (document.visibilityState === "visible") {
+      window.location.reload();
+    }
+  });
+}
+
+//Function that shows the emptyCart text and image if there are no products on the cart
+function cartElementsShow() {
+  const emptyCart = document.getElementById(
+    "dresseco-cart-page-container-empty"
+  );
+  const cartResume = document.getElementById(
+    "dresseco-cart-page-container-resume"
+  );
+
+  if (cart.length === 0) {
+    emptyCart.className = "";
+    cartResume.className = "d-none";
+  } else {
+    emptyCart.className = "d-none";
+    cartResume.className = "";
+  }
 }
