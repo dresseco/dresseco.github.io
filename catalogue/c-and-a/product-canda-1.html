@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Dresseco, S.L." />
     <meta name="description" content="Example product page." />
-    <title></title>
+    <title>Dresseco</title>
     <link href="/assets/images/favicon.png" rel="icon" />
     <script src="/js/libraries.js"></script>
     <script src="/js/main.js"></script>
@@ -22,6 +22,7 @@
 
   <dresseco-loading-screen></dresseco-loading-screen>
   <dresseco-header></dresseco-header>
+  <iframe id="dummy-iframe" class="d-none"></iframe>
   <body>
     <div id="dresseco-product-id" data-product-id="canda-1"></div>
     <div
@@ -49,26 +50,6 @@
                 />
               </div>
               <div
-            id="dresseco-product-page-container-product-img-carousel-indicators"
-            class="carousel-indicators"
-          >
-            <button
-              type="button"
-              data-bs-target="#dresseco-product-page-container-product-img"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Model image"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#dresseco-product-page-container-product-img"
-              data-bs-slide-to="1"
-              aria-label="Item image"
-            ></button>
-          </div>
-            </div>
-            <div
               id="dresseco-product-page-container-product-img-carousel-control-buttons"
             >
               <button
@@ -90,9 +71,9 @@
                 <span class="visually-hidden">Next</span>
               </button>
             </div>
+            </div>
             <div
-              id="dresseco-product-page-container-product-img-carousel-product-thumbnails"
-              class="carousel-indicators"
+              id="dresseco-product-page-container-product-img-carousel-product-thumbnails" class="carousel-indicators"
             >
               <button
                 type="button"
@@ -148,12 +129,12 @@
                 class="text-muted"
                 >incl. 21 % de IVA. Veure
                 <span class="dresseco-link-muted"
-                  ><a href="/404.html">despeses d'enviament</a></span
+                  ><a href="/about.html">despeses d'enviament</a></span
                 ></span
               >
             </div>
             <div id="dresseco-product-page-container-product-info-action-buttons">
-              <form name="product-user-data" method="POST" data-netlify="true"
+              <form name="product-user-data" target="dummy-iframe" method="POST" data-netlify="true"
                 onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
               >
                 <div
@@ -204,36 +185,6 @@
                       <option value="all.[4]" disabled>{{{json all.[4]}}}</option>
                       {{else}}
                       <option value="all.[4]">{{{json all.[4]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
-                      canda-1.[0].main-information.[0].sizes}} {{#inArray all.[5]
-                      unavailable}}
-                      <option value="all.[5]" disabled>{{{json all.[5]}}}</option>
-                      {{else}}
-                      <option value="all.[5]">{{{json all.[5]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
-                      canda-1.[0].main-information.[0].sizes}} {{#inArray all.[6]
-                      unavailable}}
-                      <option value="all.[6]" disabled>{{{json all.[6]}}}</option>
-                      {{else}}
-                      <option value="all.[6]">{{{json all.[6]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
-                      canda-1.[0].main-information.[0].sizes}} {{#inArray all.[7]
-                      unavailable}}
-                      <option value="all.[7]" disabled>{{{json all.[7]}}}</option>
-                      {{else}}
-                      <option value="all.[7]">{{{json all.[7]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
-                      canda-1.[0].main-information.[0].sizes}} {{#inArray all.[8]
-                      unavailable}}
-                      <option value="all.[8]" disabled>{{{json all.[8]}}}</option>
-                      {{else}}
-                      <option value="all.[8]">{{{json all.[8]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
-                      canda-1.[0].main-information.[0].sizes}} {{#inArray all.[9]
-                      unavailable}}
-                      <option value="all.[9]" disabled>{{{json all.[9]}}}</option>
-                      {{else}}
-                      <option value="all.[9]">{{{json all.[9]}}}</option>
                       {{/inArray}} {{/each}} {{/each}}
                     </select>
                   </div>
