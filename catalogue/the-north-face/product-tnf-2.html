@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Dresseco, S.L." />
     <meta name="description" content="Example product page." />
-    <title></title>
+    <title>Dresseco</title>
     <link href="/assets/images/favicon.png" rel="icon" />
     <script src="/js/libraries.js"></script>
     <script src="/js/main.js"></script>
@@ -18,6 +18,9 @@
     <script src="/components/header.js"></script>
     <script src="/components/footer.js"></script>
     <script src="/components/loading-screen.js"></script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/about.html" />
+    </noscript>
   </head>
 
   <dresseco-loading-screen></dresseco-loading-screen>
@@ -49,26 +52,6 @@
                 />
               </div>
               <div
-            id="dresseco-product-page-container-product-img-carousel-indicators"
-            class="carousel-indicators"
-          >
-            <button
-              type="button"
-              data-bs-target="#dresseco-product-page-container-product-img"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Model image"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#dresseco-product-page-container-product-img"
-              data-bs-slide-to="1"
-              aria-label="Item image"
-            ></button>
-          </div>
-            </div>
-            <div
               id="dresseco-product-page-container-product-img-carousel-control-buttons"
             >
               <button
@@ -89,6 +72,7 @@
                 <span aria-hidden="true"><i class="bi bi-caret-right-fill"></i></span>
                 <span class="visually-hidden">Next</span>
               </button>
+            </div>
             </div>
             <div
               id="dresseco-product-page-container-product-img-carousel-product-thumbnails"
@@ -136,7 +120,7 @@
               </a>
             </div>
             <div id="dresseco-product-page-container-product-info-origin-shop-img">
-              <img src="{{display-image}}" alt="Origin shop image" class="img-fluid" />
+              <a href="{{shop-url}}" target="_blank"><img src="{{display-image}}" alt="Origin shop image" class="img-fluid" /></a>
             </div>
             <div id="dresseco-product-page-container-product-info-price">
               <span class="fs-2"
@@ -146,15 +130,14 @@
               <span
                 id="dresseco-product-page-container-product-info-price-additional"
                 class="text-muted"
-                >incl. 21 % de IVA. Veure
+                >incl. 21 % d'IVA. Veure
                 <span class="dresseco-link-muted"
-                  ><a href="/404.html">despeses d'enviament</a></span
+                  ><a href="/about.html">despeses d'enviament</a></span
                 ></span
               >
             </div>
             <div id="dresseco-product-page-container-product-info-action-buttons">
-              <form name="product-user-data" method="POST" data-netlify="true"
-                onsubmit="addToCart('dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
+              <form onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
               >
                 <div
                   id="dresseco-product-page-container-product-info-action-buttons-input"
@@ -171,7 +154,6 @@
                       id="dresseco-product-page-container-product-info-action-buttons-input-size-selector"
                       class="form-select"
                       aria-label="Product size selector"
-                      name="product-user-data-size"
                       required
                     >
                       <option selected disabled value="">. . .</option>
@@ -204,7 +186,13 @@
                       <option value="all.[4]" disabled>{{{json all.[4]}}}</option>
                       {{else}}
                       <option value="all.[4]">{{{json all.[4]}}}</option>
-                      {{/inArray}} {{/each}} {{/each}}
+                      {{/inArray}} {{/each}} {{/each}} {{#each products}} {{#each
+                        tnf-2.[0].main-information.[0].sizes}} {{#inArray all.[5]
+                        unavailable}}
+                        <option value="all.[5]" disabled>{{{json all.[5]}}}</option>
+                        {{else}}
+                        <option value="all.[5]">{{{json all.[5]}}}</option>
+                        {{/inArray}} {{/each}} {{/each}}
                     </select>
                   </div>
                   <div
@@ -222,7 +210,6 @@
                       placeholder="#"
                       min="1"
                       max="20"
-                      name="product-user-data-quantity"
                       required
                     />
                   </div>

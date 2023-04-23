@@ -1,0 +1,163 @@
+[
+  [
+    {
+      "shop-name": "zara",
+      "url": "https://www.zara.com",
+      "display-image": "url",
+      "products": ["zara-1", "zara-2"]
+    },
+
+    {
+      "product-name": "zara-1",
+      "shop": "zara",
+      "metadata-url": "https://www.zara.com/es/en/floral-print-blouse-p03026176.html"
+    },
+
+    {
+      "product-name": "zara-2",
+      "shop": "zara",
+      "metadata-url": "https://www.zara.com/es/en/linen---cotton-trousers-with-belt-p04451788.html"
+    }
+  ],
+
+  [
+    {
+      "shop-name": "c-and-a",
+      "url": "https://www.c-and-a.com",
+      "display-image": "url",
+      "products": ["c-and-a-1", "c-and-a-2"]
+    },
+
+    {
+      "product-name": "c-and-a-1",
+      "shop": "c-and-a",
+      "metadata-url": "https://www.c-and-a.com/es/es/shop/straight-jeans-jog-denim-2188474/1/"
+    },
+
+    {
+      "product-name": "c-and-a-2",
+      "shop": "c-and-a",
+      "metadata-url": "https://www.c-and-a.com/es/es/shop/mono-2193454/3/"
+    }
+  ],
+  [
+    {
+      "shop-name": "hm",
+      "url": "https://www.hm.com",
+      "display-image": "url",
+      "products": ["hm-1", "hm-2"]
+    },
+
+    {
+      "product-name": "hm-1",
+      "shop": "hm",
+      "metadata-url": "https://www.hm.com/productpage.1087261003.html"
+    },
+
+    {
+      "product-name": "hm-2",
+      "shop": "hm",
+      "metadata-url": "https://www.hm.com/productpage.0748749018.html"
+    }
+  ],
+  [
+    {
+      "shop-name": "reebok",
+      "url": "https://www.reebok.com",
+      "display-image": "url",
+      "products": ["reebok-1", "reebok-2"]
+    },
+
+    {
+      "product-name": "reebok-1",
+      "shop": "reebok",
+      "metadata-url": "https://www.reebok.com/chandal-workout-ready/H46636.html/"
+    },
+
+    {
+      "product-name": "reebok-2",
+      "shop": "reebok",
+      "metadata-url": "https://www.reebok.es/club-c-85/AR0455.html/"
+    }
+  ],
+  [
+    {
+      "shop-name": "forever-21",
+      "url": "https://www.forever21.com",
+      "display-image": "url",
+      "products": ["forever-21-1", "forever-21-2"]
+    },
+
+    {
+      "product-name": "forever-21-1",
+      "shop": "forever-21",
+      "metadata-url": "https://www.forever21.com/us/2000464766.html"
+    },
+
+    {
+      "product-name": "forever-21-2",
+      "shop": "forever-21",
+      "metadata-url": "https://www.forever21.com/us/2000478217.html"
+    }
+  ],
+  [
+    {
+      "shop-name": "uniqlo",
+      "url": "https://www.uniqlo.com",
+      "display-image": "url",
+      "products": ["uniqlo-1", "uniqlo-2"]
+    },
+
+    {
+      "product-name": "uniqlo-1",
+      "shop": "uniqlo",
+      "metadata-url": "https://www.uniqlo.com/es/es/product/camiseta-100pc-algodon-supima-cuello-pico-456016.html"
+    },
+
+    {
+      "product-name": "uniqlo-2",
+      "shop": "uniqlo",
+      "metadata-url": "https://www.uniqlo.com/es/es/product/jersey-hilo-suave-ninos-450241.html"
+    }
+  ],
+  [
+    {
+      "shop-name": "the-north-face",
+      "url": "https://www.thenorthface.com",
+      "display-image": "url",
+      "products": ["the-north-face-1", "the-north-face-2"]
+    },
+
+    {
+      "product-name": "the-north-face-1",
+      "shop": "the-north-face",
+      "metadata-url": "https://www.thenorthface.es/shop/es/tnf-es/mujer-tops-sujetadores-deportivos/sujetador-deportivo-align-para-mujer-7sxu"
+    },
+
+    {
+      "product-name": "the-north-face-2",
+      "shop": "the-north-face",
+      "metadata-url": "https://www.thenorthface.es/shop/es/tnf-es/hombre-chaquetas-chalecos/chaleco-con-aislamiento-himalayan-para-hombre-4qz4"
+    }
+  ],
+  [
+    {
+      "shop-name": "levi",
+      "url": "https://www.levi.com",
+      "display-image": "url",
+      "products": ["levi-1", "levi-2"]
+    },
+
+    {
+      "product-name": "levi-1",
+      "shop": "levi",
+      "metadata-url": "https://www.levi.com/ES/es_ES/ropa/mujer/camiseta-recortada-grafica-reese/p/A35250003"
+    },
+
+    {
+      "product-name": "levi-2",
+      "shop": "levi",
+      "metadata-url": "https://www.levi.com/ES/es_ES/ropa/hombre/sudadera-new-original/p/359090002"
+    }
+  ]
+]

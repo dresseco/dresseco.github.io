@@ -37,7 +37,7 @@ class Header extends HTMLElement {
         class="dropdown-menu"
       >
         <span class="fw-bold dropdown-header"
-          >Selecciona el teu idioma:</span
+          >Selecciona el teu idioma</span
         >
         <div id="google_translate_element"></div>
         </div>
@@ -91,9 +91,6 @@ class Header extends HTMLElement {
         <form
           class="d-flex"
           role="search"
-          name="user-search-input"
-          method="POST"
-          data-netlify="true"
         >
           <div class="input-group">
             <div class="form-floating">
@@ -103,7 +100,6 @@ class Header extends HTMLElement {
                 id="floatingInput"
                 placeholder="Cerca"
                 aria-label="Search"
-                name="input"
                 required
               />
               <label for="floatingInput">Cerca</label>

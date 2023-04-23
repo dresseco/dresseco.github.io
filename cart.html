@@ -10,13 +10,15 @@
     <link href="/assets/images/favicon.png" rel="icon" />
     <script src="/js/libraries.js"></script>
     <script src="/js/main.js"></script>
-    <script src="/js/cart.js"></script>
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/components.css" rel="stylesheet" />
     <link href="/css/pages/cart.css" rel="stylesheet" />
     <script src="/components/header.js"></script>
     <script src="/components/footer.js"></script>
     <script src="/components/loading-screen.js"></script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/about.html" />
+    </noscript>
   </head>
 
   <dresseco-loading-screen></dresseco-loading-screen>
@@ -24,78 +26,104 @@
   <body>
     <div id="dresseco-cart-page">
       <div id="dresseco-cart-page-container" class="container py-5">
-        <span class="fs-1 fw-bold">Cistella</span>
-        <div id="dresseco-cart-page-container-items">
-          <div class="card mb-3" style="max-width: 540px">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img
-                  src="https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_6_1_1.jpg?ts=1678894560239"
-                  alt="Product image"
-                  class="rounded-start img-fluid"
-                />
+        <span class="fs-1 fw-bold"
+          >La teva cistella (<span
+            id="dresseco-cart-page-container-title-count"
+          ></span
+          ><span id="dresseco-cart-page-container-title-label"></span>)</span
+        >
+        <div id="dresseco-cart-page-container-empty" class="invisible">
+          <img
+            id="dresseco-cart-page-container-empty-image"
+            src="assets/images/empty-cart.png"
+            alt="Empty cart image"
+          />
+          <span class="fw-bold fs-3 text-center"
+            >Sembla que no hi ha res aquí...</span
+          >
+          <span class="fs-3 text-center"
+            >Perquè no hi afegeixes algun producte?</span
+          >
+          <button
+            id="dresseco-cart-page-container-empty-discover"
+            class="btn btn-primary fs-5"
+            onclick="location.href='/catalogue.html'"
+          >
+            <i class="bi bi-compass-fill pe-2"></i
+            ><span>Descobreix el nostre catàleg</span>
+          </button>
+        </div>
+        <div id="dresseco-cart-page-container-data">
+          <div id="dresseco-cart-page-container-data-items"></div>
+          <div id="dresseco-cart-page-container-data-resume" class="d-none">
+            <span class="fw-bold fs-3">Total</span>
+            <span class="resume-label"
+              ><span>Subtotal</span><span id="subtotal-value">X €</span></span
+            >
+            <span class="resume-label d-flex flex-column"
+              ><span class="d-flex flex-row justify-content-between"
+                >Tramesa<span id="shipping-value">X €</span></span
+              >
+              <span id="shipping-value-disclaimer" class="text-muted"
+                >La tramesa és gratuïta si la comanda inclou articles sense
+                descompte per un import superior a 150 €.</span
+              >
+            </span>
+            <hr id="resume-separator" />
+            <span class="resume-label fw-bold"
+              ><span>Total (IVA inclòs)</span
+              ><span id="total-value">X €</span></span
+            >
+            <div id="dresseco-cart-page-container-data-resume-checkout">
+              <button
+                id="dresseco-cart-page-container-data-resume-checkout-button"
+                class="btn btn-primary"
+                onclick="goToCheckout()"
+              >
+                <i
+                  id="dresseco-cart-page-container-data-resume-checkout-button-icon"
+                  class="bi bi-credit-card-fill pe-2"
+                ></i
+                ><span
+                  id="dresseco-cart-page-container-data-resume-checkout-button-label"
+                  >Procedir al pagament</span
+                >
+              </button>
+            </div>
+            <div id="dresseco-cart-page-container-data-resume-badges">
+              <div id="paypal">
+                <a href="https://paypal.com" target="_blank"
+                  ><img
+                    src="https://1000marcas.net/wp-content/uploads/2019/12/logo-Paypal.png"
+                  />
+                </a>
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <div
-                    id="dresseco-cart-page-container-items-item-name"
-                    class="dresseco-link-title"
-                  >
-                    <a href="jrwefg">
-                      <span
-                        class="fs-4 fw-bold pe-2 text-decoration-underline card-title"
-                        >bruh</span
-                      >
-                    </a>
-                  </div>
-                  <p class="fs-4 fw-bold">39,95 €</p>
-                  <div id="dresseco-cart-page-container-items-item-description">
-                    <ul class="list-unstyled">
-                      <li>
-                        <span
-                          ><i class="bi bi-shop pe-2"></i
-                          ><span>Botiga: Zara</span></span
-                        >
-                      </li>
-                      <li>
-                        <span
-                          ><i class="bi bi-rulers pe-2"></i
-                          ><span>Mida: Zara</span></span
-                        >
-                      </li>
-                      <li>
-                        <span
-                          ><i class="bi bi-box pe-2"></i
-                          ><span>Quantitat: Zara</span></span
-                        >
-                      </li>
-                      <li class="dresseco-link">
-                        <a
-                          href="/catalogue/zara/product-zara-1#dresseco-product-page-container-product-info-data-additional-information"
-                          ><i class="bi bi-layers pe-2"></i
-                          ><span class="text-decoration-underline"
-                            >Composició</span
-                          ></a
-                        >
-                      </li>
-                    </ul>
-                  </div>
-                  <button
-                    id="dresseco-cart-page-container-items-item-remove-btn"
-                    class="btn btn-link link-danger"
-                    type="button"
-                  >
-                    <i class="bi bi-trash3 pe-2 small"></i
-                    ><span class="small">Eliminar de la cistella</span>
-                  </button>
-                </div>
+              <div id="visa">
+                <a href="https://visa.com" target="_blank">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Visa_2021.svg/1920px-Visa_2021.svg.png"
+                  />
+                </a>
+              </div>
+              <div id="mastercard">
+                <a href="https://mastercard.com" target="_blank">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Mastercard_2019_logo.svg/1920px-Mastercard_2019_logo.svg.png"
+                  />
+                </a>
               </div>
             </div>
+            <p
+              id="checkout-button-disclaimer"
+              class="text-center text-muted fst-italic"
+            >
+              Pagament fictici.
+            </p>
           </div>
         </div>
-        <div id="dresseco-cart-page-container-resume"></div>
       </div>
     </div>
+    <script src="/js/cart.js"></script>
   </body>
   <dresseco-footer></dresseco-footer>
 </html>

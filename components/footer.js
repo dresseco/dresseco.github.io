@@ -48,17 +48,13 @@ class Footer extends HTMLElement {
             <p>No t'oblidis de cap novetat sobre nosaltres i el món de la moda.</p>
             <form
               id="dresseco-footer-container-metadata-newsletter-form"
-              name="user-newsletter-input"
-              method="POST"
-              data-netlify="true"
               class="mb-1"
-              onsubmit="newsletterThanksModal(); clearFormInput(
+              onsubmit="newsletterThanksModal(event); clearFormInput(
                 'dresseco-footer-container-metadata-newsletter-form')"
             >
               <div class="input-group">
                 <div class="form-floating">
                   <input
-                    name="email"
                     type="email"
                     class="form-control"
                     id="floatingInput"
@@ -88,27 +84,27 @@ class Footer extends HTMLElement {
           <ul class="list-unstyled list-inline mb-0">
             <li class="list-inline-item me-3">
               <a href="mailto:fastfashiontrcdmsc@proton.me"
-                ><i class="bi bi-envelope-fill"></i
+                ><i class="bi bi-envelope-fill" title="E-mail"></i
               ></a>
             </li>
             <li class="list-inline-item me-3">
             <a href="https://www.github.com/dresseco" target="_blank"
-              ><i class="bi bi-github"></i
+              ><i class="bi bi-github" title="GitHub"></i
             ></a>
           </li>
             <li class="list-inline-item me-3">
               <a href="https://www.instagram.com/dressecoo" target="_blank"
-                ><i class="bi bi-instagram"></i
+                ><i class="bi bi-instagram" title="Instagram"></i
               ></a>
             </li>
             <li class="list-inline-item me-3">
             <a href="https://www.tiktok.com/@dressecoo" target="_blank"
-              ><i class="bi bi-tiktok"></i
+              ><i class="bi bi-tiktok" title="TikTok"></i
             ></a>
           </li>
             <li class="list-inline-item">
               <a href="https://www.twitter.com/dresseco" target="_blank"
-                ><i class="bi bi-twitter"></i
+                ><i class="bi bi-twitter" title="Twitter"></i
               ></a>
             </li>
           </ul>
@@ -117,18 +113,18 @@ class Footer extends HTMLElement {
           id="dresseco-footer-container-bottom-disclaimer"
           class="text-md-start position-absolute top-1 start-0"
         >
-          <span class="mb-1 small text-black">&copy; 2023 Dresseco, S.L.</span>
-          <p class="mb-1 small text-black">Totes les marques i productes són propietat de les seves respectives marques, de les quals<span translate="no"> Dresseco </span>no n'està associat.</p>
+          <span class="mb-1 small text-black notranslate">&copy; 2023 Dresseco, S.L.</span>
+          <p class="mb-1 small text-black">Totes els logotips i productes són propietat de les seves respectives marques, amb les quals<span translate="no"> Dresseco </span>no n'està associat.</p>
           <p class="mb-1 small text-muted">
             El codi font d'aquest lloc web està disponible a
             <span class="dresseco-link-muted text-style-underline"
               ><a
                 href="https://www.github.com/dresseco/dresseco.github.io"
-                target="_blank"
+                target="_blank" translate="no"
                 >GitHub</a
               ></span
             >
-            sota la licència MIT.
+            sota la licència <span class="notranslate">MIT</span>.
           </p>
         </div>
       </div>

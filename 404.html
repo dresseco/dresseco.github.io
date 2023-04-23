@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="author" content="Dresseco, S.L." />
-    <meta name="description" content="Catalogue page." />
-    <title>Catàleg | Dresseco</title>
+    <meta name="description" content="HTTP error 404 page." />
+    <title>Pàgina no trobada | Dresseco</title>
     <link href="/assets/images/favicon.png" rel="icon" />
     <script src="/js/libraries.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cart.js"></script>
-    <script src="/js/catalogue.js"></script>
     <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/components.css" rel="stylesheet" />
-    <link href="/css/pages/catalogue.css" rel="stylesheet" />
+    <link href="/css/pages/404.css" rel="stylesheet" />
     <script src="/components/header.js"></script>
     <script src="/components/footer.js"></script>
     <script src="/components/loading-screen.js"></script>
@@ -26,16 +25,21 @@
   <dresseco-loading-screen></dresseco-loading-screen>
   <dresseco-header></dresseco-header>
   <body>
-    <div id="dresseco-catalogue-page">
-      <div id="dresseco-catalogue-page-container" class="container py-5">
-        <span class="fs-1 fw-bold">Catàleg</span>
-        <p class="fs-4">
-          Descobreix les últimes novetats i tendències del món de la moda.
-        </p>
-        <div
-          id="dresseco-catalogue-page-container-items"
-          class="row row-cols-3 g-4"
-        ></div>
+    <div id="dresseco-404-page">
+      <div id="dresseco-404-page-container" class="container py-5">
+        <div id="dresseco-404-page-container-image">
+          <img src="/assets/images/404.png" alt="HTTP error 404 image" />
+        </div>
+        <span class="fw-bold fs-3 text-center"
+          >Sembla que no hi ha res aquí...</span
+        >
+        <button
+          id="dresseco-404-page-container-discover"
+          class="btn btn-primary fs-5"
+          onclick="location.href='/'"
+        >
+          <i class="bi bi-house-fill pe-2"></i><span>Tornar a l'inici</span>
+        </button>
       </div>
     </div>
   </body>

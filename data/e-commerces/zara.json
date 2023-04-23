@@ -1,6 +1,6 @@
 {
   "shop-name": "zara",
-  "url": "https://www.zara.com",
+  "shop-url": "https://www.zara.com",
   "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/800px-Zara_Logo.svg.png",
   "products": [
     {
@@ -25,7 +25,7 @@
               "name": "BRUSA AMB ESTAMPAT FLORAL",
               "price": "25,95 €",
               "description": "Brusa de coll rodó amb escot en punta i màniga llarga. Detall de tavelles al davant i volants. Tancament frontal amb botons folrats al to.",
-              "made-in": "al Marroc",
+              "made-in": "al Marroc.",
               "sizes": [
                 {
                   "all": ["XS", "S", "M", "L", "XL"],
@@ -38,7 +38,6 @@
           "composition": [
             {
               "polyester": "99 %",
-              "RCS-certified-recycled-polyester": "50 %",
               "metallised-fibre": "1 %",
               "fabrication-used-water": "1.000 L"
             }
@@ -72,8 +71,8 @@
               "sizes": [
                 {
                   "all": ["36", "38", "40", "42", "44"],
-                  "available": ["36", "38", "40", "44"],
-                  "unavailable": ["42"]
+                  "available": ["36", "38", "40", "42", "44"],
+                  "unavailable": []
                 }
               ]
             }

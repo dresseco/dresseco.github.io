@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Dresseco, S.L." />
+    <meta name="description" content="Checkout page." />
+    <title>Pagament | Dresseco</title>
+    <link href="/assets/images/favicon.png" rel="icon" />
+    <script src="/js/libraries.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/cart.js"></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/components.css" rel="stylesheet" />
+    <link href="/css/pages/checkout.css" rel="stylesheet" />
+    <script src="/components/header.js"></script>
+    <script src="/components/footer.js"></script>
+    <script src="/components/loading-screen.js"></script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/about.html" />
+    </noscript>
+  </head>
+
+  <dresseco-loading-screen></dresseco-loading-screen>
+  <dresseco-header></dresseco-header>
+  <body>
+    <div id="dresseco-checkout-page">
+      <div id="dresseco-checkout-page-container" class="container py-5">
+        <div id="dresseco-checkout-page-container-text">
+          <div id="dresseco-checkout-page-container-text-stats">
+            <span id="checkout-stats" class="fs-1 text-center"
+              >no-data<span id="checkout-stats-defprice"></span
+              ><span id="checkout-stats-defcomposition"></span
+            ></span>
+          </div>
+          <div id="dresseco-checkout-page-container-text-about">
+            <p>
+              Comprant aquestes peces de roba has de ser conscient que la
+              indústria tèxtil és una de les indústries que genera més residus
+              contaminants que són perjudicials per al nostre planeta.
+            </p>
+            <p>
+              Per la producció tèxtil s’utilitza molta aigua, com també
+              s’utilitza a escales massives el cotó de les terres de cultiu, com
+              altres fibres sintètiques i orgàniques.
+            </p>
+            <p>
+              També, el rentat dels materials sintètics suposa uns 0,5 milions
+              de tones de microfibres més en els oceans, que podrien acabar en
+              la nostra cadena alimentària.
+            </p>
+            <p>
+              Per altra banda, aquest tipus de moda promou el consumisme
+              exagerat i el trasllat de grans empreses a països
+              subdesenvolupats, a on els treballadors són sotmesos a llargues
+              jornades de treball i recompensats amb salaris mínims.
+            </p>
+            <p>Per tant, <span class="fw-bold">val la pena?</span></p>
+          </div>
+        </div>
+        <hr />
+        <div id="dresseco-checkout-page-container-other-data">
+          <span class="fs-3 fw-bold">Sobre aquest lloc web</span>
+          <div id="dresseco-checkout-page-container-other-data-download-paper">
+            <div
+              id="dresseco-checkout-page-container-other-data-download-paper-about"
+            >
+              <p>
+                Aquest lloc web ha estat construït amb l'objectiu d'advertir a
+                la població sobre les conseqüències del
+                <span class="fst-italic">Fast Fashion</span> en el món en el que
+                vivim, com també en la nostra vida quotidiana.
+              </p>
+              <p>
+                A més a més, representa una part del nostre projecte de recerca
+                sobre el
+                <span class="fst-italic">Fast Fashion</span>.
+              </p>
+
+              <p>
+                És per això que posem a disposició pública la memòria del nostre
+                projecte de recerca per a qui vulgui llegir-la o utilitzar-la
+                com a font de coneixement.
+              </p>
+            </div>
+            <div
+              id="dresseco-checkout-page-container-other-data-download-paper-button-container"
+              class="mt-3"
+            >
+              <button
+                id="dresseco-checkout-page-container-other-data-download-paper-button"
+                class="btn btn-primary"
+                onclick="downloadPaperMemoryModal()"
+              >
+                <i class="bi bi-download pe-2"></i
+                ><span>Baixar la memòria</span>
+              </button>
+            </div>
+          </div>
+          <div id="dresseco-checkout-page-container-other-data-reviews-form">
+            <span
+              id="dresseco-checkout-page-container-other-data-reviews-form-disclaimer"
+              class="fs-4 text-center mb-3"
+              >Si desitjes, pots deixar una ressenya anònima sobre el lloc
+              web</span
+            >
+            <form
+              id="dresseco-checkout-page-container-other-data-reviews-form-form"
+              name="checkout-reviews"
+              netlify-honeypot="bot-field"
+              data-netlify="true"
+            >
+              <input name="bot-field" class="d-none" />
+              <textarea
+                id="dresseco-checkout-page-container-other-data-reviews-form-textarea"
+                class="form-control"
+                name="review"
+                placeholder="Escriu aquí..."
+                maxlength="2000"
+                required
+              ></textarea>
+              <div
+                id="dresseco-checkout-page-container-other-data-reviews-form-character-count"
+                class="small text-muted mt-2"
+              ></div>
+              <button class="btn btn-primary" type="submit">
+                <i class="bi bi-send-fill pe-2"></i><span>Enviar ressenya</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <dresseco-footer></dresseco-footer>
+</html>

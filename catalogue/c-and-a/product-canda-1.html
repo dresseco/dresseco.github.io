@@ -18,11 +18,13 @@
     <script src="/components/header.js"></script>
     <script src="/components/footer.js"></script>
     <script src="/components/loading-screen.js"></script>
+    <noscript>
+      <meta http-equiv="refresh" content="0; url=/about.html" />
+    </noscript>
   </head>
 
   <dresseco-loading-screen></dresseco-loading-screen>
   <dresseco-header></dresseco-header>
-  <iframe id="dummy-iframe" class="d-none"></iframe>
   <body>
     <div id="dresseco-product-id" data-product-id="canda-1"></div>
     <div
@@ -117,7 +119,7 @@
               </a>
             </div>
             <div id="dresseco-product-page-container-product-info-origin-shop-img">
-              <img src="{{display-image}}" alt="Origin shop image" class="img-fluid" />
+              <a href="{{shop-url}}" target="_blank"><img src="{{display-image}}" alt="Origin shop image" class="img-fluid" /></a>
             </div>
             <div id="dresseco-product-page-container-product-info-price">
               <span class="fs-2"
@@ -127,36 +129,14 @@
               <span
                 id="dresseco-product-page-container-product-info-price-additional"
                 class="text-muted"
-                >incl. 21 % de IVA. Veure
+                >incl. 21 % d'IVA. Veure
                 <span class="dresseco-link-muted"
                   ><a href="/about.html">despeses d'enviament</a></span
                 ></span
               >
             </div>
             <div id="dresseco-product-page-container-product-info-action-buttons">
-              <form name="contact" method="POST" data-netlify="true">
-                <p>
-                  <label>Your Name: <input type="text" name="name" /></label>
-                </p>
-                <p>
-                  <label>Your Email: <input type="email" name="email" /></label>
-                </p>
-                <p>
-                  <label>Your Role: <select name="role[]" multiple>
-                    <option value="leader">Leader</option>
-                    <option value="follower">Follower</option>
-                  </select></label>
-                </p>
-                <p>
-                  <label>Message: <textarea name="message"></textarea></label>
-                </p>
-                <p>
-                  <button type="submit">Send</button>
-                </p>
-              </form>
-
-              <form name="product-user-data" method="POST" data-netlify="true"
-                onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
+              <form onsubmit="addToCart(event, 'dresseco-product-id', 'dresseco-product-data-path', 'dresseco-product-page-container-product-info-action-buttons-input-size-selector', 'dresseco-product-page-container-product-info-action-buttons-input-quantity-input')"
               >
                 <div
                   id="dresseco-product-page-container-product-info-action-buttons-input"
@@ -173,7 +153,6 @@
                       id="dresseco-product-page-container-product-info-action-buttons-input-size-selector"
                       class="form-select"
                       aria-label="Product size selector"
-                      name="product-user-data-size"
                       required
                     >
                       <option selected disabled value="">. . .</option>
@@ -224,7 +203,6 @@
                       placeholder="#"
                       min="1"
                       max="20"
-                      name="product-user-data-quantity"
                       required
                     />
                   </div>

@@ -1,0 +1,84 @@
+#dresseco-checkout-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#dresseco-checkout-page-container-text-stats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#dresseco-checkout-page-container-text-about {
+  text-align: justify;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#dresseco-checkout-page-container-other-data-download-paper-about p {
+  text-align: justify;
+}
+
+#dresseco-checkout-page-container-other-data-download-paper-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-left: -1.2em !important;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  text-align: justify;
+  margin-left: 1rem;
+}
+
+button.swal2-confirm.dresseco-modal-button.btn.btn-primary[disabled] {
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+}
+
+.swal2-confirm[disabled] {
+  cursor: not-allowed;
+  pointer-events: auto !important;
+  --bs-btn-active-bg: #0d6efd !important;
+  --bs-btn-active-border-color: 0 !important;
+  --bs-btn-hover-border-color: 0 !important;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form-disclaimer {
+  margin-top: 3rem;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form-character-count {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-checkout-page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.05rem;
+  }
+}

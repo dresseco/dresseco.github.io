@@ -1,6 +1,6 @@
 {
   "shop-name": "reebok",
-  "url": "https://www.reebok.com",
+  "shop-url": "https://www.reebok.com",
   "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Reebok_red_logo.svg/300px-Reebok_red_logo.svg.png",
   "products": [
     {
@@ -10,7 +10,7 @@
             {
               "shop": "Reebok",
               "product-id": "reebok-1",
-              "product-url": "https://www.reebok.es/chandal-workout-ready/H46636.html/",
+              "product-url": "https://www.reebok.es/chandal-workout-ready/H46636.html",
               "dresseco-url": "/catalogue/reebok/product-reebok-1.html",
               "images-urls": [
                 {
@@ -25,12 +25,12 @@
               "name": "Xandall Workout Ready",
               "price": "59,50 €",
               "description": "Llueix el teu millor look mentre et prepares per a qualsevol repte. Aquest xandall per a home Reebok està dissenyat per infondre un estil atlètic al teu dia a dia. Està confeccionat en un teixit de niló resistent al desgast amb un acabat que repel·leix la pluja suau i s'asseca ràpid. El tall folgat et permet moure't amb llibertat i estar sempre llest per a l'acció.",
-              "made-in": "a la Xina",
+              "made-in": "a la Xina.",
               "sizes": [
                 {
-                  "all": ["XS", "S", "M", "L", "XL"],
-                  "available": [],
-                  "unavailable": ["XS", "S", "M", "L", "XL"]
+                  "all": ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+                  "available": ["XL"],
+                  "unavailable": ["XS", "S", "M", "L", "2XL", "3XL"]
                 }
               ]
             }
@@ -39,7 +39,7 @@
             {
               "cotton": "42 %",
               "polyester": "58 %",
-              "fabrication-used-water": "2.800 L"
+              "fabrication-used-water": "5.500 L"
             }
           ]
         }
@@ -52,7 +52,7 @@
             {
               "shop": "Reebok",
               "product-id": "reebok-2",
-              "product-url": "https://www.reebok.es/club-c-85/AR0455.html/",
+              "product-url": "https://www.reebok.es/club-c-85/AR0455.html",
               "dresseco-url": "/catalogue/reebok/product-reebok-2.html",
               "images-urls": [
                 {
@@ -67,12 +67,56 @@
               "name": "Club C 85",
               "price": "80,00 €",
               "description": "Flueix a cada pas. Aquesta sabatilla ho fa amb tu. Calça't aquesta Club C 85 i marca tendència. L'estil senzill d'aquesta sabatilla de pell suau combina a la perfecció amb tot el teu armari. Perquè de vegades no cal dir res per llençar un missatge clar.",
-              "made-in": "a la Xina",
+              "made-in": "a la Xina.",
               "sizes": [
                 {
-                  "all": ["36", "38", "40", "42", "44"],
-                  "available": ["36", "38", "40", "42", "44"],
-                  "unavailable": []
+                  "all": [
+                    "34",
+                    "34,5",
+                    "35",
+                    "36",
+                    "36,5",
+                    "37,5",
+                    "38,5",
+                    "39",
+                    "40",
+                    "40,5",
+                    "41",
+                    "42",
+                    "42,5",
+                    "43",
+                    "44",
+                    "44,5",
+                    "45",
+                    "45,5",
+                    "46",
+                    "47",
+                    "48,5",
+                    "50"
+                  ],
+                  "available": [
+                    "34",
+                    "35",
+                    "36",
+                    "36,5",
+                    "37,5",
+                    "38,5",
+                    "39",
+                    "40",
+                    "40,5",
+                    "41",
+                    "42",
+                    "42,5",
+                    "43",
+                    "44",
+                    "44,5",
+                    "45",
+                    "45,5",
+                    "47",
+                    "48,5",
+                    "50"
+                  ],
+                  "unavailable": ["34,5", "46"]
                 }
               ]
             }

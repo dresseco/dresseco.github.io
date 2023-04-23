@@ -1,0 +1,65 @@
+/*HTTP error noscript page*/
+.text-center {
+  text-align: center !important;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+.fs-3 {
+  font-size: calc(1.3rem + 0.6vw) !important;
+}
+
+p {
+  margin-top: 0;
+}
+
+#dresseco-noscript-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#dresseco-noscript-page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#dresseco-noscript-page-container-image {
+  width: 562.5px;
+  height: 475px;
+  margin-bottom: -7rem;
+}
+
+#dresseco-noscript-page-container-image img {
+  width: 562.5px;
+  height: 475px;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-noscript-page-container {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  #dresseco-noscript-page-container-image {
+    width: 393.75px;
+    height: 332.5px;
+    margin-bottom: -7rem;
+  }
+
+  #dresseco-noscript-page-container-image img {
+    width: 393.75px;
+    height: 332.5px;
+    object-fit: cover;
+  }
+}

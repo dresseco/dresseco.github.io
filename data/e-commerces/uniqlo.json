@@ -1,0 +1,105 @@
+{
+  "shop-name": "uniqlo",
+  "shop-url": "https://www.uniqlo.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/UNIQLO_logo.svg/204px-UNIQLO_logo.svg.png",
+  "products": [
+    {
+      "uniqlo-1": [
+        {
+          "product-metadata": [
+            {
+              "shop": "UNIQLO",
+              "product-id": "uniqlo-1",
+              "product-url": "https://www.uniqlo.com/eu/en/product/active-swim-shorts-458246.html",
+              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-1.html",
+              "images-urls": [
+                {
+                  "model": "/assets/images/product-uniqlo-1-model.png",
+                  "item": "/assets/images/product-uniqlo-1-item.png"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "BERMUDES ESPORTIVES BANYADOR",
+              "price": "29,90 €",
+              "description": "Renovat amb un tall estilitzat. Pantalons curts que també es poden utilitzar com a banyador.",
+              "made-in": "a la Xina.",
+              "sizes": [
+                {
+                  "all": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
+                  "available": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "nylon": "50 %",
+              "polyester": "50 %",
+              "fabrication-used-water": "1.200 L"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "uniqlo-2": [
+        {
+          "product-metadata": [
+            {
+              "shop": "UNIQLO",
+              "product-id": "uniqlo-2",
+              "product-url": "https://www.uniqlo.com/eu/en/product/kids-ultra-stretch-sweatshirt-450694.html",
+              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-2.html",
+              "images-urls": [
+                {
+                  "model": "/assets/images/product-uniqlo-2-model.png",
+                  "item": "/assets/images/product-uniqlo-2-model.png"
+                }
+              ]
+            }
+          ],
+          "main-information": [
+            {
+              "name": "DESSUADORA FELPA ULTRAELÀSTICA NENS",
+              "price": "19,90 €",
+              "description": "Cotó 100% a l'interior, que ofereix més comoditat. Tall folgat.",
+              "made-in": "a la Xina.",
+              "sizes": [
+                {
+                  "all": [
+                    "3-4Y (110)",
+                    "5-6Y (120)",
+                    "7-8Y (130)",
+                    "9-10Y (140)",
+                    "11-12Y (150)",
+                    "13Y (160)"
+                  ],
+                  "available": [
+                    "3-4Y (110)",
+                    "5-6Y (120)",
+                    "7-8Y (130)",
+                    "9-10Y (140)",
+                    "11-12Y (150)",
+                    "13Y (160)"
+                  ],
+                  "unavailable": []
+                }
+              ]
+            }
+          ],
+          "composition": [
+            {
+              "cotton": "96 %",
+              "elastane": "4 %",
+              "fabrication-used-water": "2.200 L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

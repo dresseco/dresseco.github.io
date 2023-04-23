@@ -49,4 +49,5 @@ const canda = "/data/e-commerces/canda.json";
 const hm = "/data/e-commerces/hm.json";
 const reebok = "/data/e-commerces/reebok.json";
 const tnf = "/data/e-commerces/tnf.json";
+const uniqlo = "/data/e-commerces/uniqlo.json";
 const zara = "/data/e-commerces/zara.json";
