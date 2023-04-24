@@ -71,7 +71,7 @@ function downloadPaperMemoryModal() {
       <form>
       <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="check2">
-      <label class="form-check-label" for="check2">Tots els drets reservats. Cap part d’aquest treball pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title text-style-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
+      <label class="form-check-label" for="check2">Tots els drets reservats. Cap part d'aquest treball pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title text-style-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
   </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check3">
@@ -79,7 +79,7 @@ function downloadPaperMemoryModal() {
         </div>
         <div class="form-check">
         <input class="form-check-input" type="checkbox" value="" id="check1">
-        <label class="form-check-label" for="check1">Les opinions expressades en aquest treball són dels autors (Fast Fashion TR CDMSC).</label>
+        <label class="form-check-label" for="check1">Les opinions expressades en aquest treball són dels autors (Fast Fashion TR CDMSC) i no reflecteixen necessàriament la política o posició oficial de cap agència o organització.</label>
     </div>
     </form>`,
       icon: "info",
@@ -170,6 +170,9 @@ function reviewThanksModal(event) {
 //Submit the review form at the checkout page with AJAX
 if (fileName2 === "checkout.html") {
   document.addEventListener("DOMContentLoaded", function () {
+    const characterCount = document.getElementById(
+      "dresseco-checkout-page-container-other-data-reviews-form-character-count"
+    );
     const handleSubmit = (event) => {
       event.preventDefault();
 
@@ -186,6 +189,7 @@ if (fileName2 === "checkout.html") {
           clearFormInput(
             "dresseco-checkout-page-container-other-data-reviews-form-form"
           );
+          characterCount.textContent = "0/2000";
         })
         .catch((error) => alert(error));
     };

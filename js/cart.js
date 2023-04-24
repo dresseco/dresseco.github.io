@@ -556,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
         shippingValueId.textContent =
           shippingValue.toLocaleString("de-DE") + " €";
       } else {
-        shippingValueId.textContent = "GRATUïTA";
+        shippingValueId.textContent = "GRATUÏTA";
       }
 
       totalValueId.textContent = totalValue.toLocaleString("de-DE") + " €";

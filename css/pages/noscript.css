@@ -11,6 +11,7 @@
 
 p {
   margin-top: 0;
+  margin-bottom: 0.25rem;
 }
 
 #dresseco-noscript-page {
@@ -39,6 +40,14 @@ p {
   width: 562.5px;
   height: 475px;
   object-fit: cover;
+}
+
+#ca {
+  margin-bottom: 1.5rem;
+}
+
+#es {
+  margin-bottom: 1.5rem;
 }
 
 @media only screen and (max-width: 767.98px) {

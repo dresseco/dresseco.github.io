@@ -8,14 +8,17 @@ class Footer extends HTMLElement {
     <footer class="bg-light">
     <div id="dresseco-footer-container" class="container py-5">
       <div id="dresseco-footer-container-metadata" class="row">
+        <div id="dresseco-footer-container-metadata-logo">
+        <a href="/" target="_blank"
+        ><img
+          src="/assets/images/dresseco-logo.png"
+          alt="Dresseco, S.L."
+          title="Dresseco, S.L."
+          class="img-fluid"
+      /></a>
+        </div>
         <div id="dresseco-footer-container-metadata-about-us" class="col-md-3">
-          <a href="/" target="_blank"
-            ><img
-              src="/assets/images/dresseco-logo.png"
-              alt="Dresseco, S.L."
-              title="Dresseco, S.L."
-              class="img-fluid"
-          /></a>
+        <span class="fs-5 fw-bold">Sobre nosaltres</span>
           <p>
             Establerts a Barcelona, som una distribuïdora de moda de
             qualitat.
@@ -28,7 +31,7 @@ class Footer extends HTMLElement {
           <nav>
             <ul class="list-group list-unstyled list-inline mt-3">
               <li class="list-inline-item me-3">
-                <span class="fs-5 fw-bold">Enllaços</span>
+                <span class="fs-5 fw-bold">Directori</span>
               </li>
               <li class="list-inline-item me-3">
                 <a href="/index.html">Inici</a>
@@ -74,9 +77,8 @@ class Footer extends HTMLElement {
           </div>
         </div>
       </div>
-  
+      <hr />
       <div id="dresseco-footer-container-bottom" class="position-relative">
-        <hr />
         <div
           id="dresseco-footer-container-bottom-social-media"
           class="dresseco-link"
@@ -111,11 +113,10 @@ class Footer extends HTMLElement {
         </div>
         <div
           id="dresseco-footer-container-bottom-disclaimer"
-          class="text-md-start position-absolute top-1 start-0"
         >
-          <span class="mb-1 small text-black notranslate">&copy; 2023 Dresseco, S.L.</span>
-          <p class="mb-1 small text-black">Totes els logotips i productes són propietat de les seves respectives marques, amb les quals<span translate="no"> Dresseco </span>no n'està associat.</p>
-          <p class="mb-1 small text-muted">
+          <span class="mb-1 small text-black">&copy; 2023 <span class="notranslate">Dresseco, S.L.</span> Tots els drets reservats.</span>
+          <p class="mb-2 small text-black">Totes les marques són propietat dels seus respectius propietaris, amb els quals <span translate="no">Dresseco</span> no n'està associat.</p>
+          <p class="small text-muted">
             El codi font d'aquest lloc web està disponible a
             <span class="dresseco-link-muted text-style-underline"
               ><a
@@ -124,7 +125,7 @@ class Footer extends HTMLElement {
                 >GitHub</a
               ></span
             >
-            sota la licència <span class="notranslate">MIT</span>.
+            sota la llicència <span class="notranslate">AGPL-3.0</span>.
           </p>
         </div>
       </div>

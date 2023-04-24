@@ -111,6 +111,10 @@
   }
 
   #dresseco-home-page-about-us-text {
-    max-width: 350px;
+    max-width: 100%;
+  }
+
+  #dresseco-home-page-about-us-background-image-credit {
+    margin-right: 0;
   }
 }

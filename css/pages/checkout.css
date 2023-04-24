@@ -15,6 +15,65 @@
   text-align: justify;
 }
 
+#dresseco-checkout-page-container-text-about-carousel {
+  width: 100% !important;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-images img {
+  height: 300px !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+#about-final-message {
+  margin-bottom: 3rem;
+}
+
+.carousel-inner {
+  border-radius: 0.375rem;
+  border: 1px solid rgb(0, 0, 0, 0.175);
+  height: 300px !important;
+  width: 100% !important;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, transparent 0, gray 100%);
+  width: 100% !important;
+}
+
+.carousel-caption {
+  z-index: 1;
+  display: block;
+  padding-bottom: 2.25rem !important;
+}
+
+.carousel-caption p {
+  margin-bottom: 0 !important;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-control-buttons button {
+  height: 300px !important;
+  width: 10%;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-control-buttons i {
+  font-size: 1.5rem;
+  color: var(--dresseco-teal-500);
+}
+
+#dresseco-checkout-page-container-text-about-carousel-indicators button {
+  background-color: var(--dresseco-teal-500);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
 hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -80,5 +139,10 @@ textarea {
     padding-left: 50px;
     padding-right: 50px;
     font-size: 1.05rem;
+  }
+
+  #dresseco-checkout-page-container-text-about-carousel-control-buttons button {
+    height: 300px !important;
+    width: 20%;
   }
 }

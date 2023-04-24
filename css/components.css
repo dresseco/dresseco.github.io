@@ -207,6 +207,13 @@ footer {
     padding-right: 50px;
   }
 
+  #dresseco-footer-container-metadata-logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 60px;
+  }
+
   #dresseco-footer-container-metadata {
     display: flex;
     flex-wrap: wrap;
@@ -219,11 +226,8 @@ footer {
     order: 1;
   }
 
-  #dresseco-footer-container-metadata-about-us img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 60px;
+  #dresseco-footer-container-metadata-about-us span {
+    display: none;
   }
 
   #dresseco-footer-container-metadata-about-us p {
@@ -244,7 +248,8 @@ footer {
   }
 
   #dresseco-footer-container-bottom {
-    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
   }
 
   #dresseco-footer-container-bottom-social-media {
@@ -255,17 +260,27 @@ footer {
 
   #dresseco-footer-container-bottom-disclaimer {
     margin-top: 25px;
+    position: relative;
+    text-align: justify;
   }
 }
 
 @media only screen and (min-width: 992px) {
-  #dresseco-footer-container-metadata-about-us img {
-    margin-bottom: -1.9rem;
-    max-height: 50px;
+  #dresseco-footer-container-metadata-logo a {
+    height: fit-content;
+  }
+
+  #dresseco-footer-container-metadata-logo img {
+    max-height: 75px;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+  }
+
+  #dresseco-footer-container-metadata-about-us {
+    margin-top: 1rem;
   }
 
   #dresseco-footer-container-metadata-about-us p {
-    margin-top: 1.36rem;
     text-align: justify;
     width: 75%;
   }
@@ -276,13 +291,14 @@ footer {
   }
 
   #dresseco-footer-container-bottom {
-    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
   }
 
   #dresseco-footer-container-bottom-social-media {
-    position: absolute;
-    top: 1rem;
-    right: 0;
+    order: 1;
   }
 }
 
