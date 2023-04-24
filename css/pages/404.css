@@ -1,0 +1,40 @@
+/*HTTP error 404 page*/
+#dresseco-404-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#dresseco-404-page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+#dresseco-404-page-container-image {
+  width: 225px;
+  height: 190px;
+  margin-bottom: 1rem;
+}
+
+#dresseco-404-page-container-image img {
+  width: 225px;
+  height: 225px;
+  object-fit: cover;
+}
+
+#dresseco-404-page-container-discover {
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-404-page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.05rem;
+  }
+}

@@ -1,2 +1,3 @@
-# Visual Studio Code Workspace Config File
+# Visual Studio Code files & folders
 *.code-workspace
+.vscode/*

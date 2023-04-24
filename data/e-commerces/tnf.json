@@ -1,7 +1,7 @@
 {
-  "shop-name": "tnf",
-  "url": "https://www.tnf.com",
-  "display-image": "https://www.senderosgr.es/blog/wp-content/uploads/2011/04/The-North-Face-Logo.png",
+  "shop-name": "the-north-face",
+  "shop-url": "https://www.thenorthface.com",
+  "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/TheNorthFace_logo.svg/600px-TheNorthFace_logo.svg.png",
   "products": [
     {
       "tnf-1": [
@@ -11,7 +11,7 @@
               "shop": "The North Face",
               "product-id": "tnf-1",
               "product-url": "https://www.thenorthface.es/shop/es/tnf-es/mujer-tops-sujetadores-deportivos/sujetador-deportivo-align-para-mujer-7sxu",
-              "dresseco-url": "/catalogue/tnf/product-tnf-1.html",
+              "dresseco-url": "/catalogue/the-north-face/product-tnf-1.html",
               "images-urls": [
                 {
                   "model": "https://s7d2.scene7.com/is/image/TheNorthFaceEU/7SXU_54B_alt40?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
@@ -22,23 +22,24 @@
           ],
           "main-information": [
             {
-              "name": "SOSTENIDOR ESPORTIU ALIGN PER A DONA",
-              "price": "25 €",
-              "description": "Supera les teves marques personals o millora la teva resistència amb tot el suport i el confort que necessites en córrer amb el sostenidor esportiu Align, amb tecnologia FlashDry™ que absorbeix la suor i la humitat per mantenir la teva pell fresca i seca. A més, el teixit elàstic ofereix un ajustament perfecte sense restringir els teus moviments.",
-              "made-in": "la Xina",
+              "name": "TOP ESPORTIU ALIGN PER A DONA",
+              "price": "25,00 €",
+              "description": "Supera les teves marques personals o millora la teva resistència amb tot el suport i el confort que necessites en córrer amb el top esportiu Align, amb tecnologia FlashDry™ que absorbeix la suor i la humitat per mantenir la teva pell fresca i seca. A més, el teixit elàstic ofereix un ajustament perfecte sense restringir els teus moviments.",
+              "made-in": "a la Xina.",
               "sizes": [
                 {
-                  "all": ["XS", "S", "M", "L", "XL"],
+                  "all": ["XS", "S", "M", "L", "XL", "XXL"],
                   "available": ["XL"],
-                  "unavailable": ["XS", "S", "M", "L"]
+                  "unavailable": ["XS", "S", "M", "L", "XXL"]
                 }
               ]
             }
           ],
           "composition": [
             {
-              "polyester": "100 %",
-              "fabrication-used-water": "400 L"
+              "polyester": "85 %",
+              "elastane": "15 %",
+              "fabrication-used-water": "1.000 L"
             }
           ]
         }
@@ -52,7 +53,7 @@
               "shop": "The North Face",
               "product-id": "tnf-2",
               "product-url": "https://www.thenorthface.es/shop/es/tnf-es/hombre-chaquetas-chalecos/chaleco-con-aislamiento-himalayan-para-hombre-4qz4",
-              "dresseco-url": "/catalogue/tnf/product-tnf-2.html",
+              "dresseco-url": "/catalogue/the-north-face/product-tnf-2.html",
               "images-urls": [
                 {
                   "model": "https://s7d2.scene7.com/is/image/TheNorthFaceEU/4QZ4_JK3_hero?wid=800&hei=800&fmt=jpg&qlt=85,1&op_sharpen=0&resMode=sharp2&op_usm=1,1,1,0",
@@ -64,13 +65,13 @@
           "main-information": [
             {
               "name": "ARMILLA AMB AÏLLAMENT HIMALAYAN PER A HOME",
-              "price": "160 €",
+              "price": "160,00 €",
               "description": "Posa't la nostra armilla amb aïllament Himalayan per no sentir el vent gelat, gràcies a l'aïllament sintètic i al teixit totalment resistent al vent. A més, està confeccionada amb materials reciclats, cosa que evita que el plàstic acabi als abocadors.",
-              "made-in": "la Xina",
+              "made-in": "a la Xina.",
               "sizes": [
                 {
-                  "all": ["XS", "S", "M", "L", "XL"],
-                  "available": ["XS", "S", "M", "L", "XL"],
+                  "all": ["XS", "S", "M", "L", "XL", "XXL"],
+                  "available": ["XS", "S", "M", "L", "XL", "XXL"],
                   "unavailable": []
                 }
               ]
@@ -78,7 +79,7 @@
           ],
           "composition": [
             {
-              "nylon": "38%",
+              "nylon": "38 %",
               "polyester": "62 %",
               "fabrication-used-water": "3.500 L"
             }
