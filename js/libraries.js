@@ -89,6 +89,7 @@ function loadLibraries(callback) {
     element.onerror = function () {
       console.error(`Failed to load ${library.url}`);
     };
+
     head.appendChild(element);
   }
 }
@@ -107,9 +108,26 @@ function swalInit() {
     customClass: {
       container: "dresseco-modal-container",
       popup: "dresseco-modal-popup",
+      closeButton: "btn-close",
       htmlContainer: "dresseco-modal-htmlcontainer",
       confirmButton: "dresseco-modal-button btn btn-primary",
       cancelButton: "dresseco-modal-button btn btn-secondary",
+    },
+  });
+
+  dressecoToast = Swal.mixin({
+    toast: true,
+    position: "bottom-end",
+    buttonsStyling: false,
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseenter", Swal.stopTimer);
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+    customClass: {
+      title: "dresseco-toast-title",
     },
   });
 }

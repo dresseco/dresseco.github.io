@@ -1,6 +1,6 @@
 {
   "shop-name": "c-and-a",
-  "url": "https://www.c-and-a.com",
+  "shop-url": "https://www.c-and-a.com",
   "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/C%26A_logo.svg/1280px-C%26A_logo.svg.png",
   "products": [
     {
@@ -22,14 +22,36 @@
           ],
           "main-information": [
             {
-              "name": "Texans rectes - jog denim",
+              "name": "Texans jog denim",
               "price": "24,99 €",
-              "description": "Straight jeans de jog denim elàstic i suau amb marques de desgast simulades i efecte rentat.",
-              "made-in": "a Turquia",
+              "description": "Texans de denim elàstic i suau amb marques de desgast simulades i efecte rentat.",
+              "made-in": "a Turquia.",
               "sizes": [
                 {
-                  "all": ["128", "134", "140", "146", "152"],
-                  "available": ["128", "134", "140", "146", "152"],
+                  "all": [
+                    "128",
+                    "134",
+                    "140",
+                    "146",
+                    "152",
+                    "158",
+                    "164",
+                    "170",
+                    "176",
+                    "182"
+                  ],
+                  "available": [
+                    "128",
+                    "134",
+                    "140",
+                    "146",
+                    "152",
+                    "158",
+                    "164",
+                    "170",
+                    "176",
+                    "182"
+                  ],
                   "unavailable": []
                 }
               ]
@@ -39,8 +61,8 @@
             {
               "cotton": "86 %",
               "polyester": "13 %",
-              "elastane": "2 %",
-              "fabrication-used-water": "3.117 L"
+              "elastane": "1 %",
+              "fabrication-used-water": "3.305 L"
             }
           ]
         }
@@ -53,7 +75,7 @@
             {
               "shop": "C&A",
               "product-id": "canda-2",
-              "product-url": "https://www.c-and-a.com/es/ca/shop/mono-2193454/3/",
+              "product-url": "https://www.c-and-a.com/es/es/shop/mono-2193454/3/",
               "dresseco-url": "/catalogue/c-and-a/product-canda-2.html",
               "images-urls": [
                 {
@@ -65,23 +87,23 @@
           ],
           "main-information": [
             {
-              "name": "Granota de lli",
+              "name": "Vestit de lli",
               "price": "49,99 €",
-              "description": "Granota de lli de teixit lleuger. Cinturó per nuar a la cintura, butxaques al biaix laterals i cremallera oculta a la costura posterior.",
-              "made-in": "a Bangladesh",
+              "description": "Vestit de lli de teixit lleuger. Cinturó per nuar a la cintura, butxaques al biaix laterals i cremallera oculta a la costura posterior.",
+              "made-in": "a Bangladesh.",
               "sizes": [
                 {
-                  "all": ["38", "40", "42", "44", "46"],
-                  "available": ["44"],
-                  "unavailable": ["38", "40", "42", "46"]
+                  "all": ["34", "36", "38", "40", "42", "44", "46", "48"],
+                  "available": ["40", "46"],
+                  "unavailable": ["34", "36", "38", "42", "44", "48"]
                 }
               ]
             }
           ],
           "composition": [
             {
-              "linen": "100 %",
-              "polyester": "80 %",
+              "linen": "50 %",
+              "polyester": "30 %",
               "cotton": "20 %",
               "fabrication-used-water": "2.700 L"
             }

@@ -1,6 +1,6 @@
 {
   "shop-name": "hm",
-  "url": "https://www.hm.com",
+  "shop-url": "https://www.hm.com",
   "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/709px-H%26M-Logo.svg.png",
   "products": [
     {
@@ -24,12 +24,12 @@
             {
               "name": "Dessuadora oversize amb caputxa",
               "price": "19,99 €",
-              "description": "Dessuadora oversize en barreja de cotó amb caputxa folrada en punt i cordó dʻajust. Model de tall relaxat amb espatlles marcadament caigudes, butxaca cangur i remat de canalé a punys i baix. Interior raspallat suau.",
-              "made-in": "a Bangladesh, Indonèsia i Turquia",
+              "description": "Dessuadora oversize en barreja de cotó amb caputxa folrada en punt i cordó d'ajust. Model de tall relaxat amb espatlles marcadament caigudes, butxaca cangur i remat de canalé a punys i baix. Interior raspallat suau.",
+              "made-in": "a Bangladesh, Indonèsia i Turquia.",
               "sizes": [
                 {
-                  "all": ["XS", "S", "M", "L", "XL"],
-                  "available": ["XS", "S", "M", "L", "XL"],
+                  "all": ["XXS", "XS", "S", "M", "L", "XL"],
+                  "available": ["XXS", "XS", "S", "M", "L", "XL"],
                   "unavailable": []
                 }
               ]
@@ -67,11 +67,31 @@
               "name": "Sabatilles de casa amb peluix",
               "price": "14,99 €",
               "description": "Sabatilles de casa suaus amb brodats i aplicacions. Model de canya alta amb tanca autoadherent darrere. Folre i plantilles en peluix. Soles toves amb protecció antilliscant.",
-              "made-in": "la Xina",
+              "made-in": "a la Xina.",
               "sizes": [
                 {
-                  "all": ["13", "15", "17", "19", "21"],
-                  "available": ["13", "15", "17", "19", "21"],
+                  "all": [
+                    "12/13",
+                    "14/15",
+                    "16/17",
+                    "18/19",
+                    "20/21",
+                    "22",
+                    "23",
+                    "24",
+                    "25"
+                  ],
+                  "available": [
+                    "12/13",
+                    "14/15",
+                    "16/17",
+                    "18/19",
+                    "20/21",
+                    "22",
+                    "23",
+                    "24",
+                    "25"
+                  ],
                   "unavailable": []
                 }
               ]
@@ -80,7 +100,7 @@
           "composition": [
             {
               "polyester": "100 %",
-              "fabrication-used-water": "4.400 L"
+              "fabrication-used-water": "2.200 L"
             }
           ]
         }

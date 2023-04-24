@@ -1,15 +1,113 @@
-.dresseco-catalogue-page-container-items-row {
+#dresseco-catalogue-page {
+  position: relative;
+  z-index: 0;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
 }
-#sis {
-  margin-top: 50px;
+
+#dresseco-catalogue-page-container-items {
+  margin-top: 30px;
+  animation-name: null;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
 }
-body {
-  background: linear-gradient(to bottom, #effded 50%, #779974);
-  height: 1900px;
+
+/* Define the fade-out animation */
+@keyframes dresseco-catalogue-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.btn-primary {
-  background-color: #4caf50;
-  border-color: #4caf50;
+
+.row {
+  margin: 0;
+}
+
+.col {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#dresseco-catalogue-page-container-items > div.col {
+  margin-bottom: 2rem !important;
+}
+
+#dresseco-catalogue-page-container-items
+  > div:not(:first-child):not(:last-child) {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#dresseco-catalogue-page-container-items > div:first-child {
+  padding-right: 0.5rem;
+}
+
+#dresseco-catalogue-page-container-items > div:last-child {
+  padding-left: 0.5rem;
+}
+
+#dresseco-catalogue-page-container-items-product-card {
+  max-width: 300px;
+}
+
+#dresseco-catalogue-page-container-items-product-card-origin-shop-img img {
+  max-height: 30px;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-image {
+  display: block;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-image a {
+  display: inherit;
+  width: 100% !important;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-image img {
+  height: 400px !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-info {
+  cursor: pointer;
+  height: 100%;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-info > div {
+  padding-bottom: 10px;
+}
+
+#dresseco-catalogue-page-container-items-product-card-product-info a {
+  display: inherit;
+  width: fit-content;
+  height: 100%;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-catalogue-page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.05rem;
+  }
+
+  #dresseco-catalogue-page-container-items {
+    justify-content: center;
+  }
+
+  #dresseco-catalogue-page-container-items > div.col {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem !important;
+  }
+
+  #dresseco-catalogue-page-container-items-product-card {
+    max-width: 100%;
+  }
 }

@@ -1,6 +1,6 @@
 {
   "shop-name": "zara",
-  "url": "https://www.zara.com",
+  "shop-url": "https://www.zara.com",
   "display-image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Zara_Logo.svg/800px-Zara_Logo.svg.png",
   "products": [
     {
@@ -25,12 +25,12 @@
               "name": "BRUSA AMB ESTAMPAT FLORAL",
               "price": "25,95 €",
               "description": "Brusa de coll rodó amb escot en punta i màniga llarga. Detall de tavelles al davant i volants. Tancament frontal amb botons folrats al to.",
-              "made-in": "al Marroc",
+              "made-in": "al Marroc.",
               "sizes": [
                 {
                   "all": ["XS", "S", "M", "L", "XL"],
-                  "available": ["M", "XL"],
-                  "unavailable": ["XS", "S", "L"]
+                  "available": ["XL"],
+                  "unavailable": ["XS", "S", "M", "L"]
                 }
               ]
             }
@@ -38,7 +38,6 @@
           "composition": [
             {
               "polyester": "99 %",
-              "RCS-certified-recycled-polyester": "50 %",
               "metallised-fibre": "1 %",
               "fabrication-used-water": "1.000 L"
             }
@@ -57,7 +56,7 @@
               "dresseco-url": "/catalogue/zara/product-zara-2.html",
               "images-urls": [
                 {
-                  "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/33/w/563/4451788700_1_1_1.jpg?ts=1679479967507",
+                  "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_1_1_1.jpg?ts=1679476582452",
                   "item": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_6_1_1.jpg?ts=1678894560239"
                 }
               ]
@@ -72,8 +71,8 @@
               "sizes": [
                 {
                   "all": ["36", "38", "40", "42", "44"],
-                  "available": ["36", "38", "40", "44"],
-                  "unavailable": ["42"]
+                  "available": ["36", "38", "40", "42", "44"],
+                  "unavailable": []
                 }
               ]
             }

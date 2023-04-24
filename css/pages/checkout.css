@@ -1,0 +1,148 @@
+#dresseco-checkout-page {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+#dresseco-checkout-page-container-text-stats {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+#dresseco-checkout-page-container-text-about {
+  text-align: justify;
+}
+
+#dresseco-checkout-page-container-text-about-carousel {
+  width: 100% !important;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-images img {
+  height: 300px !important;
+  width: 100% !important;
+  object-fit: cover;
+}
+
+#about-final-message {
+  margin-bottom: 3rem;
+}
+
+.carousel-inner {
+  border-radius: 0.375rem;
+  border: 1px solid rgb(0, 0, 0, 0.175);
+  height: 300px !important;
+  width: 100% !important;
+}
+
+.carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to bottom, transparent 0, gray 100%);
+  width: 100% !important;
+}
+
+.carousel-caption {
+  z-index: 1;
+  display: block;
+  padding-bottom: 2.25rem !important;
+}
+
+.carousel-caption p {
+  margin-bottom: 0 !important;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-control-buttons button {
+  height: 300px !important;
+  width: 10%;
+}
+
+#dresseco-checkout-page-container-text-about-carousel-control-buttons i {
+  font-size: 1.5rem;
+  color: var(--dresseco-teal-500);
+}
+
+#dresseco-checkout-page-container-text-about-carousel-indicators button {
+  background-color: var(--dresseco-teal-500);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#dresseco-checkout-page-container-other-data-download-paper-about p {
+  text-align: justify;
+}
+
+#dresseco-checkout-page-container-other-data-download-paper-button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-check {
+  margin-bottom: 15px;
+}
+
+.form-check-input {
+  margin-left: -1.2em !important;
+}
+
+.form-check-label {
+  font-size: 1rem;
+  text-align: justify;
+  margin-left: 1rem;
+}
+
+button.swal2-confirm.dresseco-modal-button.btn.btn-primary[disabled] {
+  border: var(--bs-btn-border-width) solid var(--bs-btn-border-color);
+}
+
+.swal2-confirm[disabled] {
+  cursor: not-allowed;
+  pointer-events: auto !important;
+  --bs-btn-active-bg: #0d6efd !important;
+  --bs-btn-active-border-color: 0 !important;
+  --bs-btn-hover-border-color: 0 !important;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form-disclaimer {
+  margin-top: 3rem;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 200px;
+}
+
+#dresseco-checkout-page-container-other-data-reviews-form-character-count {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #dresseco-checkout-page-container {
+    padding-left: 50px;
+    padding-right: 50px;
+    font-size: 1.05rem;
+  }
+
+  #dresseco-checkout-page-container-text-about-carousel-control-buttons button {
+    height: 300px !important;
+    width: 20%;
+  }
+}
