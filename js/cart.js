@@ -635,6 +635,7 @@ function cartElementsShow() {
     cartResume.className = "d-none";
   } else {
     emptyCart.classList.add("d-none");
+    emptyCart.classList.add("invisible");
     emptyCart.classList.remove("visible");
     cartResume.style.animationName = "dresseco-cart-animation";
     cartResume.className = "";
