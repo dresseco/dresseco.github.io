@@ -1,5 +1,6 @@
 //loading-screen.js - dresseco-loading-screen fading out, JS code
 //Wait for the DOM content to load
+const eventLoadingScreenFinished = new CustomEvent("loadingScreenDone");
 document.addEventListener("DOMContentLoaded", function () {
   //Set a timeout to delay the start of the fade-out animation
   setTimeout(function () {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loadingScreen.style.display = "none";
       //Allow scrolling on the page
       document.documentElement.style.overflow = "visible";
+      document.dispatchEvent(eventLoadingScreenFinished);
     }, 500);
   }, 500);
 });
@@ -138,7 +140,7 @@ function downloadStartedToast() {
 
 //Checkout page textarea character counter
 const fileName2 = window.location.pathname.split("/").pop();
-if (fileName2 === "checkout.html") {
+if (fileName2 === "checkout") {
   document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.getElementById(
       "dresseco-checkout-page-container-other-data-reviews-form-textarea"
@@ -169,7 +171,7 @@ function reviewThanksModal(event) {
 }
 
 //Submit the review form at the checkout page with AJAX
-if (fileName2 === "checkout.html") {
+if (fileName2 === "checkout") {
   document.addEventListener("DOMContentLoaded", function () {
     const characterCount = document.getElementById(
       "dresseco-checkout-page-container-other-data-reviews-form-character-count"
@@ -204,7 +206,7 @@ if (fileName2 === "checkout.html") {
 }
 
 //Show a warning reload modal when there's data on the statistics span
-if (fileName2 === "checkout.html") {
+if (fileName2 === "checkout") {
   let checkoutStats = document.getElementById("checkout-stats");
   var hasUserGesture = false;
 

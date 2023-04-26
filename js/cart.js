@@ -220,7 +220,7 @@ function getTopLeftPixelColor(img) {
   return hex;
 }
 
-//Function that prints the items in the cart on the cart.html page
+//Function that prints the items in the cart on the cart page
 function printCartUI() {
   window.onload = function () {
     cartElementsShow();
@@ -459,7 +459,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //If only one product on the cart, make it have full width
   function fullWidthSingleItemCart() {
-    if (fileName === "cart.html") {
+    if (fileName === "cart") {
       let productsContainer = document.getElementById(
         "dresseco-cart-page-container-data-items"
       );
@@ -488,7 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Resume container prices code
-  if (fileName === "cart.html") {
+  if (fileName === "cart") {
     //Set cart title product count value
     const productCountTitle = document.getElementById(
       "dresseco-cart-page-container-title-count"
@@ -608,7 +608,7 @@ if (fileName.startsWith("product-")) {
 }
 
 //Code that prints the data of the cart array into the cart page
-if (fileName === "cart.html") {
+if (fileName === "cart") {
   printCartUI();
   window.scrollTo(0, 0);
 
@@ -629,7 +629,6 @@ function cartElementsShow() {
     "dresseco-cart-page-container-data-resume"
   );
 
-  delay(3000);
   if (cart.length === 0) {
     emptyCart.className = "visible";
     emptyCart.style.animationName = "dresseco-cart-empty-animation";
@@ -644,7 +643,7 @@ function cartElementsShow() {
 }
 
 //Code that replaces the checkout button text and icon by a "think" text and icon
-if (fileName === "cart.html") {
+if (fileName === "cart") {
   let button = document.querySelector(
     "#dresseco-cart-page-container-data-resume-checkout-button"
   );
@@ -757,7 +756,7 @@ function dataCheckout() {
   defPriceContainer.textContent = defPrice;
 }
 
-if (fileName === "checkout.html") {
+if (fileName === "checkout") {
   window.onload = function () {
     let productCountSpan = document.getElementById("cart-product-count");
     let productCountLabelSpan = document.getElementById(
