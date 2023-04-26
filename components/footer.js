@@ -11,7 +11,7 @@ class Footer extends HTMLElement {
         <div id="dresseco-footer-container-metadata-logo">
         <a href="/" target="_blank"
         ><img
-          src="/assets/images/dresseco-logo.png"
+          src="/assets/images/brand/dresseco-logo.png"
           alt="Dresseco, S.L."
           title="Dresseco, S.L."
           class="img-fluid"

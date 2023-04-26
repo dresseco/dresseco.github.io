@@ -84,7 +84,6 @@
 
 #dresseco-catalogue-page-container-items-product-card-product-info a {
   display: inherit;
-  width: fit-content;
   height: 100%;
   text-decoration: none;
 }

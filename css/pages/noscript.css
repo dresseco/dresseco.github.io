@@ -1,12 +1,18 @@
 /*HTTP error noscript page*/
-.text-center {
-  text-align: center !important;
+.fs-3 {
+  font-size: calc(1.3rem + 0.6vw) !important;
 }
+
 .fw-bold {
   font-weight: 700 !important;
 }
-.fs-3 {
-  font-size: calc(1.3rem + 0.6vw) !important;
+
+.text-center {
+  text-align: center !important;
+}
+
+.underline a {
+  text-decoration: underline;
 }
 
 p {

@@ -1,3 +1,10 @@
+/*Custom font*/
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
 /*CSS custom color variables*/
 :root {
   --dresseco-teal-500: #20c997;
@@ -131,6 +138,7 @@ input[type="search"]::-webkit-search-cancel-button:hover {
 
 .dresseco-modal-htmlcontainer {
   color: black !important;
+  height: calc(100% - 1rem) !important;
 }
 
 .dresseco-modal-button {

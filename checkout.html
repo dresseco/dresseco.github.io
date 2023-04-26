@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
+    <meta name="google" content="nositelinkssearchbox" />
+    <meta name="google" content="notranslate" />
     <meta name="author" content="Dresseco, S.L." />
     <meta name="description" content="Checkout page." />
     <title>Pagament | Dresseco</title>
-    <link href="/assets/images/favicon.png" rel="icon" />
+
+    <!--Favicon(s)-->
+    <link rel="icon" href="/assets/images/favicons/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      href="/assets/images/favicons/dresseco-teal-round.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/images/favicons/apple-touch-icon.png"
+    />
+    <link
+      rel="mask-icon"
+      href="/assets/images/favicons/safari-pinned-tab.svg"
+      color="#20c997"
+    />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="application-name" content="Dresseco" />
+    <meta name="msapplication-tooltip" content="Dresseco" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#2d89ef" />
+    <meta
+      name="msapplication-TileImage"
+      content="/assets/images/favicons/mstile-144x144.png"
+    />
+
     <script src="/js/libraries.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/cart.js"></script>
@@ -18,7 +47,7 @@
     <script src="/components/footer.js"></script>
     <script src="/components/loading-screen.js"></script>
     <noscript>
-      <meta http-equiv="refresh" content="0; url=/about.html" />
+      <meta http-equiv="refresh" content="0; url=/noscript.html" />
     </noscript>
   </head>
 
@@ -30,7 +59,7 @@
         <div id="dresseco-checkout-page-container-text">
           <div id="dresseco-checkout-page-container-text-stats">
             <span id="checkout-stats" class="fs-1 text-center"
-              >no-data<span id="checkout-stats-defprice"></span
+              >Carregant...<span id="checkout-stats-defprice"></span
               ><span id="checkout-stats-defcomposition"></span
             ></span>
           </div>
@@ -38,36 +67,77 @@
             <p>
               Comprant aquestes peces de roba has de ser conscient que la
               indústria tèxtil és una de les indústries que genera més residus
-              contaminants que són perjudicials per al nostre planeta.
+              contaminants que són perjudicials per al nostre planeta.<span
+                class="dresseco-link"
+                ><sup
+                  ><a
+                    class="text-decoration-underline"
+                    href="#dresseco-checkout-page-container-text-about-carousel"
+                    >[1]</a
+                  ></sup
+                ></span
+              >
             </p>
             <p>
               Per la producció tèxtil s'utilitza molta aigua, com també
               s'utilitza a escales massives el cotó de les terres de cultiu, com
-              altres fibres sintètiques i orgàniques.
+              altres fibres sintètiques i orgàniques.<span class="dresseco-link"
+                ><sup
+                  ><a
+                    class="text-decoration-underline"
+                    href="#dresseco-checkout-page-container-text-about-carousel"
+                    >[2]</a
+                  ></sup
+                ></span
+              >
             </p>
             <p>
               També, el rentatge dels materials sintètics suposa uns 0,5 milions
               de tones de microfibres més en els oceans, que podrien acabar en
-              la nostra cadena alimentària.
+              la nostra cadena alimentària.<span class="dresseco-link"
+                ><sup
+                  ><a
+                    class="text-decoration-underline"
+                    href="#dresseco-checkout-page-container-text-about-carousel"
+                    >[3]</a
+                  ></sup
+                ></span
+              >
             </p>
             <p>
-              A més a més, l'abocament massiu de tints tòxics a l'aigua deriva
-              en malalties (com el càncer) que la gent que beu aquella aigua pot
-              contraure.
+              Per altra banda, l'abocament massiu de tints tòxics a l'aigua
+              deriva en malalties (com el càncer) que la gent que beu aquella
+              aigua pot contraure.<span class="dresseco-link"
+                ><sup
+                  ><a
+                    class="text-decoration-underline"
+                    href="#dresseco-checkout-page-container-text-about-carousel"
+                    >[4]</a
+                  ></sup
+                ></span
+              >
             </p>
             <p>
-              Per altra banda, aquest tipus de moda promou el consumisme
-              exagerat i el trasllat de grans empreses a països
-              subdesenvolupats, a on els treballadors (nens inclosos) són
-              sotmesos a llargues jornades de treball i recompensats amb salaris
-              mínims.
+              Així doncs, aquest tipus de moda promou el consumisme exagerat i
+              el trasllat de grans empreses a països subdesenvolupats, a on els
+              treballadors (nens inclosos) són sotmesos a llargues jornades de
+              treball i recompensats amb salaris mínims.<span
+                class="dresseco-link"
+                ><sup
+                  ><a
+                    class="text-decoration-underline"
+                    href="#dresseco-checkout-page-container-text-about-carousel"
+                    >[5]</a
+                  ></sup
+                ></span
+              >
             </p>
             <span
               id="about-final-message"
               class="fs-5 d-flex justify-content-center"
             >
-              Per tant,<span class="fw-bold fst-underline"
-                >&nbsp;val la pena?</span
+              Per tant,&nbsp;<span class="fw-bold fst-underline"
+                >val la pena?</span
               >
             </span>
             <div
@@ -80,52 +150,60 @@
                 class="carousel-inner"
               >
                 <div class="carousel-item active">
-                  <a
-                    href="https://www.reuters.com/world/india/indias-textile-industry-revs-up-giving-hope-jobs-pm-modi-2022-02-11/"
-                    target="_blank"
-                  >
-                    <img
-                      src="/assets/images/textile-industry-workers.jpg"
-                      alt="Checkout image 1"
-                      title="Checkout image 1"
-                    />
-                  </a>
-                  <div class="carousel-caption">
-                    <h5>
-                      1. Treballadores cosint en una fàbrica tèxtil a l'Índia
-                    </h5>
+                  <img
+                    src="/assets/images/pages/checkout/textile-industry-workers.png"
+                    alt="Checkout image 1"
+                    title="Checkout image 1"
+                  />
+                  <div class="carousel-caption dresseco-link-white">
+                    <span class="fs-5">
+                      1.
+                      <a
+                        class="fst-underline"
+                        href="https://www.reuters.com/world/india/indias-textile-industry-revs-up-giving-hope-jobs-pm-modi-2022-02-11/"
+                        target="_blank"
+                        >Treballadores cosint en una fàbrica tèxtil a l'Índia</a
+                      >
+                    </span>
                     <p>Font: Reuters</p>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <a
-                    href="https://www.fibre2fashion.com/news/textile-news/indian-textile-industry-could-benefit-from-us-ban-on-xinjiang-cotton-278137-newsdetails.htm"
-                    target="_blank"
-                  >
-                    <img
-                      src="/assets/images/textile-industry-cotton.webp"
-                      alt="Checkout image 2"
-                      title="Checkout image 2"
-                    />
-                  </a>
-                  <div class="carousel-caption">
-                    <h5>2. Processament del teixit de cotó a l'Índia</h5>
+                <div class="carousel-item" id="bruh">
+                  <img
+                    src="/assets/images/pages/checkout/textile-industry-cotton.png"
+                    alt="Checkout image 2"
+                    title="Checkout image 2"
+                  />
+                  <div class="carousel-caption dresseco-link-white">
+                    <span class="fs-5">
+                      2.
+                      <a
+                        class="fst-underline"
+                        href="https://www.fibre2fashion.com/news/textile-news/indian-textile-industry-could-benefit-from-us-ban-on-xinjiang-cotton-278137-newsdetails.htm"
+                        target="_blank"
+                      >
+                        Processament del teixit de cotó a l'Índia</a
+                      >
+                    </span>
                     <p>Font: Fibre2Fashion, Grigorenko | Dreamstime.com</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <a
-                    href="https://www.ft.com/content/39847318-ab6c-45f2-80b1-e1ea384f3596"
-                    target="_blank"
-                  >
-                    <img
-                      src="/assets/images/textile-industry-contamination-2.jpg"
-                      alt="Checkout image 3"
-                      title="Checkout image 3"
-                    />
-                  </a>
-                  <div class="carousel-caption">
-                    <h5>3. Abocador de roba a Xile</h5>
+                  <img
+                    src="/assets/images/pages/checkout/textile-industry-contamination-2.png"
+                    alt="Checkout image 3"
+                    title="Checkout image 3"
+                  />
+                  <div class="carousel-caption dresseco-link-white">
+                    <span class="fs-5">
+                      3.
+                      <a
+                        class="fst-underline"
+                        href="https://www.ft.com/content/39847318-ab6c-45f2-80b1-e1ea384f3596"
+                        target="_blank"
+                        >Abocador de roba a Xile</a
+                      >
+                    </span>
                     <p>
                       Font: Financial Times, Martin Bernetti | AFP | Getty
                       Images
@@ -133,36 +211,40 @@
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <a
-                    href="https://www.ecowatch.com/fast-fashion-riverblue-2318389169.html"
-                    target="_blank"
-                  >
-                    <img
-                      src="/assets/images/textile-industry-contamination-1.webp"
-                      alt="Checkout image 4"
-                      title="Checkout image 4"
-                    />
-                  </a>
-                  <div class="carousel-caption">
-                    <h5>4. Riu contaminat de tints tòxics</h5>
+                  <img
+                    src="/assets/images/pages/checkout/textile-industry-contamination-1.png"
+                    alt="Checkout image 4"
+                    title="Checkout image 4"
+                  />
+                  <div class="carousel-caption dresseco-link-white">
+                    <span class="fs-5">
+                      4.
+                      <a
+                        class="fst-underline"
+                        href="https://www.ecowatch.com/fast-fashion-riverblue-2318389169.html"
+                        target="_blank"
+                        >Riu contaminat de tints tòxics</a
+                      >
+                    </span>
                     <p>Font: EcoWatch</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <a
-                    href="https://www.worldvision.org/child-protection-news-stories/child-labor-garment-factory-bangladesh"
-                    target="_blank"
-                  >
-                    <img
-                      src="/assets/images/girl-working.png"
-                      alt="Checkout image 5"
-                      title="Checkout image 5"
-                    />
-                  </a>
-                  <div class="carousel-caption">
-                    <h5>
-                      5. Noia treballant en una fàbrica tèxtil a Bangladesh
-                    </h5>
+                  <img
+                    src="/assets/images/pages/checkout/textile-industry-girl-working.png"
+                    alt="Checkout image 5"
+                    title="Checkout image 5"
+                  />
+                  <div class="carousel-caption dresseco-link-white">
+                    <span class="fs-5">
+                      5.
+                      <a
+                        class="fst-underline"
+                        href="https://www.worldvision.org/child-protection-news-stories/child-labor-garment-factory-bangladesh"
+                        target="_blank"
+                        >Noia treballant en una fàbrica tèxtil a Bangladesh</a
+                      >
+                    </span>
                     <p>Font: World Vision, Mark Nonkes</p>
                   </div>
                 </div>
@@ -235,7 +317,9 @@
         </div>
         <hr />
         <div id="dresseco-checkout-page-container-other-data">
-          <span class="fs-3 fw-bold">Sobre aquest lloc web</span>
+          <div id="dresseco-checkout-page-container-other-data-title">
+            <span class="fs-3 fw-bold">Sobre aquest lloc web</span>
+          </div>
           <div id="dresseco-checkout-page-container-other-data-download-paper">
             <div
               id="dresseco-checkout-page-container-other-data-download-paper-about"
@@ -299,7 +383,7 @@
                 class="small text-muted mt-2"
               ></div>
               <button class="btn btn-primary" type="submit">
-                <i class="bi bi-send-fill pe-2"></i><span>Enviar ressenya</span>
+                <i class="bi bi-send-fill pe-2"></i><span>Enviar</span>
               </button>
             </form>
           </div>

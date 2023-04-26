@@ -164,6 +164,7 @@ function removeFromCart(index, productIdToRemove) {
   if (productCard) {
     productCard.classList.add("fade-out");
     productCard.addEventListener("animationend", function () {
+      productCard.style.display = "none";
       productCard.remove();
     });
   }
@@ -234,11 +235,13 @@ function printCartUI() {
       productContainer.id = "product-" + generateProductId(product) + "-card";
       productContainer.className = "card mb-3";
 
-      //Set width 100% if there's just one product in the cart, so it fits better on mobile
+      //Set width to 100% if there's just one product in the cart, so it fits better on mobile
       if (cart.length === 1) {
         productContainer.className = "card mb-3 single-item";
+        productsContainer.className = "no-x-scrollbar";
       } else {
         productContainer.className = "card mb-3";
+        productsContainer.className = "";
       }
       productsContainer.appendChild(productContainer);
 
@@ -462,9 +465,9 @@ document.addEventListener("DOMContentLoaded", function () {
       );
       if (cart.length === 1) {
         productsContainer.className =
-          "justify-content-center single-item-from-parent";
+          "justify-content-center single-item-from-parent no-x-scrollbar";
       } else {
-        productsContainer.className = "";
+        productsContainer.className = "no-x-scrollbar";
       }
     }
   }
@@ -606,8 +609,10 @@ if (fileName.startsWith("product-")) {
 
 //Code that prints the data of the cart array into the cart page
 if (fileName === "cart.html") {
-  printCartUI();
-  window.scrollTo(0, 0);
+  document.addEventListener("loadingScreenDone", function () {
+    printCartUI();
+    window.scrollTo(0, 0);
+  });
 
   //Code to reload the page every time the user leaves and returns, so the cart gets updated on time
   document.addEventListener("visibilitychange", function () {
@@ -626,15 +631,13 @@ function cartElementsShow() {
     "dresseco-cart-page-container-data-resume"
   );
 
-  delay(3000);
   if (cart.length === 0) {
     emptyCart.className = "visible";
     emptyCart.style.animationName = "dresseco-cart-empty-animation";
     cartResume.className = "d-none";
   } else {
-    emptyCart.classList.add("invisible");
-    emptyCart.classList.remove("visible");
     emptyCart.classList.add("d-none");
+    emptyCart.classList.remove("visible");
     cartResume.style.animationName = "dresseco-cart-animation";
     cartResume.className = "";
   }
@@ -720,7 +723,7 @@ function dataCheckout() {
   //Convert to spanish locale
   Object.keys(defComposition2).forEach((key) => {
     let value = defComposition2[key];
-    value = value.toLocaleString("es-ES");
+    value = value.toLocaleString("de-DE");
     defComposition2[key] = value;
   });
 
@@ -756,21 +759,24 @@ function dataCheckout() {
 
 if (fileName === "checkout.html") {
   window.onload = function () {
-    let productCountSpan = document.getElementById("cart-product-count");
-    let productCountLabelSpan = document.getElementById(
-      "cart-product-count-label"
-    );
-    let checkoutStats = document.getElementById("checkout-stats");
-    if (cart.length === 0) {
-      checkoutStats.textContent = "no-data";
-    } else {
-      checkoutStats.innerHTML =
-        "Per <span id='checkout-stats-defprice'></span> en roba gastats, has consumit: <span id='checkout-stats-defcomposition'></span>";
-      dataCheckout();
-      delay(1000);
-      clearCart();
-      productCountSpan.textContent = "0 ";
-      productCountLabelSpan.textContent = "productes";
-    }
+    document.addEventListener("loadingScreenDone", function () {
+      let productCountSpan = document.getElementById("cart-product-count");
+      let productCountLabelSpan = document.getElementById(
+        "cart-product-count-label"
+      );
+      let checkoutStats = document.getElementById("checkout-stats");
+      if (cart.length === 0) {
+        checkoutStats.textContent =
+          "Has de 'pagar' algun producte per tal de poder veure estadístiques aquí";
+      } else {
+        checkoutStats.innerHTML =
+          "Per <span id='checkout-stats-defprice'></span> en roba gastats, has consumit: <span id='checkout-stats-defcomposition'></span>";
+        dataCheckout();
+        delay(3000);
+        clearCart();
+        productCountSpan.textContent = "0 ";
+        productCountLabelSpan.textContent = "productes";
+      }
+    });
   };
 }
