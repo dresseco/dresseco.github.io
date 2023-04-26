@@ -16,7 +16,7 @@ function addCartModal() {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        document.location.href = "/cart.html";
+        document.location.href = "/cart";
       } else if (result.isDismissed) {
         dressecoModal.close();
       }
@@ -28,7 +28,7 @@ function maxQuantityModal() {
   dressecoModal.fire({
     title:
       "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
-    html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart.html'>cistella</a></span>.",
+    html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
     icon: "warning",
     iconColor: "#fd7e14",
     showConfirmButton: true,
@@ -667,7 +667,7 @@ if (fileName === "cart.html") {
 }
 
 function goToCheckout() {
-  window.location.href = "/checkout.html";
+  window.location.href = "/checkout";
 }
 
 //Function to print the data from the cart page (total price and composition) into the checkout page

@@ -45,7 +45,7 @@ class Header extends HTMLElement {
         <button
           class="btn btn-outline-primary ms-1"
           type="button"
-          onclick="document.location.href='/cart.html'"
+          onclick="document.location.href='/cart'"
         >
           <i class="bi bi-cart-fill pe-2"></i
           ><span id="cart-product-count"></span
@@ -81,7 +81,7 @@ class Header extends HTMLElement {
           <a
             id="dresseco-header-navbar-pages-catalogue"
             class="nav-link mx-3"
-            href="/catalogue.html"
+            href="/catalogue"
             ><i class="bi bi-bag-fill pe-2"></i
             ><span class="fw-bold">Catàleg</span>
           </a>
