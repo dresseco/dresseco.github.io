@@ -629,6 +629,7 @@ function cartElementsShow() {
     "dresseco-cart-page-container-data-resume"
   );
 
+  delay(3000);
   if (cart.length === 0) {
     emptyCart.className = "visible";
     emptyCart.style.animationName = "dresseco-cart-empty-animation";
