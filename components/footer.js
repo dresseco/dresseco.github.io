@@ -11,7 +11,7 @@ class Footer extends HTMLElement {
         <div id="dresseco-footer-container-metadata-logo">
         <a href="/" target="_blank"
         ><img
-          src="/assets/images/dresseco-logo.png"
+          src="/assets/images/brand/dresseco-logo.png"
           alt="Dresseco, S.L."
           title="Dresseco, S.L."
           class="img-fluid"
@@ -34,10 +34,10 @@ class Footer extends HTMLElement {
                 <span class="fs-5 fw-bold">Directori</span>
               </li>
               <li class="list-inline-item me-3">
-                <a href="/index.html">Inici</a>
+                <a href="/index">Inici</a>
               </li>
               <li class="list-inline-item me-3">
-                <a href="/catalogue.html">Catàleg</a>
+                <a href="/catalogue">Catàleg</a>
               </li>
             </ul>
           </nav>

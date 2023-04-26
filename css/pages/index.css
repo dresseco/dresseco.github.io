@@ -6,7 +6,7 @@
       rgba(26, 139, 41, 0.73) 100%,
       rgba(255, 255, 255, 1)
     ),
-    url("/assets/images/home-background-image.png");
+    url("/assets/images/pages/home/home-background-image.png");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,6 +40,12 @@
   align-items: center;
   padding-top: 5%;
   padding-bottom: 5%;
+}
+
+#dresseco-home-page-trending-carousel-images a {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
 }
 
 #dresseco-home-page-trending-carousel-images img {

@@ -236,14 +236,14 @@
     margin-right: 0 !important;
   }
 
-  /*Scrollbar hiding support*/
+  /*Scrollbar hiding support class*/
   /*WebKit & Blink*/
-  #dresseco-cart-page-container-data-items::-webkit-scrollbar {
-    display: none;
+  .no-x-scrollbar::-webkit-scrollbar {
+    overflow-x: hidden;
   }
 
   /*Firefox*/
-  #dresseco-cart-page-container-data-items {
+  .no-x-scrollbar {
     scrollbar-width: none;
   }
 
