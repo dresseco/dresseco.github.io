@@ -15,6 +15,10 @@
   text-align: justify;
 }
 
+#about-final-message {
+  margin-bottom: 3rem;
+}
+
 #dresseco-checkout-page-container-text-about-carousel {
   width: 100% !important;
 }
@@ -23,10 +27,7 @@
   height: 300px !important;
   width: 100% !important;
   object-fit: cover;
-}
-
-#about-final-message {
-  margin-bottom: 3rem;
+  object-position: center;
 }
 
 .carousel-inner {
@@ -43,7 +44,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to bottom, transparent 0, gray 100%);
+  background: linear-gradient(to bottom, transparent 0, lightslategray 100%);
   width: 100% !important;
 }
 
@@ -77,6 +78,10 @@
 hr {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+#dresseco-checkout-page-container-other-data-title {
+  margin-bottom: 0.5rem;
 }
 
 #dresseco-checkout-page-container-other-data-download-paper-about p {

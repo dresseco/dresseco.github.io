@@ -1,5 +1,6 @@
 //loading-screen.js - dresseco-loading-screen fading out, JS code
 //Wait for the DOM content to load
+const eventLoadingScreenFinished = new CustomEvent("loadingScreenDone");
 document.addEventListener("DOMContentLoaded", function () {
   //Set a timeout to delay the start of the fade-out animation
   setTimeout(function () {
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loadingScreen.style.display = "none";
       //Allow scrolling on the page
       document.documentElement.style.overflow = "visible";
+      document.dispatchEvent(eventLoadingScreenFinished);
     }, 500);
   }, 500);
 });
@@ -25,7 +27,7 @@ function newsletterThanksModal(event) {
   dressecoModal.fire({
     title:
       "<p class='text-center fs-3 fw-bold text-dark'>Gràcies per subscriure't!</p>",
-    html: "<p class='text-center text-dark'>D'ara endavant rebràs novetats sobre nosaltres i el món de la moda al teu correu.</p><p id='newsletter-modal-disclaimer' class='text-center text-muted fst-italic'>Subscripció fictícia.</p>",
+    html: "<p class='text-center text-dark'>D'ara endavant rebràs novetats sobre nosaltres i el món de la moda al teu correu.</p><p id='newsletter-modal-disclaimer' class='text-center text-muted fst-italic'>Subscripció fictícia</p>",
     icon: "success",
     iconColor: "#20c997",
     showConfirmButton: true,
@@ -71,7 +73,7 @@ function downloadPaperMemoryModal() {
       <form>
       <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="check2">
-      <label class="form-check-label" for="check2">Tots els drets reservats. Cap part d'aquest treball pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title text-style-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
+      <label class="form-check-label" for="check2">Tots els drets reservats. Cap part d'aquest treball pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title fst-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
   </div>
         <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="check3">
@@ -99,7 +101,8 @@ function downloadPaperMemoryModal() {
         //Code to run when the confirm button is clicked after the modal has been closed and the result of the user’s action has been resolved
         //Download file from specified path
         let link = document.createElement("a");
-        link.href = "/assets/documents/"; //File path
+        link.href =
+          "/assets/documents/PR ESO4 22-23 DM EL FENOMEN DEL FAST FASHION.pdf"; //File path
         link.download = "PR ESO4 22-23 DM EL FENOMEN DEL FAST FASHION.pdf"; //File name
         downloadStartedToast();
         link.click();
@@ -137,7 +140,7 @@ function downloadStartedToast() {
 
 //Checkout page textarea character counter
 const fileName2 = window.location.pathname.split("/").pop();
-if (fileName2 === "checkout.html") {
+if (fileName2 === "checkout") {
   document.addEventListener("DOMContentLoaded", function () {
     const textarea = document.getElementById(
       "dresseco-checkout-page-container-other-data-reviews-form-textarea"
@@ -168,7 +171,7 @@ function reviewThanksModal(event) {
 }
 
 //Submit the review form at the checkout page with AJAX
-if (fileName2 === "checkout.html") {
+if (fileName2 === "checkout") {
   document.addEventListener("DOMContentLoaded", function () {
     const characterCount = document.getElementById(
       "dresseco-checkout-page-container-other-data-reviews-form-character-count"
@@ -200,4 +203,33 @@ if (fileName2 === "checkout.html") {
       )
       .addEventListener("submit", handleSubmit);
   });
+}
+
+//Show a warning reload modal when there's data on the statistics span
+if (fileName2 === "checkout") {
+  let checkoutStats = document.getElementById("checkout-stats");
+  var hasUserGesture = false;
+
+  function enableBeforeUnload() {
+    hasUserGesture = true;
+    window.removeEventListener("scroll", enableBeforeUnload);
+    window.removeEventListener("keydown", enableBeforeUnload);
+    window.removeEventListener("click", enableBeforeUnload);
+  }
+
+  window.addEventListener("scroll", enableBeforeUnload);
+  window.addEventListener("keydown", enableBeforeUnload);
+  window.addEventListener("click", enableBeforeUnload);
+
+  window.onbeforeunload = function (event) {
+    let checkoutStats = document.getElementById("checkout-stats");
+    if (
+      hasUserGesture &&
+      checkoutStats.textContent !==
+        "Has de 'pagar' algun producte per tal de poder veure estadístiques aquí"
+    ) {
+      event.preventDefault();
+      event.returnValue = "";
+    }
+  };
 }

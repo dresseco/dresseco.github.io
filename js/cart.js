@@ -16,7 +16,7 @@ function addCartModal() {
     })
     .then((result) => {
       if (result.isConfirmed) {
-        document.location.href = "/cart.html";
+        document.location.href = "/cart";
       } else if (result.isDismissed) {
         dressecoModal.close();
       }
@@ -28,7 +28,7 @@ function maxQuantityModal() {
   dressecoModal.fire({
     title:
       "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
-    html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart.html'>cistella</a></span>.",
+    html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
     icon: "warning",
     iconColor: "#fd7e14",
     showConfirmButton: true,
@@ -164,6 +164,7 @@ function removeFromCart(index, productIdToRemove) {
   if (productCard) {
     productCard.classList.add("fade-out");
     productCard.addEventListener("animationend", function () {
+      productCard.style.display = "none";
       productCard.remove();
     });
   }
@@ -219,7 +220,7 @@ function getTopLeftPixelColor(img) {
   return hex;
 }
 
-//Function that prints the items in the cart on the cart.html page
+//Function that prints the items in the cart on the cart page
 function printCartUI() {
   window.onload = function () {
     cartElementsShow();
@@ -234,11 +235,13 @@ function printCartUI() {
       productContainer.id = "product-" + generateProductId(product) + "-card";
       productContainer.className = "card mb-3";
 
-      //Set width 100% if there's just one product in the cart, so it fits better on mobile
+      //Set width to 100% if there's just one product in the cart, so it fits better on mobile
       if (cart.length === 1) {
         productContainer.className = "card mb-3 single-item";
+        productsContainer.className = "no-x-scrollbar";
       } else {
         productContainer.className = "card mb-3";
+        productsContainer.className = "";
       }
       productsContainer.appendChild(productContainer);
 
@@ -456,15 +459,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //If only one product on the cart, make it have full width
   function fullWidthSingleItemCart() {
-    if (fileName === "cart.html") {
+    if (fileName === "cart") {
       let productsContainer = document.getElementById(
         "dresseco-cart-page-container-data-items"
       );
       if (cart.length === 1) {
         productsContainer.className =
-          "justify-content-center single-item-from-parent";
+          "justify-content-center single-item-from-parent no-x-scrollbar";
       } else {
-        productsContainer.className = "";
+        productsContainer.className = "no-x-scrollbar";
       }
     }
   }
@@ -485,7 +488,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Resume container prices code
-  if (fileName === "cart.html") {
+  if (fileName === "cart") {
     //Set cart title product count value
     const productCountTitle = document.getElementById(
       "dresseco-cart-page-container-title-count"
@@ -605,7 +608,7 @@ if (fileName.startsWith("product-")) {
 }
 
 //Code that prints the data of the cart array into the cart page
-if (fileName === "cart.html") {
+if (fileName === "cart") {
   printCartUI();
   window.scrollTo(0, 0);
 
@@ -626,22 +629,21 @@ function cartElementsShow() {
     "dresseco-cart-page-container-data-resume"
   );
 
-  delay(3000);
   if (cart.length === 0) {
     emptyCart.className = "visible";
     emptyCart.style.animationName = "dresseco-cart-empty-animation";
     cartResume.className = "d-none";
   } else {
+    emptyCart.classList.add("d-none");
     emptyCart.classList.add("invisible");
     emptyCart.classList.remove("visible");
-    emptyCart.classList.add("d-none");
     cartResume.style.animationName = "dresseco-cart-animation";
     cartResume.className = "";
   }
 }
 
 //Code that replaces the checkout button text and icon by a "think" text and icon
-if (fileName === "cart.html") {
+if (fileName === "cart") {
   let button = document.querySelector(
     "#dresseco-cart-page-container-data-resume-checkout-button"
   );
@@ -664,7 +666,7 @@ if (fileName === "cart.html") {
 }
 
 function goToCheckout() {
-  window.location.href = "/checkout.html";
+  window.location.href = "/checkout";
 }
 
 //Function to print the data from the cart page (total price and composition) into the checkout page
@@ -720,7 +722,7 @@ function dataCheckout() {
   //Convert to spanish locale
   Object.keys(defComposition2).forEach((key) => {
     let value = defComposition2[key];
-    value = value.toLocaleString("es-ES");
+    value = value.toLocaleString("de-DE");
     defComposition2[key] = value;
   });
 
@@ -754,7 +756,7 @@ function dataCheckout() {
   defPriceContainer.textContent = defPrice;
 }
 
-if (fileName === "checkout.html") {
+if (fileName === "checkout") {
   window.onload = function () {
     let productCountSpan = document.getElementById("cart-product-count");
     let productCountLabelSpan = document.getElementById(
@@ -762,12 +764,13 @@ if (fileName === "checkout.html") {
     );
     let checkoutStats = document.getElementById("checkout-stats");
     if (cart.length === 0) {
-      checkoutStats.textContent = "no-data";
+      checkoutStats.textContent =
+        "Has de 'pagar' algun producte per tal de poder veure estadístiques aquí";
     } else {
       checkoutStats.innerHTML =
         "Per <span id='checkout-stats-defprice'></span> en roba gastats, has consumit: <span id='checkout-stats-defcomposition'></span>";
       dataCheckout();
-      delay(1000);
+      delay(3000);
       clearCart();
       productCountSpan.textContent = "0 ";
       productCountLabelSpan.textContent = "productes";
