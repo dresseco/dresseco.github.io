@@ -609,10 +609,8 @@ if (fileName.startsWith("product-")) {
 
 //Code that prints the data of the cart array into the cart page
 if (fileName === "cart.html") {
-  document.addEventListener("loadingScreenDone", function () {
-    printCartUI();
-    window.scrollTo(0, 0);
-  });
+  printCartUI();
+  window.scrollTo(0, 0);
 
   //Code to reload the page every time the user leaves and returns, so the cart gets updated on time
   document.addEventListener("visibilitychange", function () {
@@ -759,24 +757,22 @@ function dataCheckout() {
 
 if (fileName === "checkout.html") {
   window.onload = function () {
-    document.addEventListener("loadingScreenDone", function () {
-      let productCountSpan = document.getElementById("cart-product-count");
-      let productCountLabelSpan = document.getElementById(
-        "cart-product-count-label"
-      );
-      let checkoutStats = document.getElementById("checkout-stats");
-      if (cart.length === 0) {
-        checkoutStats.textContent =
-          "Has de 'pagar' algun producte per tal de poder veure estadístiques aquí";
-      } else {
-        checkoutStats.innerHTML =
-          "Per <span id='checkout-stats-defprice'></span> en roba gastats, has consumit: <span id='checkout-stats-defcomposition'></span>";
-        dataCheckout();
-        delay(3000);
-        clearCart();
-        productCountSpan.textContent = "0 ";
-        productCountLabelSpan.textContent = "productes";
-      }
-    });
+    let productCountSpan = document.getElementById("cart-product-count");
+    let productCountLabelSpan = document.getElementById(
+      "cart-product-count-label"
+    );
+    let checkoutStats = document.getElementById("checkout-stats");
+    if (cart.length === 0) {
+      checkoutStats.textContent =
+        "Has de 'pagar' algun producte per tal de poder veure estadístiques aquí";
+    } else {
+      checkoutStats.innerHTML =
+        "Per <span id='checkout-stats-defprice'></span> en roba gastats, has consumit: <span id='checkout-stats-defcomposition'></span>";
+      dataCheckout();
+      delay(3000);
+      clearCart();
+      productCountSpan.textContent = "0 ";
+      productCountLabelSpan.textContent = "productes";
+    }
   };
 }

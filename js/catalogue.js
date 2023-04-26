@@ -40,9 +40,7 @@ async function fetchData(callback) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.addEventListener("loadingScreenDone", function () {
-    fetchData(printCatalogueUI);
-  });
+  fetchData(printCatalogueUI);
 });
 
 //Function that prints the items in the cart on the cart.html page
