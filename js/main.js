@@ -70,17 +70,13 @@ function downloadPaperMemoryModal() {
       html: `
       <form>
       <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="check2">
-      <label class="form-check-label" for="check2">Tots els drets reservats. Cap part d'aquest treball pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title fst-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
+      <input class="form-check-input" type="checkbox" value="" id="check1">
+      <label class="form-check-label" for="check1">Tots els drets reservats. Cap part d'aquest projecte pot ser reproduïda o transmesa sense el permís escrit a <span class='dresseco-link-title fst-underline'><a href="mailto:fastfashiontrcdmsc@proton.me">fastfashiontrcdmsc@proton.me</a></span></label>
   </div>
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="check3">
-            <label class="form-check-label" for="check3">Les marques comercials i registrades que apareixen en aquest treball són propietat dels seus respectius propietaris.</label>
+            <input class="form-check-input" type="checkbox" value="" id="check2">
+            <label class="form-check-label" for="check2">Les marques comercials registrades que apareixen en aquest projecte són propietat dels seus respectius propietaris i no estan associades amb els autors.</label>
         </div>
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="check1">
-        <label class="form-check-label" for="check1">Les opinions expressades en aquest treball són dels autors (Fast Fashion TR CDMSC) i no reflecteixen necessàriament la política o posició oficial de cap agència o organització.</label>
-    </div>
     </form>`,
       icon: "info",
       iconColor: "#0dcaf0",
@@ -110,9 +106,8 @@ function downloadPaperMemoryModal() {
   const checkStatus = () => {
     let check1 = document.getElementById("check1").checked;
     let check2 = document.getElementById("check2").checked;
-    let check3 = document.getElementById("check3").checked;
 
-    if (check1 && check2 && check3) {
+    if (check1 && check2) {
       Swal.getConfirmButton().disabled = false;
     } else {
       Swal.getConfirmButton().disabled = true;
@@ -121,7 +116,6 @@ function downloadPaperMemoryModal() {
 
   document.getElementById("check1").addEventListener("change", checkStatus);
   document.getElementById("check2").addEventListener("change", checkStatus);
-  document.getElementById("check3").addEventListener("change", checkStatus);
 
   Swal.getConfirmButton().disabled = true;
 }
