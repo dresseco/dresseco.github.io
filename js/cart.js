@@ -544,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (acc, product) => acc + 1.05 * product.quantity,
         0
       );
-      if (shippingValue <= 150) {
+      if (subtotalValue <= 150) {
         shippingValue = shippingValue;
       } else {
         shippingValue = 0;
@@ -686,7 +686,7 @@ function dataCheckout() {
     (acc, product) => acc + 1.05 * product.quantity,
     0
   );
-  if (shippingValue <= 150) {
+  if (subtotalValue <= 150) {
     shippingValue = shippingValue;
   } else {
     shippingValue = 0;
