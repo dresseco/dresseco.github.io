@@ -11,7 +11,7 @@
               "shop": "H&M",
               "product-id": "hm-1",
               "product-url": "https://www.hm.com/productpage.1087261003.html",
-              "dresseco-url": "/catalogue/hm/product-hm-1.html",
+              "dresseco-url": "/catalogue/hm/product-hm-1",
               "images-urls": [
                 {
                   "model": "https://lp2.hm.com/hmgoepprod?set=format%5Bwebp%5D%2Cquality%5B79%5D%2Csource%5B%2Fae%2Fde%2Faede78889de76e7bf8b9b791771ea5bbadd53ccd.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url%5Bfile%3A%2Fproduct%2Fmain%5D",
@@ -54,7 +54,7 @@
               "shop": "H&M",
               "product-id": "hm-2",
               "product-url": "https://www.hm.com/productpage.0748749018.html",
-              "dresseco-url": "/catalogue/hm/product-hm-2.html",
+              "dresseco-url": "/catalogue/hm/product-hm-2",
               "images-urls": [
                 {
                   "model": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc8%2F9d%2Fc89de4a68e58aece5d869ee9e322066e11f04e31.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",

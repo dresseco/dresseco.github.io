@@ -11,7 +11,7 @@
               "shop": "Zara",
               "product-id": "zara-1",
               "product-url": "https://www.zara.com/es/ca/brusa-amb-estampat-floral-p03026176.html",
-              "dresseco-url": "/catalogue/zara/product-zara-1.html",
+              "dresseco-url": "/catalogue/zara/product-zara-1",
               "images-urls": [
                 {
                   "model": "https://static.zara.net/photos///2023/V/0/1/p/3026/176/330/2/w/563/3026176330_1_1_1.jpg?ts=1678968805274",
@@ -54,7 +54,7 @@
               "shop": "Zara",
               "product-id": "zara-2",
               "product-url": "https://www.zara.com/es/ca/pantalons-de-lli---coto-cinturo-p04451788.html",
-              "dresseco-url": "/catalogue/zara/product-zara-2.html",
+              "dresseco-url": "/catalogue/zara/product-zara-2",
               "images-urls": [
                 {
                   "model": "https://static.zara.net/photos///2023/V/0/2/p/4451/788/700/2/w/563/4451788700_1_1_1.jpg?ts=1679476582452",
