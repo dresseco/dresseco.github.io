@@ -782,7 +782,7 @@ const text = entries
 
 //Checkout page code to warn about that you need to 'pay' products in order to see stats
 if (fileName === "checkout") {
-  window.onload = function () {
+  document.addEventListener("DOMContentLoaded", function() {
     let productCountSpan = document.getElementById("cart-product-count");
     let productCountLabelSpan = document.getElementById(
       "cart-product-count-label"
@@ -800,5 +800,5 @@ if (fileName === "checkout") {
       productCountSpan.textContent = "0 ";
       productCountLabelSpan.textContent = "productes";
     }
-  };
+  });
 }

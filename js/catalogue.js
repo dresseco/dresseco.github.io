@@ -39,12 +39,6 @@ async function fetchData(callback) {
   callback();
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  document.addEventListener("loadingScreenDone", function () {
-    fetchData(printCatalogueUI);
-  });
-});
-
 //Function that prints the items in the cart on the cart.html page
 function printCatalogueUI() {
   products.forEach((product) => {
@@ -135,3 +129,5 @@ function printCatalogueUI() {
     window.scrollTo(0, 0);
   });
 }
+
+fetchData(printCatalogueUI);

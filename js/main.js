@@ -1,6 +1,5 @@
 //loading-screen.js - dresseco-loading-screen fading out, JS code
 //Wait for the DOM content to load
-const eventLoadingScreenFinished = new CustomEvent("loadingScreenDone");
 document.addEventListener("DOMContentLoaded", function () {
   //Set a timeout to delay the start of the fade-out animation
   setTimeout(function () {
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
       loadingScreen.style.display = "none";
       //Allow scrolling on the page
       document.documentElement.style.overflow = "visible";
-      document.dispatchEvent(eventLoadingScreenFinished);
     }, 500);
   }, 500);
 });
