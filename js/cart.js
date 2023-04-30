@@ -544,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
         (acc, product) => acc + 1.05 * product.quantity,
         0
       );
-      if (shippingValue <= "150 €") {
+      if (shippingValue <= 150) {
         shippingValue = shippingValue;
       } else {
         shippingValue = 0;
@@ -555,11 +555,11 @@ document.addEventListener("DOMContentLoaded", function () {
       subtotalValueId.textContent =
         subtotalValue.toLocaleString("de-DE") + " €";
 
-      if (shippingValue <= "150 €") {
-        shippingValueId.textContent =
-          shippingValue.toLocaleString("de-DE") + " €";
-      } else {
+      if (shippingValue === 0) {
         shippingValueId.textContent = "GRATUÏTA";
+      } else {
+        shippingValueId.textContent =
+        shippingValue.toLocaleString("de-DE") + " €";
       }
 
       totalValueId.textContent = totalValue.toLocaleString("de-DE") + " €";
@@ -686,7 +686,7 @@ function dataCheckout() {
     (acc, product) => acc + 1.05 * product.quantity,
     0
   );
-  if (shippingValue <= "150 €") {
+  if (shippingValue <= 150) {
     shippingValue = shippingValue;
   } else {
     shippingValue = 0;
