@@ -114,7 +114,7 @@ class Footer extends HTMLElement {
         <div
           id="dresseco-footer-container-bottom-disclaimer"
         >
-          <span class="mb-1 small text-black">&copy; 2023 <span class="notranslate">Dresseco, S.L.</span> Tots els drets reservats.</span>
+          <span class="mb-1 small text-black">&copy; 2023 <span class="notranslate">Dresseco, S.L.</span></span>
           <p class="mb-2 small text-black">Totes les marques són propietat dels seus respectius propietaris, amb els quals <span translate="no">Dresseco</span> no n'està associat.</p>
           <p class="small text-muted">
             El codi font d'aquest lloc web està disponible a

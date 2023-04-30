@@ -193,6 +193,13 @@ footer {
 
 #dresseco-footer-container-metadata {
   margin-bottom: 2rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+  
+#dresseco-footer-container-metadata-logo, #dresseco-footer-container-metadata-about-us, #dresseco-footer-container-metadata-links, #dresseco-footer-container-metadata-newsletter {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 #newsletter-modal-disclaimer {
