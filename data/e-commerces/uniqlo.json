@@ -14,8 +14,8 @@
               "dresseco-url": "/catalogue/uniqlo/product-uniqlo-1.html",
               "images-urls": [
                 {
-                  "model": "/assets/images/pages/product-page-uniqlo-specific/product-uniqlo-1-model.png",
-                  "item": "/assets/images/pages/product-page-uniqlo-specific/product-uniqlo-1-item.png"
+                  "model": "/assets/images/pages/product-page-uniqlo/product-uniqlo-1-model.png",
+                  "item": "/assets/images/pages/product-page-uniqlo/product-uniqlo-1-item.png"
                 }
               ]
             }
@@ -57,8 +57,8 @@
               "dresseco-url": "/catalogue/uniqlo/product-uniqlo-2.html",
               "images-urls": [
                 {
-                  "model": "/assets/images/pages/product-page-uniqlo-specific/product-uniqlo-2-model.png",
-                  "item": "/assets/images/pages/product-page-uniqlo-specific/product-uniqlo-2-model.png"
+                  "model": "/assets/images/pages/product-page-uniqlo/product-uniqlo-2-model.png",
+                  "item": "/assets/images/pages/product-page-uniqlo/product-uniqlo-2-model.png"
                 }
               ]
             }
