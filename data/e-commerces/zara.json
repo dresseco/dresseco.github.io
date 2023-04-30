@@ -37,6 +37,7 @@
           ],
           "composition": [
             {
+              "weight": "200 g",
               "polyester": "99 %",
               "metallised-fibre": "1 %",
               "fabrication-used-water": "1.000 L"
@@ -79,6 +80,7 @@
           ],
           "composition": [
             {
+              "weight": "420 g",
               "cotton": "55 %",
               "linen": "45 %",
               "fabrication-used-water": "3.305 L"
