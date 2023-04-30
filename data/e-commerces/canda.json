@@ -11,7 +11,7 @@
               "shop": "C&A",
               "product-id": "canda-1",
               "product-url": "https://www.c-and-a.com/es/es/shop/straight-jeans-jog-denim-2188474/1/",
-              "dresseco-url": "/catalogue/c-and-a/product-canda-1.html",
+              "dresseco-url": "/catalogue/c-and-a/product-canda-1",
               "images-urls": [
                 {
                   "model": "https://www.c-and-a.com/img/product/q_auto:good,b_rgb:E0DEDA,c_scale,w_478/v1676883021/productimages/2188474-1-05.jpg",
@@ -77,7 +77,7 @@
               "shop": "C&A",
               "product-id": "canda-2",
               "product-url": "https://www.c-and-a.com/es/es/shop/mono-2193454/3/",
-              "dresseco-url": "/catalogue/c-and-a/product-canda-2.html",
+              "dresseco-url": "/catalogue/c-and-a/product-canda-2",
               "images-urls": [
                 {
                   "model": "https://www.c-and-a.com/productimages/b_rgb:E0DEDA,c_scale,h_790,q_70,e_sharpen:70/v1679040610/2193454-3-01.jpg",

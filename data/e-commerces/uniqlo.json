@@ -11,7 +11,7 @@
               "shop": "UNIQLO",
               "product-id": "uniqlo-1",
               "product-url": "https://www.uniqlo.com/eu/en/product/active-swim-shorts-458246.html",
-              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-1.html",
+              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-1",
               "images-urls": [
                 {
                   "model": "/assets/images/pages/product-page-uniqlo/product-uniqlo-1-model.png",
@@ -54,7 +54,7 @@
               "shop": "UNIQLO",
               "product-id": "uniqlo-2",
               "product-url": "https://www.uniqlo.com/eu/en/product/kids-ultra-stretch-sweatshirt-450694.html",
-              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-2.html",
+              "dresseco-url": "/catalogue/uniqlo/product-uniqlo-2",
               "images-urls": [
                 {
                   "model": "/assets/images/pages/product-page-uniqlo/product-uniqlo-2-model.png",

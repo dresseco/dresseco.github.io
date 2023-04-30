@@ -11,7 +11,7 @@
               "shop": "Reebok",
               "product-id": "reebok-1",
               "product-url": "https://www.reebok.es/chandal-workout-ready/H46636.html",
-              "dresseco-url": "/catalogue/reebok/product-reebok-1.html",
+              "dresseco-url": "/catalogue/reebok/product-reebok-1",
               "images-urls": [
                 {
                   "model": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ed3cbe30740a4eb48b6eadd300a51101_9366/Chandal_Workout_Ready_Negro_H46636_01_standard.jpg",
@@ -54,7 +54,7 @@
               "shop": "Reebok",
               "product-id": "reebok-2",
               "product-url": "https://www.reebok.es/club-c-85/AR0455.html",
-              "dresseco-url": "/catalogue/reebok/product-reebok-2.html",
+              "dresseco-url": "/catalogue/reebok/product-reebok-2",
               "images-urls": [
                 {
                   "model": "https://assets.reebok.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0a38c50f84a0436a8b94aa940119ae96_9366/Club_C_85_Blanco_AR0455_06_standard_hover.jpg",
