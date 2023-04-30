@@ -178,7 +178,7 @@
               <span
                 id="dresseco-product-page-container-product-info-price-additional"
                 class="text-muted"
-                >incl. 21 % d'IVA. Veure
+                >incl. 21 % d'IVA. Veure les
                 <span class="dresseco-link-muted"
                   ><a href="/about">despeses d'enviament</a></span
                 ></span
@@ -407,6 +407,10 @@
                     >
                       <div class="accordion-body">
                         <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                            Pes: {{#each products}}{{#each reebok-2}}{{#each
+                            composition}}{{weight}}{{/each}}{{/each}}{{/each}}
+                          </li>
                           <li class="list-group-item">
                             Polièster: {{#each products}}{{#each
                             reebok-2}}{{#each

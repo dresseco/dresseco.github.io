@@ -59,6 +59,7 @@
           ],
           "composition": [
             {
+              "weight": "400 g",
               "cotton": "86 %",
               "polyester": "13 %",
               "elastane": "1 %",
@@ -102,6 +103,7 @@
           ],
           "composition": [
             {
+              "weight": "340 g",
               "linen": "50 %",
               "polyester": "30 %",
               "cotton": "20 %",

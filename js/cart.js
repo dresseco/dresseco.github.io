@@ -705,57 +705,82 @@ function dataCheckout() {
     "checkout-stats-defcomposition"
   );
 
-  //Calculate the total used materials values
-  const defComposition2 = defComposition1.reduce((sums, product) => {
-    Object.entries(product.composition).forEach(([key, value]) => {
+//Calculate the total used materials values
+const defComposition2 = defComposition1.reduce((sums, product) => {
+  const firstValue = parseFloat(
+    product.composition.weight
+      .replace(/[ %Lg]/g, "")
+      .replace(".", "")
+      .replace(",", ".")
+  );
+  Object.entries(product.composition)
+    .filter(([key]) => key !== "weight")
+    .forEach(([key, value]) => {
       value = parseFloat(
-        value.replace(/[ %L]/g, "").replace(".", "").replace(",", ".")
+        value.replace(/[ %Lg]/g, "").replace(".", "").replace(",", ".")
       );
       if (!isNaN(value)) {
-        value *= product.quantity;
+        if (key === "fabrication-used-water") {
+          value *= product.quantity;
+        } else {
+          value = (value * firstValue) / 100;
+          value *= product.quantity;
+          if (value > 1000) {
+            value *= 0.001;
+            value = Math.round(value * 100) / 100;
+            key += "_kg";
+          }
+        }
         sums[key] = (sums[key] || 0) + value;
       }
     });
-    return sums;
-  }, {});
+  return sums;
+}, {});
+  console.log(defComposition1)
+  console.log(defComposition2)
 
-  //Convert to spanish locale
+  //Convert to german locale
   Object.keys(defComposition2).forEach((key) => {
     let value = defComposition2[key];
     value = value.toLocaleString("de-DE");
     defComposition2[key] = value;
   });
 
-  //Define the mapping object
-  const keyMap = {
-    cotton: "de cotó",
-    elastane: "d'elastà",
-    "fabrication-used-water": "d'aigua",
-    linen: "de lli",
-    "metallised-fibre": "de fibra metal·litzada",
-    nylon: "de niló",
-    polyester: "de polièster",
-  };
+//Define the mapping object
+const keyMap = {
+  cotton: "de cotó",
+  elastane: "d'elastà",
+  "fabrication-used-water": "d'aigua",
+  linen: "de lli",
+  "metallised-fibre": "de fibra metal·litzada",
+  nylon: "de niló",
+  polyester: "de polièster",
+};
 
-  //Build the string by concatenating all the key-value pairs
-  const entries = Object.entries(defComposition2);
-  const lastIndex = entries.length - 1;
-  const text = entries
-    .map(([key, value], index) => {
-      const displayName = keyMap[key] || key;
-      let suffix = key === "fabrication-used-water" ? " L" : " %";
-      let prefix = index === lastIndex ? "i " : "";
-      let separator = index === lastIndex ? "" : ", ";
-      return `${prefix}<span class="text-decoration-underline">${value}${suffix}</span> ${displayName}`;
-    })
-    .join(", ")
-    .replace(/, i/, " i");
+//Build the string by concatenating all the key-value pairs
+const entries = Object.entries(defComposition2);
+const lastIndex = entries.length - 1;
+const text = entries
+  .map(([key, value], index) => {
+    let suffix = key === "fabrication-used-water" ? " L" : " g";
+    if (key.endsWith("_kg")) {
+      suffix = " kg";
+      key = key.replace("_kg", "");
+    }
+    const displayName = keyMap[key] || key;
+    let prefix = index === lastIndex ? "i " : "";
+    let separator = index === lastIndex ? "" : ", ";
+    return `${prefix}<span class="text-decoration-underline">${value}${suffix}</span> ${displayName}`;
+  })
+  .join(", ")
+  .replace(/, i/, " i");
 
   //Append the data to its container
   defCompositionContainer.innerHTML = text;
   defPriceContainer.textContent = defPrice;
 }
 
+//Checkout page code to warn about that you need to 'pay' products in order to see stats
 if (fileName === "checkout") {
   window.onload = function () {
     let productCountSpan = document.getElementById("cart-product-count");

@@ -37,6 +37,7 @@
           ],
           "composition": [
             {
+              "weight": "260 g",
               "nylon": "50 %",
               "polyester": "50 %",
               "fabrication-used-water": "1.200 L"
@@ -93,6 +94,7 @@
           ],
           "composition": [
             {
+              "weight": "425 g",
               "cotton": "96 %",
               "elastane": "4 %",
               "fabrication-used-water": "2.200 L"

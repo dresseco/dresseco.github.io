@@ -37,6 +37,7 @@
           ],
           "composition": [
             {
+              "weight": "370 g",
               "cotton": "42 %",
               "polyester": "58 %",
               "fabrication-used-water": "5.500 L"
@@ -123,6 +124,7 @@
           ],
           "composition": [
             {
+              "weight": "800 g",
               "polyester": "100 %",
               "fabrication-used-water": "4.400 L"
             }
