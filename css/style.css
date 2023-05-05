@@ -1,3 +1,12 @@
+/*PWA specific*/
+@media (display-mode: standalone),
+  (display-mode: fullscreen),
+  (display-mode: minimal-ui) {
+  body {
+    overscroll-behavior-y: contain;
+  }
+}
+
 /*Custom font*/
 @import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
 
