@@ -23,18 +23,46 @@
   ],
   "screenshots": [
     {
-      "src": "/assets/images/pwa/mobile-ui.png",
+      "src": "/assets/images/pwa/mobile-ui-home-page.png",
       "sizes": "446x886",
       "type": "image/png",
       "platform": "narrow",
-      "label": "Mobile UI"
+      "label": "Mobile UI home page"
     },
     {
-      "src": "/assets/images/pwa/desktop-ui.png",
+      "src": "/assets/images/pwa/desktop-ui-cart-page.png",
+      "sizes": "446x886",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Mobile UI cart page"
+    },
+    {
+      "src": "/assets/images/pwa/mobile-ui-checkout-page.png",
+      "sizes": "446x886",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Mobile UI checkout page"
+    },
+    {
+      "src": "/assets/images/pwa/desktop-ui-home-page.png",
       "sizes": "1036x729",
       "type": "image/png",
       "platform": "wide",
-      "label": "Desktop UI"
+      "label": "Desktop UI home page"
+    },
+    {
+      "src": "/assets/images/pwa/mobile-ui-cart-page.png",
+      "sizes": "1036x729",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Desktop UI cart page"
+    },
+    {
+      "src": "/assets/images/pwa/desktop-ui-checkout-page.png",
+      "sizes": "1036x729",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Desktop UI checkout page"
     }
   ],
   "related_applications": [
