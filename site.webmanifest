@@ -30,7 +30,7 @@
       "label": "Mobile UI home page"
     },
     {
-      "src": "/assets/images/pwa/desktop-ui-cart-page.png",
+      "src": "/assets/images/pwa/mobile-ui-cart-page.png",
       "sizes": "446x822",
       "type": "image/png",
       "platform": "narrow",
@@ -51,7 +51,7 @@
       "label": "Desktop UI home page"
     },
     {
-      "src": "/assets/images/pwa/mobile-ui-cart-page.png",
+      "src": "/assets/images/pwa/desktop-ui-cart-page.png",
       "sizes": "1035x681",
       "type": "image/png",
       "platform": "wide",
