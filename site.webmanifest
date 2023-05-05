@@ -1,9 +1,14 @@
 {
   "name": "Dresseco",
   "short_name": "Dresseco",
-  "categories": ["website", "ecommerce", "web", "commerce", "fashion", "research-paper", "fast-fashion"],
   "description": "Portal web d'e-commerce de distribució de moda de qualitat.",
+  "categories": ["education", "fashion", "shopping"],
   "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#20c997",
+  "theme_color": "#20c997",
   "icons": [
     {
       "src": "/assets/images/favicons/android-chrome-192x192.png",
@@ -16,8 +21,34 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#20c997",
-  "background_color": "#20c997",
-  "display": "standalone",
-  "orientation": "portrait"
+  "screenshots": [
+    {
+      "src": "/assets/images/pwa/mobile-ui.png",
+      "sizes": "446x886",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "Mobile UI"
+    },
+    {
+      "src": "/assets/images/pwa/desktop-ui.png",
+      "sizes": "1036x729",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Desktop UI"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "amazon",
+      "url": "https://apps.microsoft.com/store/detail/example-app1/id123456789"
+    },
+    {
+      "platform": "f-droid",
+      "url": "https://itunes.apple.com/app/example-app1/id123456789"
+    },
+    {
+      "platform": "windows",
+      "url": "https://play.google.com/store/apps/details?id=com.example.app1"
+    }
+  ]
 }
