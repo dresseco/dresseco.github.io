@@ -1,8 +1,9 @@
 {
   "name": "Dresseco",
   "short_name": "Dresseco",
+  "categories": ["website", "ecommerce", "web", "commerce", "fashion", "research-paper", "fast-fashion"],
   "description": "Portal web d'e-commerce de distribució de moda de qualitat.",
-  "start_url": "https://dresseco.netlify.app",
+  "start_url": "/",
   "icons": [
     {
       "src": "/assets/images/favicons/android-chrome-192x192.png",

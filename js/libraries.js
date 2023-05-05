@@ -20,7 +20,7 @@ const libraries = [
     type: "js",
     url: "https://cdn.jsdelivr.net/npm/sweetalert2@11",
     integrity:
-      "sha512-/iBgV43zPirSC0tue+PT/1VHGs7En24twBmT+sVMgn9PTaOpKfbgIyL5YsGKlbAIxcwz9S8W/YEnYjpIYj2Axw==",
+      "sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA==",
     crossorigin: "anonymous",
     defer: true,
   },
