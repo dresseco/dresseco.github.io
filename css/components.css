@@ -107,14 +107,6 @@ html {
     margin-bottom: 15px;
   }
 
-  #dresseco-header-navbar-pages-home {
-    padding-top: 0;
-  }
-
-  #dresseco-header-navbar-pages-catalogue {
-    padding-bottom: 0;
-  }
-
   .form-floating > .form-control,
   .form-floating > .form-control-plaintext {
     padding: 0rem 0.75rem;
