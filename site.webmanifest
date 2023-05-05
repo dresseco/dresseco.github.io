@@ -24,42 +24,42 @@
   "screenshots": [
     {
       "src": "/assets/images/pwa/mobile-ui-home-page.png",
-      "sizes": "446x886",
+      "sizes": "446x822",
       "type": "image/png",
       "platform": "narrow",
       "label": "Mobile UI home page"
     },
     {
       "src": "/assets/images/pwa/desktop-ui-cart-page.png",
-      "sizes": "446x886",
+      "sizes": "446x822",
       "type": "image/png",
       "platform": "narrow",
       "label": "Mobile UI cart page"
     },
     {
       "src": "/assets/images/pwa/mobile-ui-checkout-page.png",
-      "sizes": "446x886",
+      "sizes": "446x822",
       "type": "image/png",
       "platform": "narrow",
       "label": "Mobile UI checkout page"
     },
     {
       "src": "/assets/images/pwa/desktop-ui-home-page.png",
-      "sizes": "1036x729",
+      "sizes": "1035x681",
       "type": "image/png",
       "platform": "wide",
       "label": "Desktop UI home page"
     },
     {
       "src": "/assets/images/pwa/mobile-ui-cart-page.png",
-      "sizes": "1036x729",
+      "sizes": "1035x681",
       "type": "image/png",
       "platform": "wide",
       "label": "Desktop UI cart page"
     },
     {
       "src": "/assets/images/pwa/desktop-ui-checkout-page.png",
-      "sizes": "1036x729",
+      "sizes": "1035x681",
       "type": "image/png",
       "platform": "wide",
       "label": "Desktop UI checkout page"
