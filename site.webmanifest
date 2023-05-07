@@ -73,5 +73,11 @@
       "platform": "wide",
       "label": "Desktop UI checkout page"
     }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://dresseco.netlify.app/site.webmanifest"
+    }
   ]
 }
