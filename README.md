@@ -11,3 +11,5 @@ Està construït amb Bootstrap 5, utilitzant HTML, CSS, JavaScript i Handlebars.
 El projecte està disponible com a `PWA`, aplicació Android (`AAB` i `APK`) i aplicació Windows* (`MSIX.APPBUNDLE` i `CLASSIC.APPXBUNDLE`).
 
 El codi font sense compilar per a iOS/iPadOS també està disponible (no es distribueix cap paquet IPA).
+
+<sub>Llicenciat sota la Llicència Pública General Affero de GNU (AGPLv3).</sub>
