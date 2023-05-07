@@ -19,6 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 500);
 });
 
+//Handler for when the PWA is already installed
+//Check if browser version supports the API
+document.addEventListener("DOMContentLoaded", async function () {
+  const linkInstallContainer = document.getElementById(
+    "dresseco-home-page-pwa"
+  );
+  const presentationContainer = document.getElementById(
+    "dresseco-home-page-presentation"
+  );
+
+  if ("getInstalledRelatedApps" in window.navigator) {
+    const relatedApps = await navigator.getInstalledRelatedApps();
+    relatedApps.forEach((app) => {
+      //If your PWA exists in the array it is installed
+      console.log(app.platform, app.url);
+      // Change the advertisement display property to "none"
+      linkInstallContainer.style.display = "none";
+      presentationContainer.style.paddingTop = "30%";
+    });
+  }
+});
+
 //product.html - code to show a thanks modal when clicking the subscribe button in the newsletter section on the footer
 function newsletterThanksModal(event) {
   event.preventDefault();
@@ -233,6 +255,11 @@ window.addEventListener("beforeinstallprompt", (event) => {
   console.log("beforeinstallprompt", event);
   // Stash the event so it can be triggered later.
   window.deferredPrompt = event;
+  //Change link style when PWA is ready to be installed
+  const linkInstallContainer2 = document.getElementById(
+    "dresseco-home-page-pwa-text-2"
+  );
+  linkInstallContainer2.className = "dresseco-link-white-2";
 });
 
 function detectBrowser(userAgent) {
@@ -359,25 +386,3 @@ if (
   */
   });
 }
-
-//Handler for when the PWA is already installed
-//Check if browser version supports the API
-document.addEventListener("DOMContentLoaded", async function () {
-  const linkInstallContainer = document.getElementById(
-    "dresseco-home-page-pwa"
-  );
-  const presentationContainer = document.getElementById(
-    "dresseco-home-page-presentation"
-  );
-
-  if ("getInstalledRelatedApps" in window.navigator) {
-    const relatedApps = await navigator.getInstalledRelatedApps();
-    relatedApps.forEach((app) => {
-      //If your PWA exists in the array it is installed
-      console.log(app.platform, app.url);
-      // Change the advertisement display property to "none"
-      linkInstallContainer.style.display = "none";
-      presentationContainer.style.paddingTop = "30%";
-    });
-  }
-});
