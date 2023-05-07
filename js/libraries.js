@@ -19,8 +19,6 @@ const libraries = [
   {
     type: "js",
     url: "https://cdn.jsdelivr.net/npm/sweetalert2@11",
-    integrity:
-      "sha512-2JsZvEefv9GpLmJNnSW3w/hYlXEdvCCfDc+Rv7ExMFHV9JNlJ2jaM+uVVlCI1MAQMkUG8K83LhsHYx1Fr2+MuA==",
     crossorigin: "anonymous",
     defer: true,
   },
