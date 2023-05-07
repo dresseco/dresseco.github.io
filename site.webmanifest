@@ -19,6 +19,10 @@
       "src": "/assets/images/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicons/android-chrome-any.svg",
+      "sizes": "any",
     }
   ],
   "screenshots": [
