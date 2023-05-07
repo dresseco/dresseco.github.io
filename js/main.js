@@ -322,15 +322,10 @@ if (
     //Function for when clicking the link
     if (browserName === "Apple Safari") {
       document.addEventListener("DOMContentLoaded", function () {
-        //Change link style (specific)
+        //Change link attributes (specific)
         const linkInstall = document.getElementById(
           "dresseco-home-page-pwa-text-link"
         );
-        const linkInstallContainer2 = document.getElementById(
-          "dresseco-home-page-pwa"
-        );
-        linkInstallContainer2.style.display = "none"
-
         linkInstall.className = "dresseco-link-white-2";
         linkInstall.onclick = function () {
           safariPWAModal();
@@ -341,17 +336,85 @@ if (
       function safariPWAModal() {
         dressecoModal.fire({
           title:
-            "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
-          html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
+            "<p class='text-center fs-3 fw-bold text-dark'>Com instal·lar Dresseco a dispositius Apple?</p>",
+          showConfirmButton: true,
+          confirmButtonText: "Següent",
+          focusConfirm: true,
+          imageUrl: "/assets/images/pwa/apple-safari/apple-safari-steps-1.png",
+          imageWidth: 160,
+          imageHeight: 311,
+          imageAlt: "PWA installation steps for Safari - image 1",
+          preConfirm: () => {
+            //Code to run when the confirm button is clicked and before the modal is closed
+          },
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            //Code to run when the confirm button is clicked after the modal has been closed and the result of the user’s action has been resolved
+            safariPWAModal2()
+          }
+        });
+      }
+
+      function safariPWAModal2() {
+        dressecoModal.fire({
+          title:
+            "<p class='text-center fs-3 fw-bold text-dark'>Com instal·lar Dresseco a dispositius Apple?</p>",
+          showConfirmButton: true,
+          confirmButtonText: "Següent",
+          focusConfirm: true,
+          imageUrl: "/assets/images/pwa/apple-safari/apple-safari-steps-2.png",
+          imageWidth: 160,
+          imageHeight: 311,
+          imageAlt: "PWA installation steps for Safari - image 2",
+          preConfirm: () => {
+            //Code to run when the confirm button is clicked and before the modal is closed
+          },
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            //Code to run when the confirm button is clicked after the modal has been closed and the result of the user’s action has been resolved
+            safariPWAModal3()
+          }
+        });
+      }
+
+      function safariPWAModal3() {
+        dressecoModal.fire({
+          title:
+            "<p class='text-center fs-3 fw-bold text-dark'>Com instal·lar Dresseco a dispositius Apple?</p>",
+          showConfirmButton: true,
+          confirmButtonText: "Següent",
+          focusConfirm: true,
+          imageUrl: "/assets/images/pwa/apple-safari/apple-safari-steps-3.png",
+          imageWidth: 160,
+          imageHeight: 311,
+          imageAlt: "PWA installation steps for Safari - image 3",
+          preConfirm: () => {
+            //Code to run when the confirm button is clicked and before the modal is closed
+          },
+        })
+        .then((result) => {
+          if (result.isConfirmed) {
+            //Code to run when the confirm button is clicked after the modal has been closed and the result of the user’s action has been resolved
+            safariPWAModal4()
+          }
+        });
+      }
+
+      function safariPWAModal4() {
+        dressecoModal.fire({
+          title:
+            "<p class='text-center fs-3 fw-bold text-dark'>Com instal·lar Dresseco a dispositius Apple?</p>",
           showConfirmButton: true,
           confirmButtonText: "Tanca",
           focusConfirm: true,
-          imageUrl: "https://unsplash.it/400/200",
-          imageWidth: 400,
-          imageHeight: 200,
-          imageAlt: "Custom image",
-        });
-      }
+          imageUrl: "/assets/images/pwa/apple-safari/apple-safari-steps-4.png",
+          imageWidth: 160,
+          imageHeight: 311,
+          imageAlt: "PWA installation steps for Safari - image 4"
+      })
+    }
     } else if (
       //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
       browserName !== "Mozilla Firefox" &&
