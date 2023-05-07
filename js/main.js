@@ -305,8 +305,8 @@ if (
       browserName !== "unknown"
     ) {
       document.addEventListener("DOMContentLoaded", function () {
-        const linkInstallContainer = document.getElementById(
-          "dresseco-home-page-pwa"
+        const linkInstallContainer2 = document.getElementById(
+          "dresseco-home-page-pwa-text"
         );
         const linkInstall = document.getElementById(
           "dresseco-home-page-pwa-text-link"
@@ -327,15 +327,15 @@ if (
           // Reset the deferred prompt variable, since
           // prompt() can only be called once.
           window.deferredPrompt = null;
-          // Change the advertisement text (HTML) to another one
-          linkInstallContainer.innerHTML =
-            "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2 me-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right'></i></a></span></span>";
         });
 
         window.addEventListener("appinstalled", (event) => {
           console.log("appinstalled", event);
           // Clear the deferredPrompt so it can be garbage collected
           window.deferredPrompt = null;
+           // Change the advertisement text (HTML) to another one
+           linkInstallContainer2.innerHTML =
+           "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right ms-2'></i></a></span></span>";
         });
       });
     }
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       console.log(app.platform, app.url);
       // Change the advertisement text (HTML) to another one
       linkInstallContainer.innerHTML =
-        "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2 me-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right'></i></a></span></span>";
+      "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right ms-2'></i></a></span></span>";
     });
   }
 });
