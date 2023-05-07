@@ -335,7 +335,7 @@ if (
           window.deferredPrompt = null;
            // Change the advertisement text (HTML) to another one
            linkInstallContainer2.innerHTML =
-           "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right ms-2'></i></a></span></span>";
+           "<span class='dresseco-link-white'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right ms-2'></i></a></span>";
         });
       });
     }
