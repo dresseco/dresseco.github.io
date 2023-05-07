@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "io.github.dresseco.Dresseco",
+                     "sha256_cert_fingerprints": ["E2:2F:BD:62:D8:C9:A9:01:36:3B:45:A5:C6:2D:81:B5:5C:20:A7:EE:A9:E0:EF:A6:85:BE:FA:1F:50:33:89:AB"] }
+      }
+]
