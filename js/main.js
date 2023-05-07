@@ -305,6 +305,9 @@ if (
       browserName !== "unknown"
     ) {
       document.addEventListener("DOMContentLoaded", function () {
+        const presentationContainer = document.getElementById(
+          "dresseco-home-page-presentation"
+        );
         const linkInstallContainer = document.getElementById(
           "dresseco-home-page-pwa"
         );
@@ -335,6 +338,7 @@ if (
           window.deferredPrompt = null;
           // Change the advertisement display property to "none"
           linkInstallContainer.style.display = "none";
+          presentationContainer.style.paddingTop = "30%";
         });
       });
     }
@@ -362,6 +366,9 @@ document.addEventListener("DOMContentLoaded", async function () {
   const linkInstallContainer = document.getElementById(
     "dresseco-home-page-pwa"
   );
+  const presentationContainer = document.getElementById(
+    "dresseco-home-page-presentation"
+  );
 
   if ("getInstalledRelatedApps" in window.navigator) {
     const relatedApps = await navigator.getInstalledRelatedApps();
@@ -369,7 +376,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       //If your PWA exists in the array it is installed
       console.log(app.platform, app.url);
       // Change the advertisement display property to "none"
-      linkInstallContainer.style.display = "block";
+      linkInstallContainer.style.display = "none";
+      presentationContainer.style.paddingTop = "30%";
     });
   }
 });
