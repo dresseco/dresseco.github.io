@@ -3,10 +3,12 @@
   "short_name": "Dresseco",
   "description": "Portal web d'e-commerce de distribució de moda de qualitat.",
   "categories": ["education", "fashion", "shopping"],
+  "lang": "ca",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
+  "dir": "auto",
   "background_color": "#20c997",
   "theme_color": "#20c997",
   "icons": [
@@ -19,10 +21,6 @@
       "src": "/assets/images/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
-    },
-    {
-      "src": "/assets/images/favicons/android-chrome-any.svg",
-      "sizes": "any",
     }
   ],
   "screenshots": [
