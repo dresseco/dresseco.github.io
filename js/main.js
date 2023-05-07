@@ -321,31 +321,37 @@ if (
   } else {
     //Function for when clicking the link
     if (browserName === "Apple Safari") {
-      //Change link style (specific)
-      const linkInstallContainer2 = document.getElementById(
-        "dresseco-home-page-pwa-text-2"
-      );
-      const linkInstallContainer = document.getElementById(
-        "dresseco-home-page-pwa"
-      );
-      //linkInstallContainer2.className = "dresseco-link-white-2";
-      linkInstallContainer.style.display = "none"
+      document.addEventListener("DOMContentLoaded", function () {
+        //Change link style (specific)
+        const linkInstall = document.getElementById(
+          "dresseco-home-page-pwa-text-link"
+        );
+        const linkInstallContainer2 = document.getElementById(
+          "dresseco-home-page-pwa"
+        );
+        linkInstallContainer2.style.display = "none"
+
+        linkInstall.className = "dresseco-link-white-2";
+        linkInstall.onclick = function () {
+          safariPWAModal();
+        };
+      });
 
       //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
-      dressecoModal.fire({
-        title:
-          "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
-        html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
-        icon: "warning",
-        iconColor: "#fd7e14",
-        showConfirmButton: true,
-        confirmButtonText: "Tanca",
-        focusConfirm: true,
-        imageUrl: "https://unsplash.it/400/200",
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: "Custom image",
-      });
+      function safariPWAModal() {
+        dressecoModal.fire({
+          title:
+            "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
+          html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
+          showConfirmButton: true,
+          confirmButtonText: "Tanca",
+          focusConfirm: true,
+          imageUrl: "https://unsplash.it/400/200",
+          imageWidth: 400,
+          imageHeight: 200,
+          imageAlt: "Custom image",
+        });
+      }
     } else if (
       //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
       browserName !== "Mozilla Firefox" &&
