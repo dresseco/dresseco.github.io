@@ -321,6 +321,16 @@ if (
   } else {
     //Function for when clicking the link
     if (browserName === "Apple Safari") {
+      //Change link style (specific)
+      const linkInstallContainer2 = document.getElementById(
+        "dresseco-home-page-pwa-text-2"
+      );
+      const linkInstallContainer = document.getElementById(
+        "dresseco-home-page-pwa"
+      );
+      //linkInstallContainer2.className = "dresseco-link-white-2";
+      linkInstallContainer.style.display = "none"
+
       //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
       dressecoModal.fire({
         title:
@@ -331,10 +341,10 @@ if (
         showConfirmButton: true,
         confirmButtonText: "Tanca",
         focusConfirm: true,
-        imageUrl: 'https://unsplash.it/400/200',
+        imageUrl: "https://unsplash.it/400/200",
         imageWidth: 400,
         imageHeight: 200,
-        imageAlt: 'Custom image',
+        imageAlt: "Custom image",
       });
     } else if (
       //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
@@ -370,10 +380,6 @@ if (
           // Reset the deferred prompt variable, since
           // prompt() can only be called once.
           window.deferredPrompt = null;
-
-          if (result === 'dismissed') {
-            linkInstall.preventDefault()
-          }
         });
 
         window.addEventListener("appinstalled", (event) => {
