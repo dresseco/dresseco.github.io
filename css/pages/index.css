@@ -24,8 +24,18 @@
   margin-bottom: 0;
 }
 
+#dresseco-home-page-pwa {
+  display: flex;
+  justify-content: center;
+  padding-top: 3%;
+}
+
+#dresseco-home-page-pwa-text {
+  font-size: 1.25rem;
+}
+
 #dresseco-home-page-presentation {
-  padding-top: 13%;
+  padding-top: 7%;
   padding-bottom: 13%;
 }
 
@@ -103,8 +113,16 @@
 }
 
 @media only screen and (max-width: 767.98px) {
+  #dresseco-home-page-pwa {
+    padding-top: 7%;
+  }
+
+  #dresseco-home-page-pwa-text {
+    font-size: 1rem;
+  }
+
   #dresseco-home-page-presentation {
-    padding-top: 30%;
+    padding-top: 17%;
     padding-bottom: 30%;
   }
 

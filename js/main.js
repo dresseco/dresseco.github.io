@@ -225,3 +225,135 @@ if (fileName2 === "checkout") {
     }
   };
 }
+
+//Code that prompts you to install the PWA, if you want
+function detectBrowser(userAgent) {
+  // The order matters here, and this may report false positives for unlisted browsers.
+
+  if (userAgent.includes("Firefox")) {
+    // "Mozilla/5.0 (X11; Linux i686; rv:104.0) Gecko/20100101 Firefox/104.0"
+    return "Mozilla Firefox";
+  } else if (userAgent.includes("SamsungBrowser")) {
+    // "Mozilla/5.0 (Linux; Android 9; SAMSUNG SM-G955F Build/PPR1.180610.011) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/9.4 Chrome/67.0.3396.87 Mobile Safari/537.36"
+    return "Samsung Internet";
+  } else if (userAgent.includes("Opera") || userAgent.includes("OPR")) {
+    // "Mozilla/5.0 (Macintosh; Intel Mac OS X 12_5_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36 OPR/90.0.4480.54"
+    return "Opera";
+  } else if (userAgent.includes("Edge")) {
+    // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/16.16299"
+    return "Microsoft Edge (Legacy)";
+  } else if (userAgent.includes("Edg")) {
+    // "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36 Edg/104.0.1293.70"
+    return "Microsoft Edge (Chromium)";
+  } else if (userAgent.includes("Chrome")) {
+    // "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36"
+    return "Google Chrome or Chromium";
+  } else if (userAgent.includes("Safari")) {
+    // "Mozilla/5.0 (iPhone; CPU iPhone OS 15_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1"
+    return "Apple Safari";
+  } else {
+    return "unknown";
+  }
+}
+
+const browserName = detectBrowser(navigator.userAgent);
+
+//If mobile, run x, else (desktop) run y
+if (
+  navigator.userAgent.match(/Android/i) ||
+  navigator.userAgent.match(/iPhone/i) ||
+  navigator.userAgent.match(/iPad/i) ||
+  navigator.userAgent.match(/iPod/i) ||
+  navigator.userAgent.match(/BlackBerry/i) ||
+  navigator.userAgent.match(/Windows Phone/i) ||
+  navigator.userAgent.match(/webOS/i)
+) {
+  //If not Chromium based browser (Firefox, Opera...), don't show PWA advertisement
+  if (
+    browserName === "Mozilla Firefox" ||
+    browserName === "Opera" ||
+    browserName === "Microsoft Edge (Legacy)" ||
+    browserName === "unknown"
+  ) {
+    document.addEventListener("DOMContentLoaded", function () {
+      const pwaContainer = document.getElementById("dresseco-home-page-pwa");
+      const presentationContainer = document.getElementById(
+        "dresseco-home-page-presentation"
+      );
+      pwaContainer.style.display = "none";
+      presentationContainer.style.paddingTop = "30%";
+    });
+  } else {
+    //Function for when clicking the link
+    function pwaInstall() {
+      if (browserName === "Apple Safari") {
+        //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
+        dressecoModal.fire({});
+      } else if (
+        //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
+        browserName !== "Mozilla Firefox" &&
+        browserName !== "Opera" &&
+        browserName !== "Microsoft Edge (Legacy)" &&
+        browserName !== "Apple Safari" &&
+        browserName !== "unknown"
+      ) {
+        dressecoModal.fire({});
+      }
+    }
+  }
+} else {
+  //Is desktop
+  document.addEventListener("DOMContentLoaded", function () {
+    const pwaContainer = document.getElementById("dresseco-home-page-pwa");
+    const presentationContainer = document.getElementById(
+      "dresseco-home-page-presentation"
+    );
+    pwaContainer.style.display = "none";
+    presentationContainer.style.paddingTop = "13%";
+    /*
+  if (window.matchMedia("screen and (max-width: 767.98px)").matches) {
+    presentationContainer.style.paddingTop = "30%"
+  }
+  */
+  });
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+const divInstall = document.getElementById("dresseco-home-page-pwa");
+const butInstall = document.getElementById("dresseco-home-page-pwa-text-link");
+
+window.addEventListener('beforeinstallprompt', (event) => {
+  // Prevent the mini-infobar from appearing on mobile.
+  event.preventDefault();
+  console.log('👍', 'beforeinstallprompt', event);
+  // Stash the event so it can be triggered later.
+  window.deferredPrompt = event;
+});
+
+
+butInstall.addEventListener('click', async () => {
+  console.log('👍', 'butInstall-clicked');
+  const promptEvent = window.deferredPrompt;
+  if (!promptEvent) {
+    // The deferred prompt isn't available.
+    return;
+  }
+  // Show the install prompt.
+  promptEvent.prompt();
+  // Log the result
+  const result = await promptEvent.userChoice;
+  console.log('👍', 'userChoice', result);
+  // Reset the deferred prompt variable, since
+  // prompt() can only be called once.
+  window.deferredPrompt = null;
+  // Hide the install button.
+  //divInstall.classList.toggle('hidden', true);
+});
+
+window.addEventListener('appinstalled', (event) => {
+  console.log('👍', 'appinstalled', event);
+  // Clear the deferredPrompt so it can be garbage collected
+  window.deferredPrompt = null;
+});
+})
