@@ -331,6 +331,10 @@ if (
         showConfirmButton: true,
         confirmButtonText: "Tanca",
         focusConfirm: true,
+        imageUrl: 'https://unsplash.it/400/200',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
       });
     } else if (
       //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
@@ -367,7 +371,7 @@ if (
           // prompt() can only be called once.
           window.deferredPrompt = null;
 
-          if (outcome === 'dismissed') {
+          if (result === 'dismissed') {
             linkInstall.preventDefault()
           }
         });
