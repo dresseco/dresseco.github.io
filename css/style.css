@@ -93,6 +93,19 @@ input[type="search"]::-webkit-search-cancel-button:hover {
   text-decoration: underline;
 }
 
+.dresseco-link-white-2 {
+  color: white;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out, background-color 0.1s ease-in-out,
+    border-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+}
+
+.dresseco-link-white-2:hover {
+  color: var(--dresseco-teal-500);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .dresseco-link-muted a {
   color: rgba(33, 37, 41, 0.75);
   transition: color 0.3s ease-in-out, background-color 0.1s ease-in-out,
