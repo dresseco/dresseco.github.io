@@ -106,6 +106,17 @@ input[type="search"]::-webkit-search-cancel-button:hover {
   cursor: pointer;
 }
 
+.dresseco-link-pwa {
+  color: rgba(33, 37, 41, 0.75);
+  text-decoration: none;
+}
+
+.dresseco-link-pwa:hover {
+  color: rgba(33, 37, 41, 0.75);
+  text-decoration: none;
+  cursor: not-allowed;
+}
+
 .dresseco-link-muted a {
   color: rgba(33, 37, 41, 0.75);
   transition: color 0.3s ease-in-out, background-color 0.1s ease-in-out,
