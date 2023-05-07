@@ -51,6 +51,13 @@ html {
   height: fit-content;
 }
 
+@media only screen and (max-width: 274.98px) {
+  #dresseco-header-navbar-action-buttons-main button,
+  .dresseco-button {
+    font-size: 0.5rem !important;
+  }
+}
+
 @media only screen and (max-width: 374.98px) {
   #dresseco-header-navbar-action-buttons-main button,
   .dresseco-button {

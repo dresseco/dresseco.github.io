@@ -1,6 +1,7 @@
 {
   "name": "Dresseco",
   "short_name": "Dresseco",
+  "id": "/",
   "description": "Portal web d'e-commerce de distribució de moda de qualitat.",
   "categories": ["education", "fashion", "shopping"],
   "lang": "ca",
@@ -21,6 +22,12 @@
       "src": "/assets/images/favicons/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "/assets/images/favicons/android-chrome-any.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ],
   "screenshots": [
