@@ -322,7 +322,16 @@ if (
     //Function for when clicking the link
     if (browserName === "Apple Safari") {
       //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
-      dressecoModal.fire({});
+      dressecoModal.fire({
+        title:
+          "<p class='text-center fs-3 fw-bold text-dark'>La quantitat màxima per afegir a aquest producte és 20</p>",
+        html: "Pots visualitzar la quantitat que ja disposes anant a la <span class='dresseco-link-title text-style-underline'><a href='/cart'>cistella</a></span>.",
+        icon: "warning",
+        iconColor: "#fd7e14",
+        showConfirmButton: true,
+        confirmButtonText: "Tanca",
+        focusConfirm: true,
+      });
     } else if (
       //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
       browserName !== "Mozilla Firefox" &&
@@ -357,6 +366,10 @@ if (
           // Reset the deferred prompt variable, since
           // prompt() can only be called once.
           window.deferredPrompt = null;
+
+          if (outcome === 'dismissed') {
+            linkInstall.preventDefault()
+          }
         });
 
         window.addEventListener("appinstalled", (event) => {
