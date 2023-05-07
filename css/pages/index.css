@@ -1,3 +1,24 @@
+/*PWA specific*/
+@media (display-mode: standalone),
+  (display-mode: fullscreen),
+  (display-mode: minimal-ui) {
+  #dresseco-home-page-pwa {
+    display: none;
+  }
+
+  @media only screen and (max-width: 767.98px) {
+    #dresseco-home-page-presentation {
+      padding-top: 30%;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    #dresseco-home-page-presentation {
+      padding-top: 13%;
+    }
+  }
+}
+
 /*Parallax effect on the background*/
 .parallax {
   background-image: linear-gradient(

@@ -227,6 +227,14 @@ if (fileName2 === "checkout") {
 }
 
 //Code that prompts you to install the PWA, if you want
+window.addEventListener("beforeinstallprompt", (event) => {
+  // Prevent the mini-infobar from appearing on mobile.
+  event.preventDefault();
+  console.log("beforeinstallprompt", event);
+  // Stash the event so it can be triggered later.
+  window.deferredPrompt = event;
+});
+
 function detectBrowser(userAgent) {
   // The order matters here, and this may report false positives for unlisted browsers.
 
@@ -285,20 +293,51 @@ if (
     });
   } else {
     //Function for when clicking the link
-    function pwaInstall() {
-      if (browserName === "Apple Safari") {
-        //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
-        dressecoModal.fire({});
-      } else if (
-        //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
-        browserName !== "Mozilla Firefox" &&
-        browserName !== "Opera" &&
-        browserName !== "Microsoft Edge (Legacy)" &&
-        browserName !== "Apple Safari" &&
-        browserName !== "unknown"
-      ) {
-        dressecoModal.fire({});
-      }
+    if (browserName === "Apple Safari") {
+      //If Safari, show custom SweetAlert2 modal with steps of how to install the PWA if you click the link
+      dressecoModal.fire({});
+    } else if (
+      //If Chromium based browser, show native modal prompting you to install the PWA if you click the link
+      browserName !== "Mozilla Firefox" &&
+      browserName !== "Opera" &&
+      browserName !== "Microsoft Edge (Legacy)" &&
+      browserName !== "Apple Safari" &&
+      browserName !== "unknown"
+    ) {
+      document.addEventListener("DOMContentLoaded", function () {
+        const linkInstallContainer = document.getElementById(
+          "dresseco-home-page-pwa"
+        );
+        const linkInstall = document.getElementById(
+          "dresseco-home-page-pwa-text-link"
+        );
+
+        linkInstall.addEventListener("click", async () => {
+          console.log("linkInstall clicked");
+          const promptEvent = window.deferredPrompt;
+          if (!promptEvent) {
+            // The deferred prompt isn't available.
+            return;
+          }
+          // Show the install prompt.
+          promptEvent.prompt();
+          // Log the result
+          const result = await promptEvent.userChoice;
+          console.log("userChoice", result);
+          // Reset the deferred prompt variable, since
+          // prompt() can only be called once.
+          window.deferredPrompt = null;
+          // Change the advertisement text (HTML) to another one
+          linkInstallContainer.innerHTML =
+            "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2 me-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right'></i></a></span></span>";
+        });
+
+        window.addEventListener("appinstalled", (event) => {
+          console.log("appinstalled", event);
+          // Clear the deferredPrompt so it can be garbage collected
+          window.deferredPrompt = null;
+        });
+      });
     }
   }
 } else {
@@ -318,42 +357,21 @@ if (
   });
 }
 
+//Handler for when the PWA is already installed
+//Check if browser version supports the API
+document.addEventListener("DOMContentLoaded", async function () {
+  const linkInstallContainer = document.getElementById(
+    "dresseco-home-page-pwa"
+  );
 
-document.addEventListener("DOMContentLoaded", function() {
-const divInstall = document.getElementById("dresseco-home-page-pwa");
-const butInstall = document.getElementById("dresseco-home-page-pwa-text-link");
-
-window.addEventListener('beforeinstallprompt', (event) => {
-  // Prevent the mini-infobar from appearing on mobile.
-  event.preventDefault();
-  console.log('👍', 'beforeinstallprompt', event);
-  // Stash the event so it can be triggered later.
-  window.deferredPrompt = event;
-});
-
-
-butInstall.addEventListener('click', async () => {
-  console.log('👍', 'butInstall-clicked');
-  const promptEvent = window.deferredPrompt;
-  if (!promptEvent) {
-    // The deferred prompt isn't available.
-    return;
+  if ("getInstalledRelatedApps" in window.navigator) {
+    const relatedApps = await navigator.getInstalledRelatedApps();
+    relatedApps.forEach((app) => {
+      //if your PWA exists in the array it is installed
+      console.log(app.platform, app.url);
+      // Change the advertisement text (HTML) to another one
+      linkInstallContainer.innerHTML =
+        "<span id='dresseco-home-page-pwa-text' class='text-white'><span class='dresseco-link-white-2 me-2'><a id='dresseco-home-page-pwa-text-link' href='https://dresseco.netlify.app' target='_blank'>Obre Dresseco a l'aplicació mòbil<i class='bi bi-box-arrow-up-right'></i></a></span></span>";
+    });
   }
-  // Show the install prompt.
-  promptEvent.prompt();
-  // Log the result
-  const result = await promptEvent.userChoice;
-  console.log('👍', 'userChoice', result);
-  // Reset the deferred prompt variable, since
-  // prompt() can only be called once.
-  window.deferredPrompt = null;
-  // Hide the install button.
-  //divInstall.classList.toggle('hidden', true);
 });
-
-window.addEventListener('appinstalled', (event) => {
-  console.log('👍', 'appinstalled', event);
-  // Clear the deferredPrompt so it can be garbage collected
-  window.deferredPrompt = null;
-});
-})
