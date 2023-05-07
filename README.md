@@ -6,5 +6,8 @@
 Lloc web pel nostre projecte de recerca sobre el Fast Fashion.
 
 Està construït amb Bootstrap 5, utilitzant HTML, CSS, JavaScript i Handlebars.
-També està disponible com a PWA, aplicació Android (AAB i APK) i aplicació MSIX* (Windows).
-El codi font per a compilar per a iOS/iPadOS també està disponible (no es distribueix cap paquet IPA).
+
+---
+El projecte està disponible com a `PWA`, aplicació Android (`AAB` i `APK`) i aplicació Windows* (`MSIX.APPBUNDLE` i `CLASSIC.APPXBUNDLE`).
+
+El codi font sense compilar per a iOS/iPadOS també està disponible (no es distribueix cap paquet IPA).
